@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>MAGENTA MACHINE</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="/favicon.svg">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="/dist/app.css">
+  <script src="/dist/app.js" defer></script>
+</head>
+
+<body>
+  <div id="app" class="full-height bg-radial-gradient text-white">
+    <div class="full-height flex flex-col justify-center">
+      <div class="mb-16">
+        <img src="/src/images/logo.svg" alt="MAGENTA" class="mx-auto h-20">
+      </div>
+      <magenta-machine></magenta-machine>
+      <div class="mt-16">
+        <div class="h-20"></div>
+      </div>
+    </div>
+
+    <div class="absolute inset-0 top-auto font-michroma uppercase">
+      <div class="flex justify-between items-end">
+        <div class="col p-4 bg-decorations-2">
+          <a href="javascript:void(0)" id="share-link">Share my mix</a><br>
+          <a href="javascript:void(0)" id="magenta-links">MAGENTA links</a><br>
+        </div>
+        <div class="col text-right text-sm p-4 bg-decorations-1">
+          Draft v0.1<br>
+          Handcrafted with ❤<br>
+          by <a href="https://mgk.dev" target="_blank">Simon (MGK)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="magenta-links-modal">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 transition-opacity">
+        <div class="absolute inset-0 bg-radial-gradient opacity-75"></div>
+      </div>
+
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
+
+      <div class="inline-block bg-radial-gradient text-white text-left overflow-hidden shadow-xl transform transition-all my-8 align-middle max-w-lg">
+        <div class="grid grid-cols-3 text-4xl gap-4 p-4">
+          <a href="https://www.facebook.com/magentamusique/" class="button" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.youtube.com/channel/UCDJL7wvwArdhfydZR-XFtgw" class="button" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/magenta.club/" class="button" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://open.spotify.com/artist/5du1Lf0YKbak13Ym58jKsA" class="button" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="https://music.apple.com/fr/artist/magenta/1482405700" class="button" target="_blank"><i class="fab fa-apple"></i></a>
+          <a href="https://mtl.fm/magenta?fbclid=IwAR3uKDD5RqFPbpl0ziM3xub62vQQ8OC3oHWHg2-dkz_iQqwyXWbFyuHV9Aw#!/index" class="button" target="_blank"><i class="fas fa-phone"></i></a>
+        </div>
+
+        <div class="p-4">
+          <button id="magenta-links-modal-close" class="focus:outline-none button button-red py-2 font-michroma uppercase block" style="width: 100%; height: auto; line-height: initial;">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

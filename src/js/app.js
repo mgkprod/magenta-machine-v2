@@ -14,9 +14,11 @@ const app = new Vue({
     el: '#app'
 })
 
-document.getElementById('magenta-links').addEventListener('click', (evt) => {
-    document.getElementById('magenta-links-modal').classList.remove('hidden');
-});
+document.querySelectorAll('.magenta-links').forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        document.getElementById('magenta-links-modal').classList.remove('hidden');
+    })
+})
 
 document.getElementById('magenta-links-modal-close').addEventListener('click', (evt) => {
     document.getElementById('magenta-links-modal').classList.add('hidden');

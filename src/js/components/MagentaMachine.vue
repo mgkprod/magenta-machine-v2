@@ -1,75 +1,91 @@
 <template>
     <div class="wrapper">
-        <div class="flex flex-row justify-center gap-16 mb-16">
+        <div class="flex flex-col md:flex-row justify-center gap-3 md:gap-8 mb-8 xl:gap-16 md:mb-16">
             <div>
-                <div class="font-michroma text-center mb-4">
+                <div class="font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base">
                     drums
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4">
                     <button
                         v-for="player in _.filter(players, (p) => { return p.sample.type == 'drums' })"
                         v-bind:key="player.sample.id"
                         @click="toggle(player.sample.id)"
                         :disabled="player.howl.state() != 'loaded'"
-                        class="focus:outline-none button button-blue"
+                        class="focus:outline-none button button-music button-blue"
                         :class="{ active: player.howl.volume() == 1 }">
                     </button>
                 </div>
             </div>
             <div>
-                <div class="font-michroma text-center mb-4">
+                <div class="font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base">
                     bass
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4">
                     <button
                         v-for="player in _.filter(players, (p) => { return p.sample.type == 'bass' })"
                         v-bind:key="player.sample.id"
                         @click="toggle(player.sample.id)"
                         :disabled="player.howl.state() != 'loaded'"
-                        class="focus:outline-none button button-red"
+                        class="focus:outline-none button button-music button-red"
                         :class="{ active: player.howl.volume() == 1 }">
                     </button>
                 </div>
             </div>
             <div>
-                <div class="font-michroma text-center mb-4">
+                <div class="font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base">
                     vocals
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4">
                     <button
                         v-for="player in _.filter(players, (p) => { return p.sample.type == 'vocals' })"
                         v-bind:key="player.sample.id"
                         @click="toggle(player.sample.id)"
                         :disabled="player.howl.state() != 'loaded'"
-                        class="focus:outline-none button button-green"
+                        class="focus:outline-none button button-music button-green"
                         :class="{ active: player.howl.volume() == 1 }">
                     </button>
                 </div>
             </div>
             <div>
-                <div class="font-michroma text-center mb-4">
+                <div class="font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base">
                     other
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4">
                     <button
                         v-for="player in _.filter(players, (p) => { return p.sample.type == 'other' })"
                         v-bind:key="player.sample.id"
                         @click="toggle(player.sample.id)"
                         :disabled="player.howl.state() != 'loaded'"
-                        class="focus:outline-none button button-yellow"
+                        class="focus:outline-none button button-music button-yellow"
                         :class="{ active: player.howl.volume() == 1 }">
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="font-michroma text-center" v-show="shareVisible">
-            <div class="mb-2">Share this link with your friends :</div>
-            <input type="text" class="block form-control mx-auto focus:outline-none px-3 py-2 font-michroma text-center" style="width: 32em" readonly v-model="shareUrl">
+        <div class="fixed z-10 inset-0 overflow-y-auto font-michroma" v-show="shareVisible">
+            <div class="min-h-screen pt-4 px-4 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 transition-opacity">
+                    <div class="absolute inset-0 bg-radial-gradient opacity-75"></div>
+                </div>
+
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
+
+                <div class="inline-block bg-radial-gradient text-white text-left overflow-hidden shadow-xl transform transition-all my-8 align-middle max-w-lg w-full">
+                    <div class="p-4">
+                        <div class="mb-2">Share this link with your friends :</div>
+                        <input type="text" class="block form-control mx-auto focus:outline-none px-3 py-2 font-michroma w-full" readonly v-model="shareUrl">
+                    </div>
+
+                    <div class="p-4">
+                        <button @click="shareVisible = false" class="focus:outline-none button button-red py-2 font-michroma uppercase block" style="width: 100%; height: auto; line-height: initial;">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -95,10 +111,11 @@
         },
         async mounted() {
             // Events
-            document.getElementById('share-link').addEventListener('click', (evt) => {
-                console.log(this, evt);
-                this.showShareUrl();
-            });
+            document.querySelectorAll('.share-link').forEach((el) => {
+                el.addEventListener('click', (evt) => {
+                    this.showShareUrl();
+                })
+            })
 
             // Audio
             await this.loadSample( 4, 'bass', 'bass_chance', '/src/audio/bass_chance.mp3')

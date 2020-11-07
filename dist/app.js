@@ -2010,6 +2010,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2036,10 +2052,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               // Events
-              document.getElementById('share-link').addEventListener('click', function (evt) {
-                console.log(_this, evt);
-
-                _this.showShareUrl();
+              document.querySelectorAll('.share-link').forEach(function (el) {
+                el.addEventListener('click', function (evt) {
+                  _this.showShareUrl();
+                });
               }); // Audio
 
               _context.next = 3;
@@ -23784,127 +23800,170 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrapper" }, [
-    _c("div", { staticClass: "flex flex-row justify-center gap-16 mb-16" }, [
-      _c("div", [
-        _c("div", { staticClass: "font-michroma text-center mb-4" }, [
-          _vm._v("\n                drums\n            ")
+    _c(
+      "div",
+      {
+        staticClass:
+          "flex flex-col md:flex-row justify-center gap-3 md:gap-8 mb-8 xl:gap-16 md:mb-16"
+      },
+      [
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base"
+            },
+            [_vm._v("\n                drums\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4"
+            },
+            _vm._l(
+              _vm._.filter(_vm.players, function(p) {
+                return p.sample.type == "drums"
+              }),
+              function(player) {
+                return _c("button", {
+                  key: player.sample.id,
+                  staticClass:
+                    "focus:outline-none button button-music button-blue",
+                  class: { active: player.howl.volume() == 1 },
+                  attrs: { disabled: player.howl.state() != "loaded" },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggle(player.sample.id)
+                    }
+                  }
+                })
+              }
+            ),
+            0
+          )
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "grid grid-cols-2 gap-4" },
-          _vm._l(
-            _vm._.filter(_vm.players, function(p) {
-              return p.sample.type == "drums"
-            }),
-            function(player) {
-              return _c("button", {
-                key: player.sample.id,
-                staticClass: "focus:outline-none button button-blue",
-                class: { active: player.howl.volume() == 1 },
-                attrs: { disabled: player.howl.state() != "loaded" },
-                on: {
-                  click: function($event) {
-                    return _vm.toggle(player.sample.id)
-                  }
-                }
-              })
-            }
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base"
+            },
+            [_vm._v("\n                bass\n            ")]
           ),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("div", { staticClass: "font-michroma text-center mb-4" }, [
-          _vm._v("\n                bass\n            ")
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4"
+            },
+            _vm._l(
+              _vm._.filter(_vm.players, function(p) {
+                return p.sample.type == "bass"
+              }),
+              function(player) {
+                return _c("button", {
+                  key: player.sample.id,
+                  staticClass:
+                    "focus:outline-none button button-music button-red",
+                  class: { active: player.howl.volume() == 1 },
+                  attrs: { disabled: player.howl.state() != "loaded" },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggle(player.sample.id)
+                    }
+                  }
+                })
+              }
+            ),
+            0
+          )
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "grid grid-cols-2 gap-4" },
-          _vm._l(
-            _vm._.filter(_vm.players, function(p) {
-              return p.sample.type == "bass"
-            }),
-            function(player) {
-              return _c("button", {
-                key: player.sample.id,
-                staticClass: "focus:outline-none button button-red",
-                class: { active: player.howl.volume() == 1 },
-                attrs: { disabled: player.howl.state() != "loaded" },
-                on: {
-                  click: function($event) {
-                    return _vm.toggle(player.sample.id)
-                  }
-                }
-              })
-            }
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base"
+            },
+            [_vm._v("\n                vocals\n            ")]
           ),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("div", { staticClass: "font-michroma text-center mb-4" }, [
-          _vm._v("\n                vocals\n            ")
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4"
+            },
+            _vm._l(
+              _vm._.filter(_vm.players, function(p) {
+                return p.sample.type == "vocals"
+              }),
+              function(player) {
+                return _c("button", {
+                  key: player.sample.id,
+                  staticClass:
+                    "focus:outline-none button button-music button-green",
+                  class: { active: player.howl.volume() == 1 },
+                  attrs: { disabled: player.howl.state() != "loaded" },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggle(player.sample.id)
+                    }
+                  }
+                })
+              }
+            ),
+            0
+          )
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "grid grid-cols-2 gap-4" },
-          _vm._l(
-            _vm._.filter(_vm.players, function(p) {
-              return p.sample.type == "vocals"
-            }),
-            function(player) {
-              return _c("button", {
-                key: player.sample.id,
-                staticClass: "focus:outline-none button button-green",
-                class: { active: player.howl.volume() == 1 },
-                attrs: { disabled: player.howl.state() != "loaded" },
-                on: {
-                  click: function($event) {
-                    return _vm.toggle(player.sample.id)
-                  }
-                }
-              })
-            }
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "font-michroma text-left md:text-center mb-4 text-base md:text-sm xl:text-base"
+            },
+            [_vm._v("\n                other\n            ")]
           ),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("div", { staticClass: "font-michroma text-center mb-4" }, [
-          _vm._v("\n                other\n            ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "grid grid-cols-2 gap-4" },
-          _vm._l(
-            _vm._.filter(_vm.players, function(p) {
-              return p.sample.type == "other"
-            }),
-            function(player) {
-              return _c("button", {
-                key: player.sample.id,
-                staticClass: "focus:outline-none button button-yellow",
-                class: { active: player.howl.volume() == 1 },
-                attrs: { disabled: player.howl.state() != "loaded" },
-                on: {
-                  click: function($event) {
-                    return _vm.toggle(player.sample.id)
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-2 xl:gap-4"
+            },
+            _vm._l(
+              _vm._.filter(_vm.players, function(p) {
+                return p.sample.type == "other"
+              }),
+              function(player) {
+                return _c("button", {
+                  key: player.sample.id,
+                  staticClass:
+                    "focus:outline-none button button-music button-yellow",
+                  class: { active: player.howl.volume() == 1 },
+                  attrs: { disabled: player.howl.state() != "loaded" },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggle(player.sample.id)
+                    }
                   }
-                }
-              })
-            }
-          ),
-          0
-        )
-      ])
-    ]),
+                })
+              }
+            ),
+            0
+          )
+        ])
+      ]
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -23917,41 +23976,95 @@ var render = function() {
             expression: "shareVisible"
           }
         ],
-        staticClass: "font-michroma text-center"
+        staticClass: "fixed z-10 inset-0 overflow-y-auto font-michroma"
       },
       [
-        _c("div", { staticClass: "mb-2" }, [
-          _vm._v("Share this link with your friends :")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.shareUrl,
-              expression: "shareUrl"
-            }
-          ],
-          staticClass:
-            "block form-control mx-auto focus:outline-none px-3 py-2 font-michroma text-center",
-          staticStyle: { width: "32em" },
-          attrs: { type: "text", readonly: "" },
-          domProps: { value: _vm.shareUrl },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.shareUrl = $event.target.value
-            }
-          }
-        })
+        _c(
+          "div",
+          { staticClass: "min-h-screen pt-4 px-4 text-center sm:block sm:p-0" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("span", {
+              staticClass: "hidden sm:inline-block sm:align-middle sm:h-screen"
+            }),
+            _vm._v("​\n\n            "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "inline-block bg-radial-gradient text-white text-left overflow-hidden shadow-xl transform transition-all my-8 align-middle max-w-lg w-full"
+              },
+              [
+                _c("div", { staticClass: "p-4" }, [
+                  _c("div", { staticClass: "mb-2" }, [
+                    _vm._v("Share this link with your friends :")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.shareUrl,
+                        expression: "shareUrl"
+                      }
+                    ],
+                    staticClass:
+                      "block form-control mx-auto focus:outline-none px-3 py-2 font-michroma w-full",
+                    attrs: { type: "text", readonly: "" },
+                    domProps: { value: _vm.shareUrl },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.shareUrl = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-4" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "focus:outline-none button button-red py-2 font-michroma uppercase block",
+                      staticStyle: {
+                        width: "100%",
+                        height: "auto",
+                        "line-height": "initial"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.shareVisible = false
+                        }
+                      }
+                    },
+                    [_vm._v("Close")]
+                  )
+                ])
+              ]
+            )
+          ]
+        )
       ]
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fixed inset-0 transition-opacity" }, [
+      _c("div", {
+        staticClass: "absolute inset-0 bg-radial-gradient opacity-75"
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -36177,8 +36290,10 @@ files.keys().map(function (key) {
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app'
 });
-document.getElementById('magenta-links').addEventListener('click', function (evt) {
-  document.getElementById('magenta-links-modal').classList.remove('hidden');
+document.querySelectorAll('.magenta-links').forEach(function (el) {
+  el.addEventListener('click', function (evt) {
+    document.getElementById('magenta-links-modal').classList.remove('hidden');
+  });
 });
 document.getElementById('magenta-links-modal-close').addEventListener('click', function (evt) {
   document.getElementById('magenta-links-modal').classList.add('hidden');

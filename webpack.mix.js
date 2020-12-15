@@ -1,6 +1,7 @@
 let mix = require('laravel-mix');
 
 require('laravel-mix-tailwind');
+require('mix-html-builder');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,6 +15,22 @@ require('laravel-mix-tailwind');
  */
 
 mix
-    .js('src/js/app.js', 'dist/')
-    .sass('src/scss/app.scss', 'dist/')
-    .tailwind();
+    .setPublicPath('public')
+
+    // Javascript
+    .js('src/js/app.js', 'assets')
+
+    // CSS
+    .sass('src/scss/app.scss', 'assets')
+    .tailwind()
+
+    // Copy resources
+    .copyDirectory('src/public', 'public')
+
+    // Build index file
+    .html({
+        output: '.',
+        inject: true,
+        versioning: true,
+    })
+    .disableSuccessNotifications();

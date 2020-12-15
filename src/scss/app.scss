@@ -23,11 +23,11 @@ a {
 }
 
 .bg-decorations-1 {
-  background: url('/src/images/decorations_1.svg') right bottom no-repeat;
+  background: url('/images/decorations_1.svg') right bottom no-repeat;
 }
 
 .bg-decorations-2 {
-  background: url('/src/images/decorations_1.svg') left top no-repeat;
+  background: url('/images/decorations_1.svg') left top no-repeat;
 }
 
 .bg-radial-gradient {
@@ -50,7 +50,7 @@ a {
   text-align: center;
 
   &:disabled {
-    background: url('/src/images/loader.gif') center no-repeat !important;
+    background: url('/images/loader.gif') center no-repeat !important;
     cursor: not-allowed;
   }
 

@@ -23,3 +23,7 @@ document.querySelectorAll('.magenta-links').forEach((el) => {
 document.getElementById('magenta-links-modal-close').addEventListener('click', (evt) => {
     document.getElementById('magenta-links-modal').classList.add('hidden');
 });
+
+document.querySelectorAll('.version').forEach((el) => {
+    el.innerHTML = "v" + process.env.PACKAGE_VERSION;
+})

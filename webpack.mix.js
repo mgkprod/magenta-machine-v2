@@ -14,7 +14,21 @@ require('mix-html-builder');
  |
  */
 
+const fs = require('fs')
+const package = fs.readFileSync('./package.json')
+const version = JSON.parse(package).version || '0.1.0'
+
 mix
+    .webpackConfig(webpack => {
+        return {
+            plugins: [
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        PACKAGE_VERSION: '"' + version + '"'
+                    }
+                })
+            ]
+        }})
     .setPublicPath('public')
 
     // Javascript
@@ -33,4 +47,5 @@ mix
         inject: true,
         versioning: true,
     })
+
     .disableSuccessNotifications();

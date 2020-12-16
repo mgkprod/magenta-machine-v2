@@ -9,9 +9,13 @@
 
     <link rel="icon" href="/favicon.svg">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.querySelector('html').classList.add('dark')
+    </script>
 </head>
 
-<body class="bg-white dark:bg-black">
+<body class="transition bg-white dark:bg-gray-900 transition-200">
     <div id="app" class="w-full h-full">
         <app />
     </div>

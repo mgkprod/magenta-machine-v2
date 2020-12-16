@@ -154,11 +154,9 @@
             </g>
         </svg>
 
-        <div class="absolute inset-0 right-auto font-mono bottom-auto bg-black bg-opacity-75 text-white m-2 p-2 text-xs rounded" style="width: 350px;">
-            <button @click="debug = !debug">DEBUG</button><br>
-
-            <div class="flex flex-row" v-if="debug">
-                <div class="flex flex-col w-1/2 pr-2 mr-2 border-r">
+        <div class="absolute top-auto left-auto p-2 font-mono text-xs text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400" style="bottom: 4.2rem; right: 1rem; width: 350px;" v-if="devtools">
+            <div class="flex flex-row">
+                <div class="flex flex-col w-1/2 pr-2 mr-2">
                     <div class="flex flex-row" v-for="btn in controls.btns" v-bind:key="btn.id">
                         <div class="w-1/3 mr-1">{{ btn.id }}</div>
                         <div class="w-1/3 mr-1">{{ btn.type }}</div>
@@ -209,9 +207,10 @@
     };
 
     export default {
+        props: ['devtools'],
+
         data() {
             return {
-                debug: false,
                 screen: undefined,
                 letters: [],
                 controls: {

@@ -3,6 +3,7 @@ module.exports = {
         './src/index.html',
         './src/js/**/*.vue',
     ],
+    darkMode: 'class',
     theme: {
         extend: {},
     },

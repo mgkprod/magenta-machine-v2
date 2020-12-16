@@ -153,6 +153,37 @@
                 <path d="M91.0398 379.321C93.1013 379.92 95.2821 380.254 97.4274 380.332C97.9774 380.355 98.8175 379.066 99.0998 378.233C99.4754 377.134 98.4313 376.671 97.5757 376.416C96.726 376.157 95.8167 376.111 94.4404 375.899C93.3686 375.54 91.9539 375.76 90.7631 376.921C89.8553 377.808 89.8676 378.978 91.0398 379.321" fill="white"/>
             </g>
         </svg>
+
+        <div class="absolute inset-0 right-auto font-mono bottom-auto bg-black bg-opacity-75 text-white m-2 p-2 text-xs rounded" style="width: 350px;">
+            <button @click="debug = !debug">DEBUG</button><br>
+
+            <div class="flex flex-row" v-if="debug">
+                <div class="flex flex-col w-1/2 pr-2 mr-2 border-r">
+                    <div class="flex flex-row" v-for="btn in controls.btns" v-bind:key="btn.id">
+                        <div class="w-1/3 mr-1">{{ btn.id }}</div>
+                        <div class="w-1/3 mr-1">{{ btn.type }}</div>
+                        <div class="w-1/3 text-right">{{ btn.value }}</div>
+                    </div>
+                </div>
+                <div class="flex flex-col w-1/2">
+                    <div class="flex flex-row" v-for="pad in controls.pads" v-bind:key="pad.id">
+                        <div class="w-1/3 mr-1">{{ pad.id }}</div>
+                        <div class="w-1/3 mr-1">{{ pad.type }}</div>
+                        <div class="w-1/3 text-right">{{ pad.value }}</div>
+                    </div>
+                    <div class="flex flex-row" v-for="knob in controls.knobs" v-bind:key="knob.id">
+                        <div class="w-1/3 mr-1">{{ knob.id }}</div>
+                        <div class="w-1/3 mr-1">min:{{ knob.min }} max:{{ knob.max }}</div>
+                        <div class="w-1/3 text-right">{{ knob.value }}</div>
+                    </div>
+                    <div class="flex flex-row" v-for="slider in controls.sliders" v-bind:key="slider.id">
+                        <div class="w-1/3 mr-1">{{ slider.id }}</div>
+                        <div class="w-1/3 mr-1">min:{{ slider.min }} max:{{ slider.max }}</div>
+                        <div class="w-1/3 text-right">{{ slider.value }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -180,6 +211,7 @@
     export default {
         data() {
             return {
+                debug: false,
                 screen: undefined,
                 letters: [],
                 controls: {
@@ -280,15 +312,15 @@
 
                 // Knobs
                 this.controls.knobs = [
-                    { ref: this.$refs.knob1, value: 0, min: 0, max: 260 },
-                    { ref: this.$refs.knob2, value: 0, min: 0, max: 260 },
-                    { ref: this.$refs.knob3, value: 0, min: -500, max: 500 },
+                    { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260 },
+                    { ref: this.$refs.knob2, id: 'knob2', value: 0, min: 0, max: 260 },
+                    { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500 },
                 ];
 
                 // Sliders
                 this.controls.sliders = [
-                    { ref: this.$refs.slider1, value: 0, min: 0, max: 85 },
-                    { ref: this.$refs.slider2, value: 0, min: 0, max: 85 },
+                    { ref: this.$refs.slider1, id: 'slider1', value: 0, min: 0, max: 85 },
+                    { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85 },
                 ];
             },
             disable_controls(){
@@ -448,11 +480,11 @@
                 this.mousehook.init_pos.x = e.clientX
                 this.mousehook.init_pos.y = e.clientY
 
-                // Find knob
-                let current_knob_index = _.findIndex(this.controls.sliders, ['ref', e.target.parentNode]);
+                // Find slider
+                let current_slider_index = _.findIndex(this.controls.sliders, ['ref', e.target.parentNode]);
                 this.mousehook.hooked_to_type = 'slider'
-                this.mousehook.hooked_to = current_knob_index
-                this.mousehook.init_value = this.controls.sliders[current_knob_index].value;
+                this.mousehook.hooked_to = current_slider_index
+                this.mousehook.init_value = this.controls.sliders[current_slider_index].value;
             },
             mouseup(e){
                 if (this.mousehook.hooked_to === undefined) return;

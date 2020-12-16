@@ -6,6 +6,7 @@
   "author": "Simon MGK <contact@mgkprod.fr>",
   "license": "MIT",
   "devDependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
     "axios": "^0.19.2",
     "createjs": "^1.0.1",
     "cross-env": "^7.0",

@@ -10,20 +10,8 @@ import _ from 'lodash'
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.prototype._ = window._
+
 const app = new Vue({
     el: '#app'
-})
-
-document.querySelectorAll('.magenta-links').forEach((el) => {
-    el.addEventListener('click', (evt) => {
-        document.getElementById('magenta-links-modal').classList.remove('hidden');
-    })
-})
-
-document.getElementById('magenta-links-modal-close').addEventListener('click', (evt) => {
-    document.getElementById('magenta-links-modal').classList.add('hidden');
-});
-
-document.querySelectorAll('.version').forEach((el) => {
-    el.innerHTML = "v" + process.env.PACKAGE_VERSION;
 })

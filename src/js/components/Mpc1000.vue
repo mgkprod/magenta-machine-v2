@@ -157,14 +157,14 @@
         <div class="absolute top-auto left-auto p-2 font-mono text-xs text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400" style="bottom: 4.2rem; right: 1rem; width: 350px;" v-if="devtools">
             <div class="flex flex-row">
                 <div class="flex flex-col w-1/2 pr-2 mr-2">
-                    <div class="flex flex-row" v-for="btn in controls.btns" v-bind:key="btn.id">
+                    <div class="flex flex-row" v-for="btn in controls.btns" v-bind:key="btn.id" :class="{ 'bg-indigo-300 dark:bg-indigo-700 rounded': btn.pressed }">
                         <div class="w-1/3 mr-1">{{ btn.id }}</div>
                         <div class="w-1/3 mr-1">{{ btn.type }}</div>
                         <div class="w-1/3 text-right">{{ btn.value }}</div>
                     </div>
                 </div>
                 <div class="flex flex-col w-1/2">
-                    <div class="flex flex-row" v-for="pad in controls.pads" v-bind:key="pad.id">
+                    <div class="flex flex-row" v-for="pad in controls.pads" v-bind:key="pad.id" :class="{ 'bg-indigo-300 dark:bg-indigo-700 rounded': pad.pressed }">
                         <div class="w-1/3 mr-1">{{ pad.id }}</div>
                         <div class="w-1/3 mr-1">{{ pad.type }}</div>
                         <div class="w-1/3 text-right">{{ pad.value }}</div>
@@ -191,13 +191,13 @@
     const colors = {
         white: '#fff',
         pad: {
-            default: '#53C6D7',
-            enabled: '#F7EC03',
+            enabled: '#53C6D7',
+            active: '#F7EC03',
             disabled: '#525AA5',
         },
         btn: {
-            default: '#B535A1',
-            enabled: '#4AC3CA',
+            enabled: '#B535A1',
+            active: '#4AC3CA',
             disabled: '#525AA5',
         },
         screen: {
@@ -252,88 +252,102 @@
 
                 // Pads
                 this.controls.pads = [
-                    { ref: this.$refs.pad1, id: 'pad1', value: false, type: 'toggle'},
-                    { ref: this.$refs.pad2, id: 'pad2', value: false, type: 'toggle'},
-                    { ref: this.$refs.pad3, id: 'pad3', value: false, type: 'toggle'},
-                    { ref: this.$refs.pad4, id: 'pad4', value: false, type: 'toggle'},
-                    { ref: this.$refs.pad5, id: 'pad5', value: false, type: 'hold'},
-                    { ref: this.$refs.pad6, id: 'pad6', value: false, type: 'hold'},
-                    { ref: this.$refs.pad7, id: 'pad7', value: false, type: 'hold'},
-                    { ref: this.$refs.pad8, id: 'pad8', value: false, type: 'hold'},
-                    { ref: this.$refs.pad9, id: 'pad9', value: false, type: 'click'},
-                    { ref: this.$refs.pad10, id: 'pad10', value: false, type: 'click'},
-                    { ref: this.$refs.pad11, id: 'pad11', value: false, type: 'click'},
-                    { ref: this.$refs.pad12, id: 'pad12', value: false, type: 'click'},
-                    { ref: this.$refs.pad13, id: 'pad13', value: false, type: 'click'},
-                    { ref: this.$refs.pad14, id: 'pad14', value: false, type: 'click'},
-                    { ref: this.$refs.pad15, id: 'pad15', value: false, type: 'click'},
-                    { ref: this.$refs.pad16, id: 'pad16', value: false, type: 'click'},
+                    { ref: this.$refs.pad1, on: 'bank1', id: 'pad1', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.pad2, on: 'bank1', id: 'pad2', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.pad3, on: 'bank1', id: 'pad3', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.pad4, on: 'bank1', id: 'pad4', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.pad5, on: 'bank1', id: 'pad5', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad6, on: 'bank1', id: 'pad6', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad7, on: 'bank1', id: 'pad7', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad8, on: 'bank1', id: 'pad8', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad9, on: 'bank1', id: 'pad9', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad10, on: 'bank1', id: 'pad10', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad11, on: 'bank1', id: 'pad11', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad12, on: 'bank1', id: 'pad12', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad13, on: 'bank1', id: 'pad13', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad14, on: 'bank1', id: 'pad14', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad15, on: 'bank1', id: 'pad15', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad16, on: 'bank1', id: 'pad16', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad1, on: 'bank2', id: 'pad17', value: 'disabled', type: 'toggle', pressed: false, },
+                    // { ref: this.$refs.pad2, on: 'bank2', id: 'pad18', value: 'disabled', type: 'toggle', pressed: false, },
+                    // { ref: this.$refs.pad3, on: 'bank2', id: 'pad19', value: 'disabled', type: 'toggle', pressed: false, },
+                    // { ref: this.$refs.pad4, on: 'bank2', id: 'pad20', value: 'disabled', type: 'toggle', pressed: false, },
+                    // { ref: this.$refs.pad5, on: 'bank2', id: 'pad21', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad6, on: 'bank2', id: 'pad22', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad7, on: 'bank2', id: 'pad23', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad8, on: 'bank2', id: 'pad24', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad9, on: 'bank2', id: 'pad25', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad10, on: 'bank2', id: 'pad26', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad11, on: 'bank2', id: 'pad27', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad12, on: 'bank2', id: 'pad28', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad13, on: 'bank2', id: 'pad29', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad14, on: 'bank2', id: 'pad30', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad15, on: 'bank2', id: 'pad31', value: 'disabled', type: 'hold', pressed: false, },
+                    // { ref: this.$refs.pad16, on: 'bank2', id: 'pad32', value: 'disabled', type: 'hold', pressed: false, },
                 ];
 
                 // Buttons
                 this.controls.btns = [
-                    { ref: this.$refs.btn_tl, id: 'tl', value: false, type: 'toggle'},
-                    { ref: this.$refs.btn_bl, id: 'bl', value: false, type: 'toggle'},
-                    { ref: this.$refs.btn_m1, id: 'm1', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_m2, id: 'm2', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_m3, id: 'm3', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_m4, id: 'm4', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_m5, id: 'm5', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_m6, id: 'm6', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr1, id: 'tr1', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr2, id: 'tr2', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr3, id: 'tr3', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr4, id: 'tr4', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr5, id: 'tr5', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr6, id: 'tr6', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr7, id: 'tr7', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr8, id: 'tr8', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_tr9, id: 'tr9', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr1, id: 'mr1', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr2, id: 'mr2', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr3, id: 'mr3', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr4, id: 'mr4', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr5, id: 'mr5', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr6, id: 'mr6', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr7, id: 'mr7', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr8, id: 'mr8', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr9, id: 'mr9', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_mr10, id: 'mr10', value: false, type: 'hold'},
-                    { ref: this.$refs.btn_br1, id: 'br1', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br2, id: 'br2', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br3, id: 'br3', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br4, id: 'br4', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br5, id: 'br5', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br6, id: 'br6', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br7, id: 'br7', value: false, type: 'click'},
-                    { ref: this.$refs.btn_br8, id: 'br8', value: false, type: 'click'},
+                    { ref: this.$refs.btn_tl, pos: 'tl', id: 'tl', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.btn_bl, pos: 'bl', id: 'bl', value: 'disabled', type: 'toggle', pressed: false, },
+                    { ref: this.$refs.btn_m1, pos: 'm', id: 'm1', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_m2, pos: 'm', id: 'm2', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_m3, pos: 'm', id: 'm3', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_m4, pos: 'm', id: 'm4', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_m5, pos: 'm', id: 'm5', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_m6, pos: 'm', id: 'm6', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr1, pos: 'tr', id: 'tr1', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr2, pos: 'tr', id: 'tr2', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr3, pos: 'tr', id: 'tr3', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr4, pos: 'tr', id: 'tr4', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr5, pos: 'tr', id: 'tr5', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr6, pos: 'tr', id: 'tr6', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr7, pos: 'tr', id: 'tr7', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr8, pos: 'tr', id: 'tr8', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_tr9, pos: 'tr', id: 'tr9', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr1,  pos: 'mr', id: 'mr1', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr2,  pos: 'mr', id: 'mr2', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr3,  pos: 'mr', id: 'mr3', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr4,  pos: 'mr', id: 'mr4', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr5,  pos: 'mr', id: 'mr5', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr6,  pos: 'mr', id: 'mr6', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr7,  pos: 'mr', id: 'mr7', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr8,  pos: 'mr', id: 'mr8', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr9,  pos: 'mr', id: 'mr9', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_mr10, pos: 'mr', id: 'mr10', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br1, pos: 'br', id: 'br1', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br2, pos: 'br', id: 'br2', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br3, pos: 'br', id: 'br3', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br4, pos: 'br', id: 'br4', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br5, pos: 'br', id: 'br5', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br6, pos: 'br', id: 'br6', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br7, pos: 'br', id: 'br7', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.btn_br8, pos: 'br', id: 'br8', value: 'disabled', type: 'hold', pressed: false, },
                 ];
 
                 // Knobs
                 this.controls.knobs = [
-                    { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260 },
-                    { ref: this.$refs.knob2, id: 'knob2', value: 0, min: 0, max: 260 },
-                    { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500 },
+                    { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260, },
+                    { ref: this.$refs.knob2, id: 'knob2', value: 0, min: 0, max: 260, },
+                    { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500, },
                 ];
 
                 // Sliders
                 this.controls.sliders = [
-                    { ref: this.$refs.slider1, id: 'slider1', value: 0, min: 0, max: 85 },
-                    { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85 },
+                    { ref: this.$refs.slider1, id: 'slider1', value: 0, min: 0, max: 85, },
+                    { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85, },
                 ];
             },
             disable_controls(){
                 SVG(this.screen).fill(colors.screen.disabled);
                 this.letters.forEach(el => SVG(el).fill({ color: colors.white, opacity: 0 }) );
-                this.controls.pads.forEach(({ ref }) => SVG(ref).fill(colors.pad.disabled) );
-                this.controls.btns.forEach(({ ref }) => SVG(ref).fill(colors.btn.disabled) );
             },
             demo_animation(){
                 // Buttons
                 this.controls.btns.forEach(({ ref }, k) => {
                     if (k >= 2 && k <= 7) {
-                        setTimeout(() => { SVG(ref).fill(colors.btn.default) }, (k + 1) * 50);
-                        setTimeout(() => { SVG(ref).fill(colors.btn.disabled) }, 700);
+                        setTimeout(() => { this.controls.btns[k].value = 'enabled'; }, (k + 1) * 50);
+                        setTimeout(() => { this.controls.btns[k].value = 'disabled'; }, 700);
                     }
                 });
 
@@ -352,11 +366,11 @@
                     // Pads
                     this.controls.pads.forEach(({ ref }, k) => {
                         setTimeout(() => {
-                            SVG(ref).fill(colors.pad.default)
+                            this.controls.pads[k].value = 'enabled';
                             setTimeout(() => {
-                                SVG(ref).fill(colors.pad.enabled)
+                                this.controls.pads[k].value = 'active';
                                 setTimeout(() => {
-                                    SVG(ref).fill(colors.pad.disabled)
+                                    this.controls.pads[k].value = 'disabled';
                                 }, (k + 1) + 50);
                             }, (k + 1) + 50);
                         }, (k + 1) * 15);
@@ -365,11 +379,11 @@
                     setTimeout(() => {
                         this.controls.pads.reverse().forEach(({ ref }, k) => {
                             setTimeout(() => {
-                                SVG(ref).fill(colors.pad.default)
+                                this.controls.pads[k].value = 'enabled';
                                 setTimeout(() => {
-                                    SVG(ref).fill(colors.pad.enabled)
+                                    this.controls.pads[k].value = 'active';
                                     setTimeout(() => {
-                                        SVG(ref).fill(colors.pad.disabled)
+                                        this.controls.pads[k].value = 'disabled';
                                 }, (k + 1) + 50);
                             }, (k + 1) + 50);
                         }, (k + 1) * 15);
@@ -378,70 +392,62 @@
 
                     setTimeout(() => {
                         this.controls.pads.reverse().forEach(({ ref }, k) => {
-                            SVG(ref).fill(colors.pad.default)
-                            setTimeout(() => { SVG(ref).fill(colors.pad.disabled) }, 300);
+                            this.controls.pads[k].value = 'enabled';
+                            setTimeout(() => { this.controls.pads[k].value = 'disabled'; }, 300);
                         });
                     }, 1200);
 
                     setTimeout(() => {
-                        this.controls.pads.reverse().forEach(({ ref }, k) => {
-                            SVG(ref).fill(colors.pad.enabled)
-                            setTimeout(() => { SVG(ref).fill(colors.pad.disabled) }, 300);
+                        this.controls.pads.forEach(({ ref }, k) => {
+                            this.controls.pads[k].value = 'active';
+                            setTimeout(() => { this.controls.pads[k].value = 'disabled'; }, 300);
                         });
                     }, 1200 + 600);
 
                     setTimeout(() => {
-                        this.controls.pads.reverse().forEach(({ ref }, k) => {
-                            SVG(ref).fill(colors.btn.enabled)
-                        });
+                        this.bind_controls()
                     }, 1200 + 600 + 600);
                 }, 500);
+            },
+            bind_controls(){
+                this.controls.pads.forEach(({ ref }, k) => {
+                    if (k >= 0 && k <= 7) {
+                        this.controls.pads[k].value = 'enabled';
+                    }
+                });
             },
             pad_click(e){
                 let current_pad_index = _.findIndex(this.controls.pads, ['ref', e.target]);
 
-                if (this.controls.pads[current_pad_index].type == 'toggle') {
-                    if (this.controls.pads[current_pad_index].value) {
-                        SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.default)
-                        this.controls.pads[current_pad_index].value = false;
-                    } else {
-                        SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.enabled)
-                        this.controls.pads[current_pad_index].value = true;
-                    }
+                if (
+                    this.controls.pads[current_pad_index].type != 'toggle'
+                    || this.controls.pads[current_pad_index].value == 'disabled'
+                ) return;
 
-                    return;
-                }
+                this.controls.pads[current_pad_index].value = (this.controls.pads[current_pad_index].value == 'enabled')
+                    ? 'active'
+                    : 'enabled'
             },
             btn_click(e){
                 let current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target]);
 
-                if (this.controls.btns[current_btn_index].type == 'toggle') {
-                    if (this.controls.btns[current_btn_index].value) {
-                        SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.default)
-                        this.controls.btns[current_btn_index].value = false;
-                    } else {
-                        SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.enabled)
-                        this.controls.btns[current_btn_index].value = true;
-                    }
+                if (
+                    this.controls.btns[current_btn_index].type != 'toggle'
+                    || this.controls.btns[current_btn_index].value == 'disabled'
+                ) return;
 
-                    return;
-                }
+                this.controls.btns[current_btn_index].value = (this.controls.btns[current_btn_index].value == 'enabled')
+                    ? 'active'
+                    : 'enabled'
             },
             pad_mousedown(e){
                 let current_pad_index = _.findIndex(this.controls.pads, ['ref', e.target]);
 
-                if (this.controls.pads[current_pad_index].type == 'toggle') {
-                    return
-                }
+                this.controls.pads[current_pad_index].pressed = true;
 
-                if (this.controls.pads[current_pad_index].type == 'click') {
-                    SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.enabled)
-                    setTimeout(() => SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.default), 20);
-                    return;
+                if (this.controls.pads[current_pad_index].type == 'hold' && this.controls.pads[current_pad_index].value != 'disabled') {
+                    this.controls.pads[current_pad_index].value = 'active';
                 }
-
-                SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.enabled)
-                this.controls.pads[current_pad_index].value = true;
 
                 this.mousehook.hooked_to_type = 'pad'
                 this.mousehook.hooked_to = current_pad_index
@@ -449,18 +455,11 @@
             btn_mousedown(e){
                 let current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target]);
 
-                if (this.controls.btns[current_btn_index].type == 'toggle') {
-                    return
-                }
+                this.controls.btns[current_btn_index].pressed = true;
 
-                if (this.controls.btns[current_btn_index].type == 'click') {
-                    SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.enabled)
-                    setTimeout(() => SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.default), 20);
-                    return;
+                if (this.controls.btns[current_btn_index].type == 'hold' && this.controls.btns[current_btn_index].value != 'disabled') {
+                    this.controls.btns[current_btn_index].value = 'active';
                 }
-
-                SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.enabled)
-                this.controls.btns[current_btn_index].value = true;
 
                 this.mousehook.hooked_to_type = 'btn'
                 this.mousehook.hooked_to = current_btn_index
@@ -490,12 +489,18 @@
 
                 if (this.mousehook.hooked_to_type == 'pad') {
                     let current_pad_index = this.mousehook.hooked_to;
-                    SVG(this.controls.pads[current_pad_index].ref).fill(colors.pad.default)
-                    this.controls.pads[current_pad_index].value = false;
+                    this.controls.pads[current_pad_index].pressed = false;
+
+                    if (this.controls.pads[current_pad_index].type == 'hold' && this.controls.pads[current_pad_index].value != 'disabled') {
+                        this.controls.pads[current_pad_index].value = 'enabled';
+                    }
                 } else if (this.mousehook.hooked_to_type == 'btn') {
                     let current_btn_index = this.mousehook.hooked_to;
-                    SVG(this.controls.btns[current_btn_index].ref).fill(colors.btn.default)
-                    this.controls.btns[current_btn_index].value = false;
+                    this.controls.btns[current_btn_index].pressed = false;
+
+                    if (this.controls.btns[current_btn_index].type == 'hold' && this.controls.btns[current_btn_index].value != 'disabled') {
+                        this.controls.btns[current_btn_index].value = 'enabled';
+                    }
                 }
 
                 this.mousehook.hooked_to = undefined;
@@ -509,27 +514,121 @@
                 if (this.mousehook.hooked_to_type == 'knob') {
                     // Knob rotation
                     let distance = (this.mousehook.current_pos.x - this.mousehook.init_pos.x);
-                    let rotation = this.mousehook.init_value + distance;
+                    let value = this.mousehook.init_value + distance;
 
                     // Min/Max
-                    if (rotation < this.controls.knobs[this.mousehook.hooked_to].min) rotation = this.controls.knobs[this.mousehook.hooked_to].min;
-                    if (rotation > this.controls.knobs[this.mousehook.hooked_to].max) rotation = this.controls.knobs[this.mousehook.hooked_to].max;
+                    if (value < this.controls.knobs[this.mousehook.hooked_to].min) value = this.controls.knobs[this.mousehook.hooked_to].min;
+                    if (value > this.controls.knobs[this.mousehook.hooked_to].max) value = this.controls.knobs[this.mousehook.hooked_to].max;
 
-                    this.controls.knobs[this.mousehook.hooked_to].value = rotation;
-                    SVG(this.controls.knobs[this.mousehook.hooked_to].ref).transform({rotate: rotation})
+                    this.controls.knobs[this.mousehook.hooked_to].value = value;
                 } else if (this.mousehook.hooked_to_type == 'slider') {
                     // Knob rotation
                     let distance = (this.mousehook.current_pos.y - this.mousehook.init_pos.y);
-                    let rotation = this.mousehook.init_value + distance;
+                    let value = this.mousehook.init_value + distance;
 
                     // Min/Max
-                    if (rotation < this.controls.sliders[this.mousehook.hooked_to].min) rotation = this.controls.sliders[this.mousehook.hooked_to].min;
-                    if (rotation > this.controls.sliders[this.mousehook.hooked_to].max) rotation = this.controls.sliders[this.mousehook.hooked_to].max;
+                    if (value < this.controls.sliders[this.mousehook.hooked_to].min) value = this.controls.sliders[this.mousehook.hooked_to].min;
+                    if (value > this.controls.sliders[this.mousehook.hooked_to].max) value = this.controls.sliders[this.mousehook.hooked_to].max;
 
-                    this.controls.sliders[this.mousehook.hooked_to].value = rotation;
-                    SVG(this.controls.sliders[this.mousehook.hooked_to].ref).transform({translateY: rotation})
+                    this.controls.sliders[this.mousehook.hooked_to].value = value;
                 }
             }
-        }
+        },
+
+        computed: {
+            controls_pads_json: function () {
+                return JSON.stringify(
+                    _.map(this.controls.pads, function(pad){
+                        return {
+                            id: pad.id,
+                            value: pad.value,
+                            pressed: pad.pressed,
+                        }
+                    })
+                )
+            },
+            controls_btns_json: function () {
+                return JSON.stringify(
+                    _.map(this.controls.btns, function(btn){
+                        return {
+                            id: btn.id,
+                            value: btn.value,
+                            pressed: btn.pressed,
+                        }
+                    })
+                )
+            },
+            controls_knobs_json: function () {
+                return JSON.stringify(
+                    _.map(this.controls.knobs, function(knob){
+                        return {
+                            id: knob.id,
+                            value: knob.value,
+                        }
+                    })
+                )
+            },
+            controls_sliders_json: function () {
+                return JSON.stringify(
+                    _.map(this.controls.sliders, function(slider){
+                        return {
+                            id: slider.id,
+                            value: slider.value,
+                        }
+                    })
+                )
+            }
+        },
+
+        watch: {
+            'controls_pads_json': function(pads_json, old_pads_json) {
+                let pads = JSON.parse(pads_json)
+                let old_pads = JSON.parse(old_pads_json)
+
+                let diff = _.differenceWith(pads, old_pads, _.isEqual);
+
+                _.each(diff, (pad) => {
+                    let curr_pad = _.find(this.controls.pads, ['id', pad.id]);
+                    SVG(curr_pad.ref).fill(colors.pad[curr_pad.value])
+                    if (pad.pressed) SVG(curr_pad.ref).transform({ translateX: 1, translateY: 3 });
+                    if (!pad.pressed) SVG(curr_pad.ref).transform({ translateX: 0, translateY: 0 });
+                });
+            },
+            'controls_btns_json': function(btns_json, old_btns_json) {
+                let btns = JSON.parse(btns_json)
+                let old_btns = JSON.parse(old_btns_json)
+
+                let diff = _.differenceWith(btns, old_btns, _.isEqual);
+
+                _.each(diff, (btn) => {
+                    let curr_btn = _.find(this.controls.btns, ['id', btn.id]);
+                    SVG(curr_btn.ref).fill(colors.btn[curr_btn.value])
+                    if (btn.pressed) SVG(curr_btn.ref).transform({ translateX: 1, translateY: 3 });
+                    if (!btn.pressed) SVG(curr_btn.ref).transform({ translateX: 0, translateY: 0 });
+                });
+            },
+            'controls_knobs_json': function(knobs_json, old_knobs_json) {
+                let knobs = JSON.parse(knobs_json)
+                let old_knobs = JSON.parse(old_knobs_json)
+
+                let diff = _.differenceWith(knobs, old_knobs, _.isEqual);
+
+                _.each(diff, (knob) => {
+                    let curr_knob = _.find(this.controls.knobs, ['id', knob.id]);
+                    SVG(curr_knob.ref).transform({rotate: curr_knob.value})
+                });
+            },
+            'controls_sliders_json': function(sliders_json, old_sliders_json) {
+                let sliders = JSON.parse(sliders_json)
+                let old_sliders = JSON.parse(old_sliders_json)
+
+                let diff = _.differenceWith(sliders, old_sliders, _.isEqual);
+
+                _.each(diff, (slider) => {
+                    let curr_slider = _.find(this.controls.sliders, ['id', slider.id]);
+                    SVG(curr_slider.ref).transform({translateY: curr_slider.value})
+                });
+            },
+        },
     }
 </script>

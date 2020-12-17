@@ -513,7 +513,7 @@
 
                 if (this.mousehook.hooked_to_type == 'knob') {
                     // Knob rotation
-                    let distance = (this.mousehook.current_pos.x - this.mousehook.init_pos.x);
+                    let distance = (this.mousehook.current_pos.x - this.mousehook.init_pos.x) - (this.mousehook.current_pos.y - this.mousehook.init_pos.y);
                     let value = this.mousehook.init_value + distance;
 
                     // Min/Max

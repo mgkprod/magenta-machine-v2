@@ -26,7 +26,7 @@
     export default {
         data() {
             return {
-                devtools: true,
+                devtools: false,
                 version: undefined,
                 theme: undefined,
             }

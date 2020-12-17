@@ -15,3 +15,11 @@ Vue.prototype._ = window._
 const app = new Vue({
     el: '#app'
 })
+
+Number.prototype.clamp = function(min, max) {
+    return Math.min(Math.max(this, min), max);
+};
+
+Number.prototype.map = function(in_min, in_max, out_min, out_max) {
+    return Math.round((this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
+};

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center w-full h-full" @mousemove="mousemove" @mouseup="mouseup">
+    <div class="flex items-center justify-center w-full h-full select-none" @mousemove="mousemove" @mouseup="mouseup">
         <svg width="853" height="566" viewBox="0 0 853 566" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M851.039 295.447C850.869 280.828 850.703 266.213 850.537 251.595L850.438 250.155C850.165 246.266 849.782 242.377 849.58 238.48C848.884 225.482 848.216 212.48 847.599 199.481C847.295 193.081 846.71 186.656 846.982 180.267C847.33 171.822 846.714 163.431 846.132 155.048C845.67 148.43 845.539 141.844 845.935 135.238C846.374 127.85 846.919 120.462 847.33 113.066C847.52 109.771 847.659 106.46 847.532 103.165C847.338 98.1597 846.773 93.1778 846.583 88.176C846.35 81.8745 846.453 75.561 846.196 69.2555C845.962 63.353 843.954 26.5668 842.222 22.8254C841.499 21.2648 841.214 19.5027 840.526 17.1322C841.131 15.0106 840.846 14.4852 837.94 14.4971C835.556 14.5089 833.16 14.8091 830.768 14.9711C828.879 15.0936 826.937 15.5045 825.095 15.2437C819.698 14.4615 814.289 14.742 808.885 14.7538C806.184 14.7538 803.484 15.0541 800.78 15.2319C794.28 15.6586 787.784 16.2077 781.276 16.4882C777.686 16.6463 777.694 16.4527 776.682 12.8337C776.472 12.0673 776.283 11.2416 775.844 10.5897C775.444 9.9931 774.788 9.29776 774.144 9.15948C771.898 8.70514 769.613 8.44438 767.339 8.16782C765.655 7.96238 763.967 7.81619 762.279 7.71742C758.649 7.51198 755.071 7.71742 751.616 9.00144C750.149 9.55455 749.35 10.5462 749.054 12.0554C748.283 15.9193 748.271 15.9193 744.27 15.7732C743.669 15.7495 743.06 15.7494 742.459 15.7099C740.371 15.5717 738.901 14.4773 737.94 12.6718C737.513 11.8816 737.121 11.048 736.868 10.1867C735.943 7.06158 733.662 5.99088 730.673 6.10941C726.47 6.27534 722.267 6.46502 718.076 6.78899C715.25 7.00628 714.981 7.50011 715.372 10.4198L715.499 11.6169C715.574 13.7148 715.04 14.3429 712.901 14.2718C709.189 14.1454 705.488 13.8807 701.779 13.7266C700.198 13.6594 699.261 12.8772 698.486 11.53C697.494 9.81532 696.371 8.12435 695.03 6.67044C694.287 5.87237 693.014 5.19677 691.947 5.12961C686.147 4.77008 680.339 4.58439 674.527 4.4303C672.83 4.38685 672.301 5.0269 672.107 6.81662C672 7.81618 672.02 8.82363 671.929 9.82319C671.72 12.1305 671.241 12.6164 668.936 12.5967C666.532 12.5809 664.124 12.3478 661.721 12.4031C658.906 12.4782 656.889 11.8855 655.604 8.87499C654.371 6.00273 651.888 4.34339 648.341 4.62785C645.558 4.84909 642.735 4.60022 639.928 4.5133C638.228 4.45799 636.528 4.2328 634.82 4.21699C631.518 4.17353 630.811 4.82937 630.407 8.02164L630.186 9.50716C629.727 11.4707 629.348 11.846 627.331 11.7986C623.314 11.7038 619.298 11.2455 615.304 11.4312C611.801 11.5892 610.2 9.78763 609.113 6.95489L608.828 6.10155C607.899 4.14589 606.416 2.77098 604.198 2.87766C599.497 3.0989 595.081 1.75564 590.586 0.767928C586.826 -0.0538438 584.339 1.89388 584.24 5.71828C584.216 6.51635 584.394 7.31838 584.323 8.10459C584.236 9.08045 583.734 9.87061 582.627 9.87851C577.021 9.95358 571.011 11.044 567.995 4.29204L567.315 3.30037C566.061 1.19853 564.171 0.30963 561.764 0.420254C560.961 0.459762 560.131 0.364917 559.364 0.542704C557.146 1.04841 555.019 0.554586 552.824 0.325438C550.076 0.0449288 547.261 0.309628 544.482 0.467662C543.055 0.542727 542.375 1.43956 542.521 2.92902C542.608 3.81796 542.647 4.73453 542.576 5.63137C542.43 7.51197 541.987 7.95842 540.168 7.91101C536.76 7.83594 533.352 7.65026 529.944 7.57124C528.489 7.53963 527.485 6.9391 526.765 5.68669C525.971 4.29995 525.105 2.94877 524.259 1.59364C523.63 0.598029 522.78 -0.0341147 521.539 0.0014427C516.632 0.171328 511.726 0.285912 506.823 0.554568C505.103 0.649388 504.403 1.68054 504.467 3.40705L504.708 4.88861C504.787 6.64673 504.261 7.30651 502.502 7.34602C500.299 7.39343 498.085 7.31839 495.883 7.23148C494.559 7.18012 492.997 7.61072 492.451 5.66692L491.163 5.10988C489.538 5.38644 488.858 4.38291 488.075 3.26088C486.58 1.11558 484.449 0.222691 481.828 0.447888C480.733 0.542708 479.63 0.455788 478.527 0.495296C475.233 0.625673 471.924 0.649403 468.646 0.96547C466.412 1.17881 465.309 2.72358 465.147 5.10197C465.104 5.76966 464.973 6.42947 464.859 7.23939C462.815 7.35396 460.929 7.56335 459.043 7.5357C446.921 7.35396 434.807 7.27493 422.693 8.21127C413.599 8.91452 404.474 9.25824 395.36 9.44393C374.907 9.86272 354.451 10.0247 333.997 10.4198C325.577 10.5818 317.169 11.2416 308.749 11.3798C297.524 11.5655 286.293 11.3522 275.067 11.5142C264.644 11.6682 254.225 12.1345 243.801 12.3755C234.179 12.5967 224.556 12.7903 214.934 12.8456C203.8 12.9048 192.665 12.7468 181.533 12.7745C174.813 12.7982 168.093 12.8851 161.377 13.1261C153.542 13.4145 145.727 13.2881 137.941 12.3399C125.869 10.8662 113.753 10.5502 101.613 10.6213C96.6028 10.6489 91.5927 10.5581 86.5873 10.483C82.1782 10.4079 77.7702 10.1867 73.3642 10.2143C71.2035 10.238 69.0503 10.8662 66.8853 10.9294C62.2967 11.0598 57.8072 12.0791 53.1447 11.8263C48.5129 11.5774 44.0927 13.4264 39.7606 14.9632C38.3724 15.4571 36.777 16.6502 36.2164 17.9343C34.3801 22.1419 32.7554 26.472 31.4781 30.8732C31.2573 31.6357 31.1307 32.4259 30.95 33.1963L6.8649 83.0479L0 565.815L827.558 560.332L853 532.34C852.798 453.371 851.96 374.41 851.039 295.447Z" fill="#303595"/>
             <path d="M851.039 295.447C850.869 280.828 850.703 266.213 850.537 251.595L850.438 250.155C850.165 246.266 849.782 242.377 849.58 238.48C848.884 225.482 848.216 212.48 847.599 199.481C847.295 193.081 846.71 186.656 846.983 180.267C847.331 171.822 846.714 163.431 846.133 155.048C845.67 148.43 845.54 141.844 845.935 135.238C846.374 127.85 846.919 120.462 847.331 113.066C847.52 109.771 847.659 106.46 847.532 103.165C847.338 98.1597 846.773 93.1777 846.583 88.176C846.35 81.8744 846.453 75.561 846.196 69.2555C845.963 63.3529 843.954 26.5668 842.222 22.8253C841.499 21.2647 841.214 19.5027 840.526 17.1322C841.131 15.0106 840.847 14.4851 837.941 14.497C835.556 14.5088 833.161 14.8091 830.769 14.9711C828.879 15.0936 826.937 15.5044 825.095 15.2437C819.698 14.4614 814.29 14.7419 808.885 14.7538C806.185 14.7538 803.484 15.0541 800.78 15.2318C794.28 15.6585 787.784 16.2077 781.276 16.4882C777.686 16.6462 777.694 16.4526 776.682 12.8337C776.473 12.0672 776.283 11.2415 775.844 10.5896C775.445 9.99305 774.788 9.2977 774.144 9.15942C771.898 8.70508 769.613 8.44432 767.34 8.16776C765.655 7.96232 763.967 7.81613 762.279 7.71736C758.649 7.51192 755.071 7.71736 751.616 9.00138C750.149 9.5545 749.35 10.5461 749.054 12.0554C748.283 15.9193 748.271 15.9193 744.27 15.7731C743.669 15.7494 743.06 15.7494 742.459 15.7099C740.372 15.5716 738.901 14.4772 737.94 12.6717C737.513 11.8815 737.122 11.0479 736.869 10.1866C735.943 7.06152 733.662 5.99082 730.673 6.10935C726.47 6.27528 722.268 6.46496 718.077 6.78893C715.25 7.00622 714.981 7.50005 715.372 10.4197L715.499 11.6168C715.574 13.7147 715.04 14.3429 712.901 14.2718C709.189 14.1453 705.488 13.8806 701.78 13.7266C700.198 13.6594 699.261 12.8772 698.486 11.5299C697.494 9.81526 696.371 8.12429 695.031 6.67038C694.287 5.87232 693.014 5.19671 691.947 5.12955C686.147 4.77003 680.339 4.58433 674.527 4.43025C672.831 4.38679 672.301 5.02684 672.107 6.81656C672 7.81612 672.02 8.82358 671.929 9.82314C671.72 12.1304 671.241 12.6164 668.936 12.5966C666.532 12.5808 664.125 12.3477 661.721 12.403C658.906 12.4781 656.889 11.8855 655.604 8.87493C654.371 6.00268 651.888 4.34333 648.342 4.62779C645.558 4.84903 642.735 4.60016 639.928 4.51325C638.228 4.45794 636.528 4.23274 634.82 4.21693C631.519 4.17348 630.811 4.82931 630.408 8.02158L630.186 9.5071C629.728 11.4707 629.348 11.846 627.332 11.7985C623.315 11.7037 619.298 11.2455 615.305 11.4311C611.802 11.5892 610.2 9.78757 609.113 6.95483L608.828 6.10149C607.899 4.14583 606.417 2.77093 604.199 2.8776C599.498 3.09884 595.081 1.75558 590.586 0.76787C586.826 -0.0539025 584.339 1.89382 584.24 5.71822C584.217 6.51629 584.395 7.31832 584.323 8.10454C584.236 9.08039 583.734 9.87055 582.627 9.87845C577.021 9.95352 571.011 11.0439 567.995 4.29198L567.315 3.30032C566.061 1.19848 564.172 0.309572 561.764 0.420195C560.961 0.459703 560.131 0.364858 559.364 0.542645C557.146 1.04835 555.019 0.554527 552.824 0.325379C550.077 0.0448701 547.262 0.30957 544.482 0.467603C543.055 0.542669 542.375 1.4395 542.521 2.92896C542.608 3.8179 542.648 4.73448 542.576 5.63131C542.43 7.51191 541.987 7.95836 540.169 7.91095C536.761 7.83588 533.353 7.6502 529.944 7.57118C528.489 7.53958 527.485 6.93904 526.766 5.68663C525.971 4.29989 525.105 2.94871 524.259 1.59358C523.63 0.597971 522.78 -0.0341734 521.539 0.00138401C516.632 0.17127 511.726 0.285853 506.823 0.55451C505.103 0.649329 504.404 1.68048 504.467 3.407L504.708 4.88856C504.787 6.64667 504.261 7.30645 502.502 7.34596C500.3 7.39337 498.086 7.31834 495.883 7.23142C494.559 7.18006 492.997 7.61066 492.452 5.66686L491.163 5.10983C489.538 5.38638 488.858 4.38285 488.075 3.26082C486.58 1.11552 484.449 0.222632 481.828 0.447829C480.733 0.542649 479.63 0.455729 478.527 0.495237C475.233 0.625615 471.924 0.649345 468.646 0.965411C466.413 1.17876 465.31 2.72352 465.147 5.10192C465.104 5.76961 464.974 6.42941 464.859 7.23933C462.815 7.3539 460.929 7.5633 459.043 7.53564C446.921 7.3539 434.807 7.27487 422.693 8.21122C413.599 8.91446 404.474 9.25818 395.36 9.44387C374.907 9.86266 354.451 10.0246 333.997 10.4197C325.577 10.5817 317.169 11.2415 308.749 11.3798C297.524 11.5655 286.293 11.3521 275.067 11.5141C264.644 11.6682 254.225 12.1344 243.801 12.3754C234.179 12.5966 224.556 12.7902 214.934 12.8455C203.8 12.9048 192.665 12.7467 181.533 12.7744C174.813 12.7981 168.094 12.885 161.377 13.126C153.542 13.4144 145.728 13.288 137.941 12.3398C125.869 10.8662 113.754 10.5501 101.613 10.6212C96.603 10.6489 91.5929 10.558 86.5875 10.4829C82.1783 10.4079 77.7704 10.1866 73.3644 10.2143C71.2037 10.238 69.0505 10.8662 66.8855 10.9294C62.2968 11.0598 57.8074 12.0791 53.1448 11.8262C48.5131 11.5773 44.0929 13.4263 39.7608 14.9632C38.3726 15.457 36.7772 16.6502 36.2166 17.9342C34.3803 22.1418 32.7556 26.4719 31.4783 30.8732C31.2575 31.6357 31.1308 32.4258 30.9502 33.1962C30.2243 36.3095 29.6945 39.4781 29.0737 42.619L28.8667 44.1084C28.5115 51.1014 28.1285 58.0904 27.8304 65.0913C27.7702 66.557 27.727 68.0149 27.6683 69.4727C27.9911 81.3726 28.3524 93.2646 28.7061 105.153C30.5223 165.758 32.005 226.327 25.466 286.824C25.1771 289.463 24.9362 292.098 24.6567 294.737C25.0798 302.254 25.3331 309.772 25.1818 317.296C24.9069 330.939 23.191 344.393 21.4922 357.835C21.6096 414.787 22.1547 471.738 22.2983 528.69C22.2983 529.622 22.303 530.559 22.303 531.499C26.9795 531.111 31.6575 530.711 36.3417 530.471C46.4607 529.954 56.5782 530.215 66.708 530.559C76.0161 530.881 85.3456 530.736 94.6665 530.688C100.272 530.661 105.877 530.286 111.48 530.289C120.799 530.306 130.118 530.483 139.437 530.633C142.243 530.676 145.046 530.921 147.853 530.945C155.771 531.02 163.705 530.807 171.616 531.107C183.539 531.55 195.447 532.388 207.368 532.965C218.275 533.486 229.187 533.983 240.102 534.28C248.318 534.51 256.54 534.355 264.76 534.469C275.47 534.616 286.181 534.895 296.891 535.054C304.097 535.164 311.305 535.156 318.511 535.219C328.023 535.307 337.537 535.343 347.047 535.508C359.678 535.733 372.305 536.161 384.935 536.326C398.148 536.5 411.365 536.848 424.571 535.9C430.165 535.5 435.768 535.153 441.366 534.797C446.166 534.497 450.966 534.141 455.765 533.956C461.455 533.727 467.152 533.664 472.845 533.505C475.953 533.414 479.057 533.189 482.16 533.158C495.781 533.016 509.409 532.884 523.029 532.81C534.052 532.755 545.079 532.81 556.102 532.763C562.519 532.735 568.932 532.621 575.345 532.53C582.153 532.438 588.961 532.32 595.765 532.218C599.166 532.17 602.574 532.221 605.978 532.079C614.075 531.739 622.172 531.083 630.281 530.985C638.291 530.881 646.317 531.205 654.327 531.55C660.325 531.81 666.299 532.565 672.301 532.798C677.773 533.016 683.249 533.091 688.721 533.145C701.558 533.067 714.392 532.955 727.233 532.841C769.158 532.474 811.083 532.051 853 532.34C852.799 453.371 851.96 374.41 851.039 295.447" fill="#3B46A4"/>
@@ -154,24 +154,46 @@
             </g>
         </svg>
 
-        <div class="absolute flex flex-row p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
-            <div class="flex flex-col w-3/4 border-r border-screen-default">
-                <div class="flex-auto text-sm italic font-bold font-eurostile-extended">
-                    MAGENTA MACHINE<br>
-                    BOUM BAP
-                </div>
-                <div class="border-t border-screen-default">
-                    <div class="flex flex-row items-center">
-                        <div class="">{{ tonejs.transport_position }}</div>
+        <div class="absolute p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
+            <div class="flex flex-row w-full h-full leading-none">
+                <div class="flex flex-col w-3/4 h-full border-r border-screen-default" v-if="display.page == 1">
+                    <div class="flex flex-col justify-center text-sm font-bold tracking-tighter h-2/3 font-eurostile-extended">
+                        <div class="-mb-1">MAGENTA MACHINE</div>
+                        <div class="-mb-1">BOUM BAP</div>
+                    </div>
+                    <div class="flex flex-row items-center justify-center border-t h-1/3 border-screen-default">
+                        <div>{{ tonejs.transport_position }}</div>
                         <div class="flex flex-row flex-auto h-2 mx-2 bg-screen-dim">
                             <div v-for="i in tonejs.transport_signature - 1" v-bind:key="i" class="w-full h-full" :class="{'bg-screen-default': tonejs.transport_position_t >= (i) }"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="w-1/4 font-digital-7">
-                <div class="px-2">BPM: 103</div>
-                <div class="px-2">BANK: {{ tonejs.bank }}</div>
+                <div class="flex flex-col justify-center w-3/4 h-full border-r border-screen-default" v-if="display.page == 2">
+                    <div><div v-if="display.effects.item_selected == 0" class="inline-block w-2 h-2 bg-screen-dim"></div> FX:<span class="font-bold">{{ display.effects.available_effects[display.effects.effect_item_selected] }}</span></div>
+                    <div><div v-if="display.effects.item_selected == 1" class="inline-block w-2 h-2 bg-screen-dim"></div> ROUTE TO:<span class="font-bold">{{ display.effects.available_routes[display.effects.route_item_selected] }}</span></div>
+                    <div
+                        v-for="(option, i) in _.find(tonejs.effects, { effect: display.effects.available_effects[display.effects.effect_item_selected], route: display.effects.available_routes[display.effects.route_item_selected] }).values"
+                        v-bind:key="i"
+                    >
+                        <div v-if="display.effects.item_selected == (i + 2)" class="inline-block w-2 h-2 bg-screen-dim"></div>
+                        {{ option.name }}:
+                        <template v-if="option.type == 'list'">
+                            {{ option.list[option.value] }}
+                        </template>
+                        <template v-else>
+                            {{ option.value }}
+                        </template>
+
+                        <span v-if="option.unit">{{ option.unit }}</span>
+                    </div>
+                    <div class="mb-auto"></div>
+                </div>
+                <div class="w-1/4 font-digital-7">
+                    <div class="pl-2 font-bold">POS:{{ tonejs.transport_position }}</div>
+                    <div class="pl-2">BPM:103</div>
+                    <div class="pl-2">VOL:{{ tonejs.destination_volume }}dB</div>
+                    <div class="pl-2">BANK:{{ tonejs.bank }}</div>
+                </div>
             </div>
         </div>
 
@@ -230,14 +252,34 @@
         }
     };
 
+    const freqs = [
+        '1m',
+        '2n',
+        '4n',
+        '8n',
+        '16n',
+        '32n',
+        '64n',
+    ];
+
     export default {
         props: ['devtools'],
 
         data() {
             return {
+                freqs,
                 display: {
                     ref: undefined,
                     on: false,
+                    page: 1,
+                    effects: {
+                        // available_effects: ['volume', 'reverb', 'tremolo', 'vibrato', 'feedbackdelay', 'chorus', 'distortion', 'crusher', 'stereowidener'],
+                        available_effects: ['volume', 'reverb', 'feedbackdelay', 'vibrato', 'distortion', 'crusher'],
+                        available_routes: ['bass', 'drums', 'kick', 'lead', 'vocals'],
+                        item_selected: 0,
+                        effect_item_selected: 0,
+                        route_item_selected: 0,
+                    }
                 },
                 screen: undefined,
                 letters: [],
@@ -259,12 +301,60 @@
                     transport_position_t: 0,
                     transport_position: '0:0',
                     bank: 1,
+                    destination_volume: 0,
                     bass_sampler: undefined,
                     drums_sampler: undefined,
                     effects_sampler: undefined,
                     kick_sampler: undefined,
                     lead_sampler: undefined,
                     vocals_sampler: undefined,
+                    effects: [
+                        { route: 'bass', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
+                        { route: 'drums', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
+                        { route: 'kick', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
+                        { route: 'lead', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
+                        { route: 'vocals', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
+                        { route: 'bass', effect: 'crusher', values: [{ name: 'bits', type: 'int', value: 1, min: 1, max: 16 }, { name: 'wet', type: 'float', value: 0.5, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'crusher', values: [{ name: 'bits', type: 'int', value: 1, min: 1, max: 16 }, { name: 'wet', type: 'float', value: 0.5, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'crusher', values: [{ name: 'bits', type: 'int', value: 1, min: 1, max: 16 }, { name: 'wet', type: 'float', value: 0.5, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'crusher', values: [{ name: 'bits', type: 'int', value: 1, min: 1, max: 16 }, { name: 'wet', type: 'float', value: 0.5, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'crusher', values: [{ name: 'bits', type: 'int', value: 1, min: 1, max: 16 }, { name: 'wet', type: 'float', value: 0.5, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'reverb', values: [{ name: 'decay', type: 'int', value: 5, min: 1, max: 20, unit: 's' }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'reverb', values: [{ name: 'decay', type: 'int', value: 5, min: 1, max: 20, unit: 's' }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'reverb', values: [{ name: 'decay', type: 'int', value: 5, min: 1, max: 20, unit: 's' }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'reverb', values: [{ name: 'decay', type: 'int', value: 5, min: 1, max: 20, unit: 's' }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'reverb', values: [{ name: 'decay', type: 'int', value: 5, min: 1, max: 20, unit: 's' }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'stereowidener', values: [{ name: 'width', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'stereowidener', values: [{ name: 'width', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'stereowidener', values: [{ name: 'width', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'stereowidener', values: [{ name: 'width', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'stereowidener', values: [{ name: 'width', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'tremolo', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'tremolo', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'tremolo', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'tremolo', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'tremolo', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'vibrato', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'vibrato', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'vibrato', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'vibrato', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'vibrato', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'feedbackdelay', values: [{ name: 'delay', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'feedbackdelay', values: [{ name: 'delay', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'feedbackdelay', values: [{ name: 'delay', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'feedbackdelay', values: [{ name: 'delay', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'feedbackdelay', values: [{ name: 'delay', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'chorus', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'delay', type: 'int', value: 10, min: 2, max: 20 }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'chorus', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'delay', type: 'int', value: 10, min: 2, max: 20 }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'chorus', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'delay', type: 'int', value: 10, min: 2, max: 20 }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'chorus', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'delay', type: 'int', value: 10, min: 2, max: 20 }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'chorus', values: [{ name: 'freq', type: 'list', value: 0, min: 0, max: (freqs.length - 1), list: freqs }, { name: 'delay', type: 'int', value: 10, min: 2, max: 20 }, { name: 'depth', type: 'float', value: 0, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'bass', effect: 'distortion', values: [{ name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'drums', effect: 'distortion', values: [{ name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'kick', effect: 'distortion', values: [{ name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'lead', effect: 'distortion', values: [{ name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                        { route: 'vocals', effect: 'distortion', values: [{ name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 }, { name: 'wet', type: 'float', value: 1, min: 0, max: 1, unit: 'x10%' }]},
+                    ],
                 }
             }
         },
@@ -272,9 +362,11 @@
         mounted() {
             this.register_controls()
             this.disable_controls()
-            this.demo_animation()
-
             window.onresize = this.position_screen
+
+            setTimeout(() => {
+                this.demo_animation()
+            }, 200);
         },
 
         methods: {
@@ -372,7 +464,7 @@
                 // Knobs
                 this.controls.knobs = [
                     { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260, },
-                    { ref: this.$refs.knob2, id: 'knob2', value: 0, min: 0, max: 260, },
+                    { ref: this.$refs.knob2, id: 'knob2', value: 235, min: 0, max: 260, },
                     { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500, },
                 ];
 
@@ -525,10 +617,9 @@
                 // this.tonejs.vocals_sampler.sync();
 
                 Tone.loaded().then(() => {
-                    Tone.Transport.start()
-
                     Tone.Transport.scheduleRepeat(time => {
-                        console.log(Tone.Transport.position)
+                        if (this.devtools) console.log(Tone.Transport.position)
+
                         let position = Tone.Transport.position.split(':');
 
                         if (this.tonejs.transport_position == 30 && position == 31) {
@@ -559,10 +650,10 @@
                     btn.value = 'enabled'
                     btn.trigger = this.play
 
-                    btn = _.find(this.controls.btns, {id: 'br5'});
+                    btn = _.find(this.controls.btns, {id: 'br4'});
                     btn.type = 'click'
                     btn.value = 'enabled'
-                    btn.trigger = this.restart
+                    btn.trigger = this.play_start
 
                     btn = _.find(this.controls.btns, {id: 'br7'});
                     btn.type = 'click'
@@ -573,6 +664,36 @@
                     btn.type = 'click'
                     btn.value = 'enabled'
                     btn.trigger = this.play
+
+                    btn = _.find(this.controls.btns, {id: 'm1'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger =  { fn: this.switch_page, payload: {page: 1} }
+
+                    btn = _.find(this.controls.btns, {id: 'm2'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger =  { fn: this.switch_page, payload: {page: 2} }
+
+                    btn = _.find(this.controls.btns, {id: 'mr4'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.left
+
+                    btn = _.find(this.controls.btns, {id: 'mr5'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.up
+
+                    btn = _.find(this.controls.btns, {id: 'mr6'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.right
+
+                    btn = _.find(this.controls.btns, {id: 'mr9'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.down
 
                     let pad;
 
@@ -709,12 +830,203 @@
                 Tone.Transport.stop();
             },
             play(){
-                Tone.Transport.position = '0:2:0';
-                Tone.Transport.start();
+                // Tone.Transport.state == 'started'
+                //     ? Tone.Transport.pause()
+                //     : Tone.Transport.start()
+                this.play_start();
             },
-            restart(){
+            play_start(){
                 this.stop();
-                this.play();
+                Tone.Transport.position = '0:2:0';
+                Tone.Transport.start()
+            },
+            left() {
+                if (this.display.page != 2) return;
+
+                if (this.display.effects.item_selected == 0) {
+                    this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected - 1).clamp(0, this.display.effects.available_effects.length - 1)
+                }
+
+                if (this.display.effects.item_selected == 1) {
+                    this.display.effects.route_item_selected = (this.display.effects.route_item_selected - 1).clamp(0, this.display.effects.available_routes.length - 1)
+                }
+
+                let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
+                this.display.effects.item_selected = (this.display.effects.item_selected).clamp(0, 1 + _.size(current_effect.values));
+
+                if (this.display.effects.item_selected >= 2) {
+                    // Apply value change
+                    let new_value = current_effect.values[this.display.effects.item_selected - 2].value
+
+                    if (current_effect.values[this.display.effects.item_selected - 2].type == 'int' || current_effect.values[this.display.effects.item_selected - 2].type == 'list') {
+                        new_value--
+                    }
+
+                    if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
+                        new_value = ((new_value * 10) - 1) / 10
+                    }
+
+                    current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
+                        current_effect.values[this.display.effects.item_selected - 2].min,
+                        current_effect.values[this.display.effects.item_selected - 2].max
+                    )
+
+                    // Apply effect
+                    this.apply_effect(current_effect)
+                }
+            },
+            right() {
+                if (this.display.page != 2) return;
+
+                if (this.display.effects.item_selected == 0) {
+                    this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected + 1).clamp(0, this.display.effects.available_effects.length - 1)
+                }
+
+                if (this.display.effects.item_selected == 1) {
+                    this.display.effects.route_item_selected = (this.display.effects.route_item_selected + 1).clamp(0, this.display.effects.available_routes.length - 1)
+                }
+
+                let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
+                this.display.effects.item_selected = (this.display.effects.item_selected).clamp(0, 1 + _.size(current_effect.values));
+
+                if (this.display.effects.item_selected >= 2) {
+                    // Apply value change
+                    let new_value = current_effect.values[this.display.effects.item_selected - 2].value
+
+                    if (current_effect.values[this.display.effects.item_selected - 2].type == 'int' || current_effect.values[this.display.effects.item_selected - 2].type == 'list') {
+                        new_value++
+                    }
+
+                    if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
+                        new_value = ((new_value * 10) + 1) / 10
+                    }
+
+                    current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
+                        current_effect.values[this.display.effects.item_selected - 2].min,
+                        current_effect.values[this.display.effects.item_selected - 2].max
+                    )
+
+                    // Apply effect
+                    this.apply_effect(current_effect)
+                }
+            },
+            up() {
+                if (this.display.page != 2) return;
+
+                let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
+                this.display.effects.item_selected = (this.display.effects.item_selected - 1).clamp(0, 1 + _.size(current_effect.values));
+            },
+            down() {
+                if (this.display.page != 2) return;
+
+                let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
+                this.display.effects.item_selected = (this.display.effects.item_selected + 1).clamp(0, 1 + _.size(current_effect.values));
+            },
+            apply_effect(current_effect){
+                if (current_effect.effect == 'volume') {
+                    this.tonejs[current_effect.route + '_sampler'].volume.value = _.find(current_effect.values, ['name', 'volume']).value;
+                }
+
+                if (current_effect.effect == 'crusher') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.BitCrusher().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        bits : _.find(current_effect.values, ['name', 'bits']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'reverb') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.Reverb().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        decay : _.find(current_effect.values, ['name', 'decay']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'stereowidener') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.StereoWidener().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        width : _.find(current_effect.values, ['name', 'width']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'tremolo') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.Tremolo().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        frequency : _.find(current_effect.values, ['name', 'freq']).list[_.find(current_effect.values, ['name', 'freq']).value],
+                        depth : _.find(current_effect.values, ['name', 'depth']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'vibrato') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.Vibrato().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        frequency : _.find(current_effect.values, ['name', 'freq']).list[_.find(current_effect.values, ['name', 'freq']).value],
+                        depth : _.find(current_effect.values, ['name', 'depth']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'feedbackdelay') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.FeedbackDelay().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        delay : _.find(current_effect.values, ['name', 'delay']).list[_.find(current_effect.values, ['name', 'delay']).value],
+                        feedback : _.find(current_effect.values, ['name', 'feedback']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'chorus') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.Chorus().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        frequency : _.find(current_effect.values, ['name', 'freq']).list[_.find(current_effect.values, ['name', 'freq']).value],
+                        delayTime : _.find(current_effect.values, ['name', 'delay']).value,
+                        depth : _.find(current_effect.values, ['name', 'depth']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
+
+                if (current_effect.effect == 'distortion') {
+                    if (!current_effect.handler) {
+                        current_effect.handler = new Tone.Distortion().toDestination();
+                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                    }
+
+                    current_effect.handler.set({
+                        distortion : _.find(current_effect.values, ['name', 'distortion']).value,
+                        wet : _.find(current_effect.values, ['name', 'wet']).value,
+                    })
+                }
             },
             switch_bank(payload){
                 this.tonejs.bank = payload.bank
@@ -723,6 +1035,9 @@
                 _.each(pads, (pad) => {
                     SVG(pad.ref).fill(colors.pad[pad.value])
                 })
+            },
+            switch_page(payload){
+                this.display.page = payload.page
             },
             pad_click(e){
                 let current_pad_index = _.findIndex(this.controls.pads, {'ref': e.target, 'on': 'bank' + this.tonejs.bank});
@@ -759,7 +1074,7 @@
                         let pads = _.filter(this.controls.pads, (pad) => pad.value == 'active');
                         let queued_pads = _.filter(this.controls.pads, (pad) => pad.value == 'queued');
                         let acts_on_self = _.find(this.controls.pads, (pad) => pad.value == 'queued' && pad.id == this.controls.pads[current_pad_index].id);
-                        if (pads.length == 0 && queued_pads.length == 1 && acts_on_self) this.restart();
+                        if (pads.length == 0 && queued_pads.length == 1 && acts_on_self) this.play_start();
                     } else {
                         if (this.controls.pads[current_pad_index].tone_event_id) {
                             if (this.controls.pads[current_pad_index].tone_event_id[0] && this.controls.pads[current_pad_index].tone_event_id.length) {
@@ -875,13 +1190,14 @@
                 if (this.mousehook.hooked_to_type == 'knob') {
                     // Knob rotation
                     let distance = (this.mousehook.current_pos.x - this.mousehook.init_pos.x) - (this.mousehook.current_pos.y - this.mousehook.init_pos.y);
-                    let value = this.mousehook.init_value + distance;
-
-                    // Min/Max
-                    if (value < this.controls.knobs[this.mousehook.hooked_to].min) value = this.controls.knobs[this.mousehook.hooked_to].min;
-                    if (value > this.controls.knobs[this.mousehook.hooked_to].max) value = this.controls.knobs[this.mousehook.hooked_to].max;
-
+                    let value = (this.mousehook.init_value + distance).clamp(this.controls.knobs[this.mousehook.hooked_to].min, this.controls.knobs[this.mousehook.hooked_to].max);
                     this.controls.knobs[this.mousehook.hooked_to].value = value;
+
+                    let current_knob_index = this.mousehook.hooked_to;
+                    if (this.controls.knobs[current_knob_index].id == 'knob2') {
+                        this.tonejs.destination_volume = value.map(this.controls.knobs[this.mousehook.hooked_to].min, this.controls.knobs[this.mousehook.hooked_to].max, -50, 10)
+                        Tone.Destination.set({ volume: this.tonejs.destination_volume })
+                    }
                 } else if (this.mousehook.hooked_to_type == 'slider') {
                     // Knob rotation
                     let distance = (this.mousehook.current_pos.y - this.mousehook.init_pos.y);
@@ -897,7 +1213,7 @@
         },
 
         computed: {
-            controls_pads_json: function () {
+            controls_pads_json: function() {
                 return JSON.stringify(
                     _.map(this.controls.pads, function(pad){
                         return {
@@ -909,7 +1225,7 @@
                     })
                 )
             },
-            controls_btns_json: function () {
+            controls_btns_json: function() {
                 return JSON.stringify(
                     _.map(this.controls.btns, function(btn){
                         return {
@@ -920,7 +1236,7 @@
                     })
                 )
             },
-            controls_knobs_json: function () {
+            controls_knobs_json: function() {
                 return JSON.stringify(
                     _.map(this.controls.knobs, function(knob){
                         return {
@@ -930,7 +1246,7 @@
                     })
                 )
             },
-            controls_sliders_json: function () {
+            controls_sliders_json: function() {
                 return JSON.stringify(
                     _.map(this.controls.sliders, function(slider){
                         return {
@@ -939,7 +1255,7 @@
                         }
                     })
                 )
-            }
+            },
         },
 
         watch: {

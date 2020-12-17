@@ -6,3 +6,35 @@ html, body, #app {
     height: 100%;
     width: 100%;
 }
+
+@font-face {
+    font-family: 'Eurostile Extended Bold';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/EurostileExt-Bla.woff2') format('woff2'),
+         url('/fonts/EurostileExt-Bla.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Digital-7 Mono';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/Digital7.woff2') format('woff2'),
+         url('/fonts/Digital7.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Digital-7 Mono';
+    font-style: italic;
+    font-weight: normal;
+    src: url('/fonts/Digital7-Italic.woff2') format('woff2'),
+         url('/fonts/Digital7-Italic.otf') format('truetype');
+}
+
+.font-eurostile-extended {
+    font-family: 'Eurostile Extended Bold';
+}
+
+.font-digital-7 {
+    font-family: 'Digital-7 Mono';
+}

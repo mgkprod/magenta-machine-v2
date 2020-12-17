@@ -154,6 +154,23 @@
             </g>
         </svg>
 
+        <div class="absolute flex flex-row p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
+            <div class="flex flex-col w-3/4 border-r border-screen-default">
+                <div class="flex-auto"></div>
+                <div class="border-t border-screen-default">
+                    <div class="flex flex-row items-center">
+                        <div class="">103 BPM</div>
+                        <div class="flex flex-row flex-auto h-2 mx-2 bg-screen-dim">
+                            <div v-for="i in tonejs.transport_signature" v-bind:key="i" class="w-full h-full" :class="{'bg-screen-default': tonejs.transport_position >= (i - 1) }"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/4 font-digital-7">
+                <div class="px-2">BANK: 1</div>
+            </div>
+        </div>
+
         <div class="absolute top-auto left-auto p-2 font-mono text-xs text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400" style="bottom: 4.2rem; right: 1rem; width: 350px;" v-if="devtools">
             <div class="flex flex-row">
                 <div class="flex flex-col w-1/2 pr-2 mr-2">
@@ -187,11 +204,13 @@
 
 <script>
     import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js'
+    import * as Tone from 'tone'
 
     const colors = {
         white: '#fff',
         pad: {
             enabled: '#53C6D7',
+            queued: '#B535A1',
             active: '#F7EC03',
             disabled: '#525AA5',
         },
@@ -202,7 +221,8 @@
         },
         screen: {
             enabled: '#3FB93C',
-            disabled: '#275426'
+            disabled: '#275426',
+            text: '#255808',
         }
     };
 
@@ -211,6 +231,11 @@
 
         data() {
             return {
+                display: {
+                    ref: undefined,
+                    on: false,
+                    mesure: 1,
+                },
                 screen: undefined,
                 letters: [],
                 controls: {
@@ -225,6 +250,16 @@
                     init_value: 0,
                     init_pos: {x: 0, y: 0},
                     current_pos: {x: 0, y: 0},
+                },
+                tonejs: {
+                    transport_signature: 32,
+                    transport_position: 0,
+                    bass_sampler: undefined,
+                    drums_sampler: undefined,
+                    effects_sampler: undefined,
+                    kick_sampler: undefined,
+                    lead_sampler: undefined,
+                    vocals_sampler: undefined,
                 }
             }
         },
@@ -233,12 +268,16 @@
             this.register_controls()
             this.disable_controls()
             this.demo_animation()
+
+            window.onresize = this.position_screen
         },
 
         methods: {
             register_controls(){
                 // Screen
                 this.screen = this.$refs.screen;
+                this.display.ref = this.$refs.display;
+                this.position_screen();
 
                 this.letters = [
                     this.$refs.letter1,
@@ -338,9 +377,16 @@
                     { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85, },
                 ];
             },
+            position_screen(){
+                let position = this.screen.getBoundingClientRect();
+                this.display.ref.style.top = position.top + "px";
+                this.display.ref.style.left = position.left + "px";
+                this.display.ref.style.width = position.width + "px";
+                this.display.ref.style.height = position.height + "px";
+            },
             disable_controls(){
                 SVG(this.screen).fill(colors.screen.disabled);
-                this.letters.forEach(el => SVG(el).fill({ color: colors.white, opacity: 0 }) );
+                this.letters.forEach(el => SVG(el).fill({ color: colors.screen.text, opacity: 0 }) );
             },
             demo_animation(){
                 // Buttons
@@ -356,10 +402,10 @@
                     SVG(this.screen).fill(colors.screen.enabled)
                     this.letters.forEach((el, k) => {
                         setTimeout(() => {
-                            SVG(el).fill({ color: colors.white, opacity: 1 })
+                            SVG(el).fill({ color: colors.screen.text, opacity: 1 })
                             setTimeout(() => {
-                                SVG(el).fill({ color: colors.white, opacity: 0 })
-                            }, (k + 1) + 1500);
+                                SVG(el).fill({ color: colors.screen.text, opacity: 0 })
+                            }, (k + 1) + 1300);
                         }, (k + 1) * 150);
                     });
 
@@ -410,11 +456,192 @@
                 }, 500);
             },
             bind_controls(){
-                this.controls.pads.forEach(({ ref }, k) => {
-                    if (k >= 0 && k <= 7) {
-                        this.controls.pads[k].value = 'enabled';
-                    }
+                this.tonejs.bass_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/bass_1.mp3",
+                        "D4": "/audios/bass_2.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.bass_sampler.sync();
+
+                this.tonejs.drums_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/drums_1.mp3",
+                        "D4": "/audios/drums_2.mp3",
+                        "E4": "/audios/drums_3.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.drums_sampler.sync();
+
+                this.tonejs.effects_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/effects_1.mp3",
+                        "D4": "/audios/effects_2.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.effects_sampler.sync();
+
+                this.tonejs.kick_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/kick_1.mp3",
+                        "D4": "/audios/kick_2.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.kick_sampler.sync();
+
+                this.tonejs.lead_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/lead_1.mp3",
+                        "D4": "/audios/lead_2.mp3",
+                        "E4": "/audios/lead_3.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.lead_sampler.sync();
+
+                this.tonejs.vocals_sampler = new Tone.Sampler({
+                    urls: {
+                        "C4": "/audios/vocals_1.mp3",
+                        "D4": "/audios/vocals_2.mp3",
+                        "E4": "/audios/vocals_3.mp3",
+                        "F4": "/audios/vocals_4.mp3",
+                        "G4": "/audios/vocals_5.mp3",
+                        "A5": "/audios/vocals_6.mp3",
+                        "B6": "/audios/vocals_7.mp3",
+                        "C7": "/audios/vocals_8.mp3",
+                        "D8": "/audios/vocals_9.mp3",
+                    },
+                }).toDestination();
+                // this.tonejs.vocals_sampler.sync();
+
+                Tone.loaded().then(() => {
+                    Tone.Transport.bpm.value = 103
+                    Tone.Transport.timeSignature = this.tonejs.transport_signature
+                    Tone.Transport.start()
+
+                    Tone.Transport.scheduleRepeat(time => {
+                        this.tonejs.transport_position = Tone.Transport.position.split(':')[1];
+                    }, "4n");
+
+                    Tone.Transport.scheduleRepeat(time => {
+                        this.triggers_on_mesure()
+                    }, "1m");
+
+                    this.display.on = true;
+
+                    let btn;
+
+                    // Btns
+                    btn = _.find(this.controls.btns, {id: 'br5'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.restart
+
+                    btn = _.find(this.controls.btns, {id: 'br7'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.stop
+
+                    btn = _.find(this.controls.btns, {id: 'br8'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger = this.play
+
+                    let pad;
+
+                    // Bank 1
+                    pad = _.find(this.controls.pads, {id: 'pad1', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'bass_sampler:C4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad2', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'bass_sampler:D4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad5', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'drums_sampler:C4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad6', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'drums_sampler:D4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad7', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'drums_sampler:E4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad8', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'drums_sampler:F4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad9', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'kick_sampler:C4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad10', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'kick_sampler:D4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad13', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'lead_sampler:C4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad14', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'lead_sampler:D4'
+
+                    pad = _.find(this.controls.pads, {id: 'pad15', on: 'bank1'});
+                    pad.type = 'toggle'
+                    pad.value = 'enabled'
+                    pad.mode = 'quantized-mesure'
+                    pad.trigger = 'lead_sampler:E4'
+                })
+            },
+            triggers_on_mesure(){
+                let pads = _.filter(this.controls.pads, (pad) => (pad.value == 'queued' || pad.value == 'active') && pad.mode == 'quantized-mesure');
+
+                _.each(pads, (pad, k) => {
+                    let trigger = pad.trigger.split(':')
+                    this.tonejs[trigger[0]].triggerAttack([trigger[1]])
+
+                    pad.value = 'active';
                 });
+            },
+            stop(){
+                this.tonejs.bass_sampler.releaseAll()
+                this.tonejs.drums_sampler.releaseAll()
+                this.tonejs.effects_sampler.releaseAll()
+                this.tonejs.kick_sampler.releaseAll()
+                this.tonejs.lead_sampler.releaseAll()
+                this.tonejs.vocals_sampler.releaseAll()
+
+                Tone.Transport.stop();
+            },
+            play(){
+                Tone.Transport.start();
+            },
+            restart(){
+                this.stop();
+                this.play();
             },
             pad_click(e){
                 let current_pad_index = _.findIndex(this.controls.pads, ['ref', e.target]);
@@ -424,21 +651,37 @@
                     || this.controls.pads[current_pad_index].value == 'disabled'
                 ) return;
 
-                this.controls.pads[current_pad_index].value = (this.controls.pads[current_pad_index].value == 'enabled')
-                    ? 'active'
-                    : 'enabled'
+                if (this.controls.pads[current_pad_index].mode == 'quantized-mesure') {
+                    this.controls.pads[current_pad_index].value = (this.controls.pads[current_pad_index].value == 'enabled')
+                        ? 'queued'
+                        : 'enabled'
+
+                    // Starts the transport if it's the first one
+                    let pads = _.filter(this.controls.pads, (pad) => pad.value == 'active');
+                    let queued_pads = _.filter(this.controls.pads, (pad) => pad.value == 'queued');
+                    let acts_on_self = _.find(this.controls.pads, (pad) => pad.value == 'queued' && pad.id == this.controls.pads[current_pad_index].id);
+                    if (pads.length == 0 && queued_pads.length == 1 && acts_on_self) this.restart();
+                } else {
+                    this.controls.pads[current_pad_index].value = (this.controls.pads[current_pad_index].value == 'enabled')
+                        ? 'active'
+                        : 'enabled'
+                }
             },
             btn_click(e){
                 let current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target]);
 
                 if (
-                    this.controls.btns[current_btn_index].type != 'toggle'
+                    (this.controls.btns[current_btn_index].type != 'toggle' && this.controls.btns[current_btn_index].type != 'click')
                     || this.controls.btns[current_btn_index].value == 'disabled'
                 ) return;
 
-                this.controls.btns[current_btn_index].value = (this.controls.btns[current_btn_index].value == 'enabled')
-                    ? 'active'
-                    : 'enabled'
+                if (this.controls.btns[current_btn_index].type == 'toggle') {
+                    this.controls.btns[current_btn_index].value = (this.controls.btns[current_btn_index].value == 'enabled')
+                        ? 'active'
+                        : 'enabled'
+                }
+
+                if (this.controls.btns[current_btn_index].trigger) this.controls.btns[current_btn_index].trigger();
             },
             pad_mousedown(e){
                 let current_pad_index = _.findIndex(this.controls.pads, ['ref', e.target]);

@@ -140,6 +140,39 @@
             </transition>
         </div>
 
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad32_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad31_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad30_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad29_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad28_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad27_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad26_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad25_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad24_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad23_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad22_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad21_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad20_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad19_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad18_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad17_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad16_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad15_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad14_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad13_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad12_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad11_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad10_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad9_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad8_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad7_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad6_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad5_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad4_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad3_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad2_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad1_text"></div>
+
         <div class="absolute p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
             <div class="flex flex-row w-full h-full leading-none">
                 <div class="flex flex-col w-3/4 h-full border-r border-screen-default" v-if="display.page == 1">
@@ -385,77 +418,54 @@
 
                 // Pads
                 this.controls.pads = [
-                    { ref: this.$refs.pad1, on: 'bank1', id: 'pad1', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad2, on: 'bank1', id: 'pad2', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad3, on: 'bank1', id: 'pad3', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad4, on: 'bank1', id: 'pad4', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad5, on: 'bank1', id: 'pad5', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad6, on: 'bank1', id: 'pad6', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad7, on: 'bank1', id: 'pad7', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad8, on: 'bank1', id: 'pad8', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad9, on: 'bank1', id: 'pad9', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad10, on: 'bank1', id: 'pad10', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad11, on: 'bank1', id: 'pad11', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad12, on: 'bank1', id: 'pad12', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad13, on: 'bank1', id: 'pad13', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad14, on: 'bank1', id: 'pad14', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad15, on: 'bank1', id: 'pad15', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad16, on: 'bank1', id: 'pad16', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad1, on: 'bank2', id: 'pad17', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad2, on: 'bank2', id: 'pad18', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad3, on: 'bank2', id: 'pad19', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad4, on: 'bank2', id: 'pad20', value: 'disabled', type: 'toggle', pressed: false, },
-                    { ref: this.$refs.pad5, on: 'bank2', id: 'pad21', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad6, on: 'bank2', id: 'pad22', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad7, on: 'bank2', id: 'pad23', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad8, on: 'bank2', id: 'pad24', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad9, on: 'bank2', id: 'pad25', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad10, on: 'bank2', id: 'pad26', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad11, on: 'bank2', id: 'pad27', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad12, on: 'bank2', id: 'pad28', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad13, on: 'bank2', id: 'pad29', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad14, on: 'bank2', id: 'pad30', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad15, on: 'bank2', id: 'pad31', value: 'disabled', type: 'hold', pressed: false, },
-                    { ref: this.$refs.pad16, on: 'bank2', id: 'pad32', value: 'disabled', type: 'hold', pressed: false, },
+                    { ref: this.$refs.pad1, on: 'bank1', id: 'pad1', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad2, on: 'bank1', id: 'pad2', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad3, on: 'bank1', id: 'pad3', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad4, on: 'bank1', id: 'pad4', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad5, on: 'bank1', id: 'pad5', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad6, on: 'bank1', id: 'pad6', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad7, on: 'bank1', id: 'pad7', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad8, on: 'bank1', id: 'pad8', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad9, on: 'bank1', id: 'pad9', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad10, on: 'bank1', id: 'pad10', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad11, on: 'bank1', id: 'pad11', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad12, on: 'bank1', id: 'pad12', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad13, on: 'bank1', id: 'pad13', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad14, on: 'bank1', id: 'pad14', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad15, on: 'bank1', id: 'pad15', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad16, on: 'bank1', id: 'pad16', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad1, on: 'bank2', id: 'pad17', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad2, on: 'bank2', id: 'pad18', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad3, on: 'bank2', id: 'pad19', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad4, on: 'bank2', id: 'pad20', value: 'disabled', type: 'toggle', pressed: false, text: '' },
+                    { ref: this.$refs.pad5, on: 'bank2', id: 'pad21', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad6, on: 'bank2', id: 'pad22', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad7, on: 'bank2', id: 'pad23', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad8, on: 'bank2', id: 'pad24', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad9, on: 'bank2', id: 'pad25', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad10, on: 'bank2', id: 'pad26', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad11, on: 'bank2', id: 'pad27', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad12, on: 'bank2', id: 'pad28', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad13, on: 'bank2', id: 'pad29', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad14, on: 'bank2', id: 'pad30', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad15, on: 'bank2', id: 'pad31', value: 'disabled', type: 'hold', pressed: false, text: '' },
+                    { ref: this.$refs.pad16, on: 'bank2', id: 'pad32', value: 'disabled', type: 'hold', pressed: false, text: '' },
                 ];
 
                 // Buttons
                 this.controls.btns = [
                     { ref: this.$refs.btn_tl, pos: 'tl', id: 'tl', value: 'disabled', type: 'toggle', pressed: false, },
                     { ref: this.$refs.btn_bl, pos: 'bl', id: 'bl', value: 'disabled', type: 'toggle', pressed: false, },
-                    // { ref: this.$refs.btn_m1, pos: 'm', id: 'm1', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_m2, pos: 'm', id: 'm2', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_m3, pos: 'm', id: 'm3', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_m4, pos: 'm', id: 'm4', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_m5, pos: 'm', id: 'm5', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_m6, pos: 'm', id: 'm6', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_tr1, pos: 'tr', id: 'tr1', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_tr2, pos: 'tr', id: 'tr2', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr3, pos: 'tr', id: 'tr3', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr4, pos: 'tr', id: 'tr4', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr5, pos: 'tr', id: 'tr5', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr6, pos: 'tr', id: 'tr6', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr7, pos: 'tr', id: 'tr7', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr8, pos: 'tr', id: 'tr8', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_tr9, pos: 'tr', id: 'tr9', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr1,  pos: 'mr', id: 'mr1', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr2,  pos: 'mr', id: 'mr2', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr3,  pos: 'mr', id: 'mr3', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr4,  pos: 'mr', id: 'mr4', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr5,  pos: 'mr', id: 'mr5', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_mr6,  pos: 'mr', id: 'mr6', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_mr7,  pos: 'mr', id: 'mr7', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_mr8,  pos: 'mr', id: 'mr8', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_mr9,  pos: 'mr', id: 'mr9', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_mr10, pos: 'mr', id: 'mr10', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_br1, pos: 'br', id: 'br1', value: 'disabled', type: 'hold', pressed: false, },
                     { ref: this.$refs.btn_br2, pos: 'br', id: 'br2', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br3, pos: 'br', id: 'br3', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br4, pos: 'br', id: 'br4', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br5, pos: 'br', id: 'br5', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br6, pos: 'br', id: 'br6', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br7, pos: 'br', id: 'br7', value: 'disabled', type: 'hold', pressed: false, },
-                    // { ref: this.$refs.btn_br8, pos: 'br', id: 'br8', value: 'disabled', type: 'hold', pressed: false, },
                 ];
 
                 // Knobs
@@ -476,6 +486,14 @@
                 this.display.ref.style.left = position.left + "px";
                 this.display.ref.style.width = position.width + "px";
                 this.display.ref.style.height = position.height + "px";
+
+                this.controls.pads.forEach((pad) => {
+                    position = pad.ref.getBoundingClientRect();
+                    this.$refs[pad.id + '_text'].style.top = position.top + "px";
+                    this.$refs[pad.id + '_text'].style.left = position.left + "px";
+                    this.$refs[pad.id + '_text'].style.width = position.width + "px";
+                    this.$refs[pad.id + '_text'].style.height = position.height + "px";
+                });
             },
             disable_controls(){
                 SVG(this.screen).fill(colors.screen.disabled);
@@ -649,11 +667,6 @@
                     btn.value = 'enabled'
                     btn.trigger = { fn: this.switch_bank, payload: {bank: 2} }
 
-                    // btn = _.find(this.controls.btns, {id: 'br1'});
-                    // btn.type = 'click'
-                    // btn.value = 'enabled'
-                    // btn.trigger = this.play
-
                     btn = _.find(this.controls.btns, {id: 'br2'});
                     btn.type = 'click'
                     btn.value = 'enabled'
@@ -663,11 +676,6 @@
                     btn.type = 'click'
                     btn.value = 'enabled'
                     btn.trigger = this.stop
-
-                    // btn = _.find(this.controls.btns, {id: 'br8'});
-                    // btn.type = 'click'
-                    // btn.value = 'enabled'
-                    // btn.trigger = this.play
 
                     // btn = _.find(this.controls.btns, {id: 'm1'});
                     // btn.type = 'click'
@@ -707,120 +715,140 @@
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'bass_sampler:C4'
+                    pad.text = 'bass'
 
                     pad = _.find(this.controls.pads, {id: 'pad2', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'bass_sampler:D4'
+                    pad.text = 'bass'
 
                     pad = _.find(this.controls.pads, {id: 'pad4', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-just-before-mesure'
                     pad.trigger = 'effects_sampler:D4'
+                    pad.text = 'fx'
 
                     pad = _.find(this.controls.pads, {id: 'pad5', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'drums_sampler:C4'
+                    pad.text = 'drum'
 
                     pad = _.find(this.controls.pads, {id: 'pad6', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'drums_sampler:D4'
+                    pad.text = 'drum'
 
                     pad = _.find(this.controls.pads, {id: 'pad7', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'drums_sampler:E4'
+                    pad.text = 'drum'
 
                     pad = _.find(this.controls.pads, {id: 'pad9', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'kick_sampler:C4'
+                    pad.text = 'kick'
 
                     pad = _.find(this.controls.pads, {id: 'pad10', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'kick_sampler:D4'
+                    pad.text = 'kick'
 
                     pad = _.find(this.controls.pads, {id: 'pad13', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'lead_sampler:C4'
+                    pad.text = 'lead'
 
                     pad = _.find(this.controls.pads, {id: 'pad14', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'lead_sampler:D4'
+                    pad.text = 'lead'
 
                     pad = _.find(this.controls.pads, {id: 'pad15', on: 'bank1'});
                     pad.type = 'toggle'
                     pad.value = 'enabled'
                     pad.mode = 'quantized-mesure'
                     pad.trigger = 'lead_sampler:E4'
+                    pad.text = 'lead'
 
                     pad = _.find(this.controls.pads, {id: 'pad17', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:D5'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad21', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:C4'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad22', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:D4'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad23', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:E4'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad25', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:F4'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad26', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:G4'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad27', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:A5'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad28', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:B5'
+                    pad.text = 'vocal'
 
                     pad = _.find(this.controls.pads, {id: 'pad29', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:C5'
+                    pad.text = 'vocal'
                 })
             },
             stop(){
@@ -1035,10 +1063,18 @@
             switch_bank(payload){
                 this.tonejs.bank = payload.bank
 
+                this.controls.pads.forEach((pad) => {
+                    this.$refs[pad.id + '_text'].innerText = ''
+                });
+
                 let pads = _.filter(this.controls.pads, {on: 'bank' + this.tonejs.bank});
                 _.each(pads, (pad) => {
                     SVG(pad.ref).fill(colors.pad[pad.value])
+
+                    this.$refs[pad.id + '_text'].innerText = pad.text
                 })
+
+                this.position_screen()
             },
             switch_page(payload){
                 this.display.page = payload.page
@@ -1296,11 +1332,20 @@
                     let curr_pad = _.find(this.controls.pads, {'id': pad.id, 'on': 'bank' + this.tonejs.bank});
 
                     if (curr_pad) {
+                        this.$refs[curr_pad.id + '_text'].innerText = curr_pad.text
                         SVG(curr_pad.ref).fill(colors.pad[curr_pad.value])
-                        if (pad.pressed) SVG(curr_pad.ref).transform({ translateX: 1, translateY: 3 });
-                        if (!pad.pressed) SVG(curr_pad.ref).transform({ translateX: 0, translateY: 0 });
+
+                        if (pad.pressed) {
+                            SVG(curr_pad.ref).transform({ translateX: 1, translateY: 3 });
+                            this.$refs[curr_pad.id + '_text'].classList.add('transform', 'translate-x-px', 'translate-y-px')
+                        } else if (!pad.pressed){
+                            SVG(curr_pad.ref).transform({ translateX: 0, translateY: 0 });
+                            this.$refs[curr_pad.id + '_text'].classList.remove('transform', 'translate-x-px', 'translate-y-px')
+                        }
                     }
                 });
+
+                this.position_screen()
             },
             'controls_btns_json': function(btns_json, old_btns_json) {
                 let btns = JSON.parse(btns_json)

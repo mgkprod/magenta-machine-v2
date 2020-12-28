@@ -145,11 +145,11 @@
                 <path d="M131.392 231.582C130.729 232.098 129.797 232.674 129.661 233.364C129.432 234.498 130.543 234.683 131.477 234.835C134.039 235.247 136.592 235.722 139.156 236.111C140.552 236.327 141.133 235.47 141.451 233.742C138.566 232.322 135.732 231.27 132.558 231.37L131.392 231.582" fill="white"/>
                 <path d="M140.879 161.29L141.685 160.934L142.469 159.492L141.556 158.489C140.924 158.252 140.198 158.196 139.508 158.189C137.622 158.165 135.732 158.153 133.848 158.228C132.045 158.303 131.119 159.236 130.532 161.484C134.149 162.985 137.502 161.705 140.879 161.29" fill="white"/>
                 <path d="M132.076 178.034C135.01 177.774 137.617 177.659 140.177 177.242C140.813 177.139 141.699 176.12 141.761 175.46C141.858 174.368 140.719 174.094 139.798 174.122C137.898 174.163 136.002 174.346 134.099 174.446C133.105 174.5 132.062 174.353 131.119 174.595C130.579 174.731 129.798 175.503 129.832 175.938C129.878 176.599 130.451 177.304 130.975 177.805L132.076 178.034" fill="white"/>
-                <g ref="slider1" @mousedown="slider_mousedown">
+                <g ref="slider1" @mousedown="slider_mousedown" :class="{ 'transition-position duration-150': !(this.mousehook.hooked_to_type == 'slider' && this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider1' })) }">
                     <path d="M124.564 137.056C124.851 136.25 125.392 135.436 126.033 134.871C127.066 133.97 127.648 132.923 127.027 131.726C126.397 130.517 125.231 130.612 123.892 130.786C117.438 131.615 110.979 132.654 104.436 131.667C99.2128 130.865 93.9865 130.055 88.7553 129.324C88.1639 129.241 87.2343 129.478 86.9517 129.897L87.1339 131.769C89.3531 134.97 91.4549 138.292 94.0248 141.204C96.6813 144.211 97.0707 147.17 95.77 150.86C93.1819 158.216 90.8607 165.668 88.4588 173.088C87.9523 174.654 88.3477 175.302 89.9201 175.737C90.7432 175.969 91.5447 176.17 92.3247 176.367C93.2653 176.285 94.2367 176.274 95.1911 176.223C95.9155 176.189 96.6319 176.131 97.3593 176.12C103.407 175.981 109.525 176.568 114.689 177.72L115.509 177.875C116.247 178.052 116.913 178.358 117.628 178.582L117.948 178.566L117.987 178.559C119.59 178.62 121.189 178.829 122.789 178.798C125.44 178.747 126.194 177.875 125.934 175.236C125.787 173.743 125.469 172.273 125.228 170.791C124.292 164.949 123.327 159.129 120.881 153.665C120.158 152.057 120.048 150.37 120.613 148.679C121.909 144.795 123.191 140.912 124.564 137.056" fill="#D5239A"/>
                     <path d="M104.325 153.041C106.387 153.637 108.569 153.977 110.712 154.056C111.262 154.076 112.099 152.784 112.382 151.958C112.76 150.852 111.717 150.39 110.858 150.133C110.013 149.884 109.098 149.833 107.727 149.615C106.651 149.26 105.238 149.485 104.048 150.643C103.142 151.532 103.153 152.697 104.325 153.041Z" fill="white"/>
                 </g>
-                <g ref="slider2" @mousedown="slider_mousedown">
+                <g ref="slider2" @mousedown="slider_mousedown" :class="{ 'transition-position duration-150': !(this.mousehook.hooked_to_type == 'slider' && this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider2' })) }">
                     <path d="M111.514 363.085C111.803 362.283 112.342 361.469 112.985 360.906C114.018 360.003 114.6 358.954 113.977 357.758C113.348 356.546 112.181 356.647 110.844 356.816C104.39 357.65 97.9294 358.692 91.3876 357.692C86.1628 356.901 80.9412 356.084 75.7053 355.358C75.1138 355.273 74.1843 355.512 73.9048 355.929L74.0839 357.804C76.3047 361.006 78.4069 364.328 80.9752 367.237C83.6313 370.243 84.0223 373.202 82.7203 376.895C80.1318 384.251 77.8138 391.698 75.4088 399.121C74.9023 400.686 75.2993 401.334 76.8701 401.773C77.6932 402.002 78.4946 402.2 79.2794 402.401C80.2184 402.314 81.1883 402.309 82.1459 402.259C82.8654 402.22 83.5759 402.16 84.3018 402.147C90.3509 402.013 96.4764 402.595 101.641 403.756L102.462 403.91C103.199 404.087 103.863 404.388 104.578 404.609L104.899 404.601L104.936 404.594C106.541 404.645 108.143 404.862 109.741 404.831C112.394 404.776 113.148 403.91 112.889 401.271C112.738 399.777 112.419 398.308 112.181 396.826C111.242 390.985 110.28 385.159 107.831 379.699C107.108 378.091 107.003 376.404 107.565 374.714C108.859 370.83 110.141 366.944 111.514 363.085Z" fill="#D5239A"/>
                     <path d="M91.0398 379.321C93.1013 379.92 95.2821 380.254 97.4274 380.332C97.9774 380.355 98.8175 379.066 99.0998 378.233C99.4754 377.134 98.4313 376.671 97.5757 376.416C96.726 376.157 95.8167 376.111 94.4404 375.899C93.3686 375.54 91.9539 375.76 90.7631 376.921C89.8553 377.808 89.8676 378.978 91.0398 379.321" fill="white"/>
                 </g>
@@ -228,12 +228,12 @@
                         <div class="w-1/3 mr-1">{{ pad.type }}</div>
                         <div class="w-1/3 text-right">{{ pad.value }}</div>
                     </div>
-                    <div class="flex flex-row" v-for="knob in controls.knobs" v-bind:key="knob.id">
+                    <div class="flex flex-row" v-for="knob in controls.knobs" v-bind:key="knob.id" :class="{ 'bg-indigo-300 dark:bg-indigo-700 rounded': knob.hooked }">
                         <div class="w-1/3 mr-1">{{ knob.id }}</div>
                         <div class="w-1/3 mr-1">min:{{ knob.min }} max:{{ knob.max }}</div>
                         <div class="w-1/3 text-right">{{ knob.value }}</div>
                     </div>
-                    <div class="flex flex-row" v-for="slider in controls.sliders" v-bind:key="slider.id">
+                    <div class="flex flex-row" v-for="slider in controls.sliders" v-bind:key="slider.id" :class="{ 'bg-indigo-300 dark:bg-indigo-700 rounded': slider.hooked }">
                         <div class="w-1/3 mr-1">{{ slider.id }}</div>
                         <div class="w-1/3 mr-1">min:{{ slider.min }} max:{{ slider.max }}</div>
                         <div class="w-1/3 text-right">{{ slider.value }}</div>
@@ -490,15 +490,15 @@
 
                 // Knobs
                 this.controls.knobs = [
-                    { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260, },
-                    { ref: this.$refs.knob2, id: 'knob2', value: 235, min: 0, max: 260, },
-                    { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500, },
+                    { ref: this.$refs.knob1, id: 'knob1', value: 0, min: 0, max: 260, hooked: false, },
+                    { ref: this.$refs.knob2, id: 'knob2', value: 235, min: 0, max: 260, hooked: false, },
+                    { ref: this.$refs.knob3, id: 'knob3', value: 0, min: -500, max: 500, hooked: false, },
                 ];
 
                 // Sliders
                 this.controls.sliders = [
-                    { ref: this.$refs.slider1, id: 'slider1', value: 0, min: 0, max: 85, },
-                    { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85, },
+                    { ref: this.$refs.slider1, id: 'slider1', value: 0, min: 0, max: 85, hooked: false, },
+                    { ref: this.$refs.slider2, id: 'slider2', value: 0, min: 0, max: 85, hooked: false, },
                 ];
             },
             position_screen(){
@@ -531,6 +531,14 @@
                                 SVG(el).fill({ color: colors.screen.text, opacity: 0 })
                             }, (k + 1) + 1300);
                         }, (k + 1) * 150);
+                    });
+
+                    // Sliders
+                    this.controls.sliders.forEach(({ ref }, k) => {
+                        this.controls.sliders[k].value = this.controls.sliders[k].max;
+                        setTimeout(() => {
+                            this.controls.sliders[k].value = this.controls.sliders[k].min;
+                        }, 500);
                     });
 
                     // Pads
@@ -1173,6 +1181,8 @@
 
                 // Find knob
                 let current_knob_index = _.findIndex(this.controls.knobs, ['ref', e.target.parentNode]);
+                this.controls.knobs[current_knob_index].hooked = true;
+
                 this.mousehook.hooked_to_type = 'knob'
                 this.mousehook.hooked_to = current_knob_index
                 this.mousehook.init_value = this.controls.knobs[current_knob_index].value;
@@ -1183,6 +1193,8 @@
 
                 // Find slider
                 let current_slider_index = _.findIndex(this.controls.sliders, ['ref', e.target.parentNode]);
+                this.controls.sliders[current_slider_index].hooked = true;
+
                 this.mousehook.hooked_to_type = 'slider'
                 this.mousehook.hooked_to = current_slider_index
                 this.mousehook.init_value = this.controls.sliders[current_slider_index].value;
@@ -1204,6 +1216,14 @@
                     if (this.controls.btns[current_btn_index].type == 'hold' && this.controls.btns[current_btn_index].value != 'disabled') {
                         this.controls.btns[current_btn_index].value = 'enabled';
                     }
+                } else if (this.mousehook.hooked_to_type == 'knob') {
+                    let current_knob_index = this.mousehook.hooked_to;
+
+                    this.controls.knobs[current_knob_index].hooked = false;
+                } else if (this.mousehook.hooked_to_type == 'slider') {
+                    let current_slider_index = this.mousehook.hooked_to;
+
+                    this.controls.sliders[current_slider_index].hooked = false;
                 }
 
                 this.mousehook.hooked_to = undefined;

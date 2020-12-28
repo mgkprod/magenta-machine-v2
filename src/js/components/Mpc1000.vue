@@ -255,7 +255,7 @@
         white: '#fff',
         pad: {
             enabled: '#53C6D7',
-            queued: '#B535A1',
+            queued: '#E142C8',
             active: '#F7EC03',
             disabled: '#525AA5',
         },
@@ -1095,20 +1095,23 @@
                         // Add the note
                         if (this.controls.pads[current_pad_index].mode == 'quantized-mesure') {
                             this.controls.pads[current_pad_index].tone_event_id = Tone.Transport.schedule((time) => {
-                                if (this.devtools) console.log(time)
                                 this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
+                                if (this.devtools) console.log(time)
+                                this.controls.pads[current_pad_index].value = "active"
                             }, '1:0:0');
                         }
 
                         if (this.controls.pads[current_pad_index].mode == 'quantized-just-before-mesure') {
                             this.controls.pads[current_pad_index].tone_event_id = [
                                 Tone.Transport.schedule((time) => {
-                                    if (this.devtools) console.log(time)
                                     this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
+                                    if (this.devtools) console.log(time)
+                                    this.controls.pads[current_pad_index].value = "active"
                                 }, '0:3:0'),
                                 Tone.Transport.schedule((time) => {
-                                    if (this.devtools) console.log(time)
                                     this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
+                                    if (this.devtools) console.log(time)
+                                    this.controls.pads[current_pad_index].value = "active"
                                 }, '8:3:0')
                             ];
                         }

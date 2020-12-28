@@ -1090,17 +1090,20 @@
                         // Add the note
                         if (this.controls.pads[current_pad_index].mode == 'quantized-mesure') {
                             this.controls.pads[current_pad_index].tone_event_id = Tone.Transport.schedule((time) => {
-                                this.tonejs[trigger[0]].triggerAttack(trigger[1])
+                                if (this.devtools) console.log(time)
+                                this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
                             }, '1:0:0');
                         }
 
                         if (this.controls.pads[current_pad_index].mode == 'quantized-just-before-mesure') {
                             this.controls.pads[current_pad_index].tone_event_id = [
                                 Tone.Transport.schedule((time) => {
-                                    this.tonejs[trigger[0]].triggerAttack(trigger[1])
+                                    if (this.devtools) console.log(time)
+                                    this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
                                 }, '0:3:0'),
                                 Tone.Transport.schedule((time) => {
-                                    this.tonejs[trigger[0]].triggerAttack(trigger[1])
+                                    if (this.devtools) console.log(time)
+                                    this.tonejs[trigger[0]].triggerAttack(trigger[1], time)
                                 }, '8:3:0')
                             ];
                         }

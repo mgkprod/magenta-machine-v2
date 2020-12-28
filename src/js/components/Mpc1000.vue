@@ -140,38 +140,38 @@
             </transition>
         </div>
 
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad32_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad31_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad30_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad29_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad28_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad27_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad26_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad25_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad24_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad23_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad22_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad21_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad20_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad19_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad18_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad17_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad16_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad15_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad14_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad13_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad12_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad11_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad10_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad9_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad8_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad7_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad6_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad5_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad4_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad3_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad2_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad1_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad32_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad31_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad30_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad29_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad28_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad27_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad26_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad25_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad24_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad23_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad22_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad21_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad20_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad19_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad18_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad17_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad16_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad15_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad14_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad13_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad12_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad11_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad10_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad9_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad8_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad7_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad6_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad5_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad4_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad3_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad2_text"></div>
+        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad1_text"></div>
 
         <div class="absolute p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
             <div class="flex flex-row w-full h-full leading-none">

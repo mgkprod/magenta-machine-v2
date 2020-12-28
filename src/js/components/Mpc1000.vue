@@ -198,7 +198,7 @@
         <div class="absolute z-10 p-3 uppercase text-variable-base font-digital-7 text-screen-default" ref="display" v-show="display.on">
             <div class="flex flex-row w-full h-full leading-none">
                 <div class="flex flex-col w-3/4 h-full border-r border-screen-default" v-if="display.page == 1">
-                    <div class="flex flex-col justify-center font-bold tracking-tighter text-variable-xs h-2/3 font-eurostile-extended">
+                    <div class="flex flex-col justify-center font-bold tracking-tighter text-variable-sm h-2/3 font-eurostile-extended">
                         <div>MAGENTA MACHINE</div>
                         <div>BOUM BAP</div>
                     </div>
@@ -525,10 +525,8 @@
             demo_animation(){
                 // Buttons
                 this.controls.btns.forEach(({ ref }, k) => {
-                    if (k >= 2 && k <= 7) {
-                        setTimeout(() => { this.controls.btns[k].value = 'enabled'; }, (k + 1) * 50);
-                        setTimeout(() => { this.controls.btns[k].value = 'disabled'; }, 700);
-                    }
+                    setTimeout(() => { this.controls.btns[k].value = 'enabled'; }, (k + 1) * 50);
+                    setTimeout(() => { this.controls.btns[k].value = 'disabled'; }, 700);
                 });
 
                 setTimeout(() => {
@@ -872,6 +870,8 @@
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:C5'
                     pad.text = 'souvenir'
+
+                    this.switch_bank({bank: 1})
                 })
             },
             stop(){
@@ -1085,6 +1085,14 @@
             },
             switch_bank(payload){
                 this.tonejs.bank = payload.bank
+
+                _.find(this.controls.btns, { id: 'tr1' }).value = 'enabled';
+                _.find(this.controls.btns, { id: 'tr2' }).value = 'enabled';
+                _.find(this.controls.btns, { id: 'tr' + payload.bank }).value = 'active';
+
+                this.controls.pads.forEach((pad) => {
+                    this.$refs[pad.id + '_text'].innerText = ''
+                });
 
                 this.controls.pads.forEach((pad) => {
                     this.$refs[pad.id + '_text'].innerText = ''

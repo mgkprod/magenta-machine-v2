@@ -49,6 +49,16 @@ html, body, #app {
     }
 }
 
+.text-variable-sm {
+    font-size: 1.6vw;
+}
+
+@media screen and (min-width: 800px) {
+    .text-variable-sm {
+        font-size: .8em;
+    }
+}
+
 .text-variable-base {
     font-size: 2vw;
 }

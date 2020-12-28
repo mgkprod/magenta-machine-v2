@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center justify-center w-full h-full select-none" @mousemove="mousemove" @mouseup="mouseup">
-        <div class="relative" width="753" height="546">
-            <svg class="transition-opacity duration-150" :class="{ 'opacity-25': audiocontext_status == 'suspended', 'opacity-100': audiocontext_status != 'suspended' }" width="753" height="546" viewBox="0 0 753 546" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="flex items-center justify-center w-full h-full p-4 select-none" @mousemove="mousemove" @mouseup="mouseup">
+        <div class="relative w-full h-full" style="max-width: 753px; max-height: 546px;">
+            <svg class="w-full h-full" width="753" height="546" viewBox="0 0 753 546" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M751.039 295.447C750.869 280.828 750.703 266.213 750.537 251.595L750.438 250.155C750.165 246.266 749.782 242.377 749.58 238.48C748.884 225.482 748.216 212.48 747.599 199.481C747.295 193.081 746.71 186.656 746.982 180.267C747.318 172.117 746.756 164.017 746.193 155.926L746.133 155.048C745.67 148.43 745.539 141.844 745.935 135.238C746.374 127.85 746.919 120.462 747.33 113.066C747.52 109.771 747.659 106.46 747.532 103.165C747.338 98.1597 746.773 93.1777 746.583 88.176C746.35 81.8744 746.453 75.561 746.196 69.2555C745.962 63.3529 743.954 26.5668 742.222 22.8253C741.499 21.2648 741.214 19.5026 740.526 17.1321C741.131 15.0106 740.846 14.4852 737.94 14.497C735.556 14.5089 733.16 14.8091 730.768 14.9711C728.879 15.0936 726.937 15.5044 725.095 15.2437C719.698 14.4614 714.289 14.7419 708.885 14.7538C706.184 14.7538 703.484 15.054 700.78 15.2318C694.28 15.6585 687.784 16.2076 681.276 16.4882C677.746 16.6436 677.695 16.459 676.732 13.0129L676.682 12.8337C676.472 12.0672 676.283 11.2415 675.844 10.5896C675.444 9.99304 674.788 9.29773 674.144 9.15942C672.078 8.74139 669.978 8.4873 667.885 8.23395L667.339 8.16779C665.655 7.96234 663.967 7.8161 662.279 7.71735C658.649 7.5119 655.071 7.71741 651.616 9.0014C650.149 9.5545 649.35 10.5461 649.054 12.0554C648.283 15.9193 648.271 15.9193 644.27 15.7731C643.669 15.7495 643.06 15.7494 642.459 15.7099C640.371 15.5716 638.901 14.4772 637.94 12.6717C637.513 11.8815 637.121 11.0479 636.868 10.1866C635.943 7.06152 633.662 5.99084 630.673 6.10938C626.47 6.27533 622.267 6.46497 618.076 6.78894C615.25 7.00623 614.981 7.50006 615.372 10.4197L615.499 11.6168C615.574 13.7147 615.04 14.3429 612.901 14.2718C609.189 14.1454 605.488 13.8806 601.779 13.7266C600.198 13.6594 599.261 12.8771 598.486 11.5299C597.494 9.81525 596.371 8.12433 595.03 6.67041C594.287 5.87231 593.014 5.19672 591.947 5.12958C586.147 4.77008 580.339 4.58429 574.527 4.43024C572.831 4.38678 572.301 5.02686 572.107 6.81659C572 7.81616 572.02 8.82355 571.929 9.82312C571.72 12.1304 571.241 12.6164 568.936 12.5966C566.532 12.5808 564.125 12.3477 561.721 12.403C558.906 12.4781 556.889 11.8855 555.604 8.87494C554.371 6.00269 551.888 4.34332 548.341 4.62781C545.558 4.84906 542.735 4.60016 539.928 4.51324C538.228 4.45795 536.528 4.23273 534.82 4.21692C531.518 4.17346 530.811 4.82935 530.407 8.02161L530.186 9.50708C529.727 11.4706 529.348 11.8459 527.331 11.7985C523.314 11.7037 519.298 11.2455 515.304 11.4312C511.801 11.5892 510.2 9.7876 509.113 6.95483L508.828 6.1015C507.899 4.14581 506.416 2.77094 504.198 2.87762C499.497 3.09888 495.081 1.75562 490.586 0.767883C486.826 -0.053894 484.339 1.8938 484.24 5.7182C484.217 6.5163 484.394 7.31836 484.323 8.10455C484.236 9.08038 483.734 9.87061 482.627 9.87848C477.021 9.95355 471.011 11.0439 467.995 4.29199L467.315 3.30029C466.061 1.19843 464.171 0.30957 461.763 0.420166C460.961 0.459656 460.131 0.364868 459.364 0.542664C457.146 1.04834 455.019 0.554504 452.824 0.325378C450.076 0.0448608 447.261 0.30957 444.482 0.46759C443.055 0.542664 442.375 1.43951 442.521 2.92896C442.608 3.81787 442.647 4.73444 442.576 5.63129C442.43 7.5119 441.987 7.95837 440.168 7.91095C436.76 7.83588 433.352 7.65021 429.944 7.57117C428.489 7.53955 427.485 6.93909 426.766 5.68665C425.971 4.29993 425.105 2.94873 424.259 1.59357C423.63 0.597961 422.78 -0.0341797 421.539 0.00140381C416.632 0.171265 411.726 0.285828 406.823 0.554504C405.103 0.649353 404.403 1.68048 404.467 3.40698L404.708 4.88855C404.787 6.64667 404.261 7.30646 402.502 7.34595C400.299 7.39337 398.085 7.31836 395.883 7.23145C394.559 7.18011 392.997 7.61066 392.451 5.66687L391.163 5.1098C389.555 5.38336 388.872 4.40442 388.1 3.29724L388.075 3.2608C386.58 1.11548 384.449 0.222595 381.828 0.447815C380.733 0.542664 379.63 0.45575 378.527 0.495239C375.233 0.62561 371.924 0.649353 368.646 0.965393C366.412 1.17871 365.309 2.72351 365.147 5.10193C365.104 5.76959 364.973 6.42938 364.859 7.23932C362.815 7.35388 360.929 7.56329 359.043 7.53564C346.921 7.35388 334.807 7.2749 322.693 8.21124C313.599 8.91449 304.474 9.25818 295.36 9.44385L101.613 10.6212C96.6028 10.6489 91.5927 10.558 86.5873 10.4829C82.1782 10.4078 77.7702 10.1866 73.3642 10.2142C71.2035 10.2379 69.0503 10.8661 66.8853 10.9294C62.2967 11.0598 57.8072 12.0791 53.1447 11.8262C48.5129 11.5773 44.0927 13.4263 39.7606 14.9631C38.3724 15.457 36.777 16.6502 36.2164 17.9342C34.3801 22.1418 32.7554 26.4719 31.4781 30.8732C31.2573 31.6357 31.1307 32.4258 30.95 33.1962L6.8649 83.0478L0 545.815L727.558 540.332L753 512.34C752.798 433.371 751.96 374.41 751.039 295.447Z" fill="#303595"/>
                 <path d="M750.547 295.447C750.377 280.828 750.211 266.213 750.045 251.595L749.946 250.155C749.673 246.266 749.29 242.377 749.088 238.48C748.392 225.482 747.724 212.48 747.107 199.481C746.803 193.081 746.218 186.656 746.49 180.267C746.826 172.117 746.264 164.017 745.701 155.926L745.641 155.048C745.178 148.43 745.047 141.844 745.443 135.238C745.882 127.85 746.427 120.462 746.838 113.066C747.028 109.771 747.167 106.46 747.04 103.165C746.846 98.1597 746.281 93.1777 746.091 88.176C745.858 81.8744 745.961 75.561 745.704 69.2555C745.47 63.3529 743.462 26.5667 741.73 22.8253C741.007 21.2647 740.722 19.5026 740.034 17.1321C740.639 15.0106 740.354 14.4852 737.448 14.497C735.064 14.5089 732.668 14.8091 730.276 14.9711C728.387 15.0935 726.445 15.5044 724.603 15.2437C719.206 14.4614 713.797 14.7419 708.393 14.7538C705.692 14.7538 702.992 15.0541 700.288 15.2319C693.788 15.6586 687.292 16.2076 680.784 16.4882C677.254 16.6435 677.203 16.459 676.24 13.0129L676.19 12.8337C675.98 12.0672 675.791 11.2415 675.352 10.5896C674.953 9.99301 674.296 9.2977 673.652 9.15942C671.586 8.74142 669.486 8.48727 667.393 8.23395L666.847 8.16779C665.163 7.96234 663.475 7.81613 661.787 7.71735C658.157 7.5119 654.579 7.71738 651.124 9.0014C649.657 9.5545 648.858 10.5461 648.562 12.0554C647.791 15.9193 647.779 15.9193 643.778 15.7731C643.177 15.7494 642.568 15.7494 641.967 15.7099C639.879 15.5716 638.409 14.4772 637.448 12.6717C637.021 11.8815 636.629 11.0479 636.376 10.1866C635.451 7.06155 633.17 5.99084 630.181 6.10938C625.978 6.2753 621.775 6.46497 617.584 6.78894C614.758 7.00623 614.489 7.50009 614.88 10.4197L615.007 11.6168C615.082 13.7147 614.548 14.3429 612.409 14.2718C608.697 14.1454 604.996 13.8806 601.287 13.7266C599.706 13.6594 598.769 12.8771 597.994 11.5299C597.002 9.81525 595.879 8.12433 594.538 6.67041C593.795 5.87234 592.522 5.19675 591.455 5.12958C585.655 4.77005 579.846 4.58432 574.035 4.43024C572.339 4.38678 571.809 5.02686 571.615 6.81659C571.508 7.81616 571.528 8.82355 571.437 9.82312C571.228 12.1304 570.749 12.6164 568.444 12.5966C566.04 12.5808 563.633 12.3477 561.229 12.403C558.414 12.4781 556.397 11.8855 555.112 8.87494C553.879 6.00269 551.396 4.34332 547.849 4.62781C545.066 4.84906 542.243 4.60016 539.436 4.51324C537.736 4.45795 536.036 4.23273 534.328 4.21692C531.026 4.17346 530.319 4.82935 529.915 8.02161L529.694 9.50708C529.235 11.4706 528.856 11.8459 526.839 11.7985C522.823 11.7037 518.806 11.2455 514.812 11.4312C511.309 11.5892 509.708 9.78757 508.621 6.95483L508.336 6.1015C507.407 4.14581 505.924 2.77094 503.706 2.87762C499.005 3.09888 494.589 1.75562 490.094 0.767883C486.334 -0.053894 483.847 1.8938 483.748 5.7182C483.725 6.51627 483.902 7.31833 483.831 8.10455C483.744 9.08041 483.242 9.87057 482.135 9.87848C476.529 9.95355 470.519 11.0439 467.503 4.29199L466.823 3.30029C465.569 1.19843 463.679 0.30957 461.272 0.420166C460.469 0.459656 459.639 0.364868 458.872 0.542664C456.654 1.04834 454.527 0.554504 452.332 0.325378C449.584 0.0448608 446.769 0.30957 443.99 0.46759C442.563 0.542664 441.883 1.43951 442.029 2.92896C442.116 3.81787 442.155 4.73444 442.084 5.63129C441.938 7.51187 441.495 7.95837 439.677 7.91095C436.268 7.83588 432.86 7.65018 429.452 7.57117C427.997 7.53955 426.993 6.93906 426.273 5.68665C425.479 4.29993 424.613 2.94873 423.767 1.59357C423.138 0.597961 422.288 -0.0341797 421.047 0.00140381C416.14 0.171265 411.234 0.285828 406.331 0.554504C404.611 0.649353 403.911 1.68048 403.975 3.40698L404.216 4.88855C404.295 6.64667 403.769 7.30643 402.01 7.34595C399.807 7.39337 397.593 7.31836 395.391 7.23145C394.067 7.18008 392.505 7.61069 391.959 5.66687L390.671 5.1098C389.063 5.38336 388.38 4.40442 387.608 3.29724L387.583 3.2608C386.088 1.11548 383.957 0.222595 381.336 0.447815C380.241 0.542664 379.138 0.45575 378.035 0.495239C374.741 0.62561 371.432 0.649353 368.154 0.965393C365.92 1.17871 364.817 2.72351 364.655 5.10193C364.612 5.76962 364.481 6.42941 364.367 7.23932C362.323 7.35388 360.437 7.56329 358.551 7.53564C346.429 7.35391 334.315 7.2749 322.201 8.21124C313.107 8.91449 303.982 9.25815 294.868 9.44385L160.885 13.126C153.05 13.4145 145.235 13.288 137.449 12.3398C125.377 10.8661 113.261 10.5501 101.121 10.6212C96.1108 10.6489 91.1007 10.558 86.0953 10.483C81.6862 10.4079 77.2782 10.1866 72.8722 10.2143C70.7115 10.238 68.5583 10.8662 66.3933 10.9294C61.8047 11.0598 57.3152 12.0791 52.6527 11.8262C48.0209 11.5773 43.6007 13.4263 39.2686 14.9632C37.8804 15.4571 36.285 16.6502 35.7244 17.9342C33.8881 22.1418 32.2634 26.472 30.9861 30.8732C30.7653 31.6357 30.6387 32.4258 30.458 33.1963C29.7321 36.3095 29.2024 39.4781 28.5815 42.619L28.3745 44.1084C28.0193 51.1014 27.6363 58.0904 27.3382 65.0913C27.278 66.557 27.2348 68.0149 27.1761 69.4727C27.4989 81.3726 27.8602 93.2646 28.2139 105.153C30.0301 165.758 31.5128 226.327 24.9738 286.824C24.685 289.463 24.444 292.098 24.1645 294.737C24.5877 302.254 24.8409 309.772 24.6896 317.296C24.4175 330.797 22.7343 344.114 21.0529 357.416L21 357.835C21.1174 414.787 21.6626 451.738 21.8062 508.69C21.8062 509.622 21.8108 510.559 21.8108 511.499C26.4873 511.111 31.1653 510.711 35.8495 510.471C45.9686 509.954 56.086 510.215 66.2158 510.559C75.5239 510.881 84.8535 510.736 94.1743 510.688C99.7802 510.661 105.385 510.286 110.988 510.289C120.307 510.306 129.626 510.483 138.945 510.633C141.751 510.676 144.554 510.921 147.36 510.945L284.443 516.326C297.656 516.5 310.873 516.848 324.079 515.9C329.673 515.5 335.275 515.153 340.874 514.797C345.674 514.497 350.473 514.141 355.273 513.956C360.963 513.727 366.66 513.664 372.353 513.505C375.461 513.414 378.564 513.189 381.668 513.158C395.288 513.016 408.917 512.884 422.537 512.81C433.56 512.755 444.587 512.81 455.61 512.763C462.027 512.735 468.44 512.621 474.852 512.53C481.661 512.438 488.469 512.32 495.273 512.218C498.673 512.17 502.081 512.221 505.486 512.079C513.583 511.739 521.68 511.083 529.789 510.985C537.799 510.881 545.825 511.205 553.835 511.55C559.833 511.81 565.807 512.565 571.809 512.798C577.281 513.016 582.756 513.091 588.228 513.145C601.066 513.067 613.9 512.955 626.741 512.841C668.666 512.474 710.591 512.051 752.508 512.34C752.306 433.371 751.468 374.41 750.547 295.447Z" fill="#3B46A4"/>
                 <path d="M553.128 140.111C552.641 139.107 552.724 137.76 552.752 136.571C552.823 133.769 553.072 130.972 553.151 128.167C553.341 121.06 553.772 113.944 553.566 106.845C553.357 99.2471 552.214 91.7208 550.842 84.2221C549.609 77.5334 548.387 70.7854 548.862 63.9267C549.443 55.472 547.664 47.1673 547.383 38.756C547.26 35.2516 546.636 31.8499 547.901 28.4048C548.585 26.54 547.944 25.9316 545.853 25.8447L544.346 25.8526C537.752 26.1568 531.161 26.6862 524.57 26.7257C513.946 26.7929 503.331 26.5005 492.707 26.4334C485.389 26.382 478.063 26.5874 470.749 26.4373C461.726 26.2635 452.72 26.0976 443.705 26.6033C436.098 27.026 428.472 27.1208 420.861 27.429C414.958 27.6739 409.055 28.3021 403.156 28.2745C389.516 28.2192 375.88 27.8359 362.243 27.6503C355.427 27.5633 348.607 27.6819 341.792 27.591C333.376 27.4883 324.965 27.2157 316.553 27.1169C308.233 27.026 299.909 27.0892 291.589 27.026C280.959 26.9351 270.325 26.6941 259.694 26.6862C253.583 26.6783 247.473 26.9865 241.36 27.1485L241.359 27.026C238.654 27.0892 235.949 27.1406 233.244 27.2157C226.328 27.4132 219.413 27.5554 212.497 27.8438C205.89 28.1125 199.288 28.5668 192.679 28.8671C186.671 29.1397 180.643 29.116 174.719 30.3842C174.138 30.5106 173.525 30.4988 172.926 30.5027C169.591 30.5541 167.845 32.2885 167.927 35.7139C167.982 37.9105 168.121 40.1309 168.503 42.292C169.113 45.7253 170.171 49.0874 170.648 52.5365C171.209 56.5901 171.413 60.695 171.67 64.788C171.985 69.7858 172.347 74.7797 172.339 79.7972C172.339 81.4724 172.294 83.1475 172.192 84.8187C171.86 90.2985 171.496 95.802 172.43 101.29C172.829 103.648 172.98 106.054 173.107 108.453C173.342 112.846 173.3 117.255 173.686 121.633C174.557 131.537 174.251 141.402 173.295 151.272C173.131 152.943 173.229 154.677 173.47 156.345C173.71 157.992 174.992 158.553 176.572 158.166C178.003 157.81 179.473 157.463 180.934 157.411C184.538 157.285 188.143 157.293 191.749 157.332C201.474 157.435 211.201 157.486 220.923 157.739C236.963 158.158 252.983 159.067 269.044 158.762C277.359 158.608 285.68 159.126 294 159.138C301.404 159.15 308.807 158.932 316.212 158.723C322.326 158.537 328.432 158.095 334.548 157.976C343.367 157.806 352.193 157.976 361.006 157.719C371.123 157.431 381.231 156.83 391.343 156.38C399.048 156.032 406.762 155.701 414.468 155.388C422.778 155.045 431.093 154.792 439.4 154.389C446.702 154.029 454.001 153.563 461.295 153.05C469.088 152.496 476.861 151.671 484.658 151.268C495.467 150.707 506.296 150.458 517.109 150.023C522.621 149.802 528.12 149.427 533.632 149.213C539.238 149 544.845 148.913 550.451 148.747C551.898 148.704 552.807 148.115 553.175 146.523C553.677 144.346 554.191 142.323 553.128 140.111Z" fill="#231F20"/>
@@ -130,55 +130,77 @@
                 leave-from-class="opacity-100"
                 leave-to-class="opacity-0"
             >
-                <div class="absolute inset-0 flex items-center justify-center" v-if="audiocontext_status == 'suspended'">
-                    <button @click="unlock_audiocontext" class="p-2 mx-1 text-sm font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105">
-                        <span class="text-sm font-bold tracking-tighter font-eurostile-extended">
-                            POWER ON
+                <div class="absolute inset-0 z-20 flex items-center justify-center bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75" v-if="audiocontext_status == 'suspended'">
+                    <button @click="unlock_audiocontext" class="p-2 mx-1 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105">
+                        <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
+                            Power ON
+                        </span>
+                    </button>
+                </div>
+            </transition>
+
+            <transition
+                leave-active-class="transition-opacity duration-150"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
+            >
+                <div class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white bg-opacity-75 lg:hidden dark:bg-gray-900 dark:bg-opacity-75" v-if="show_size_disclaimer">
+                    <div class="w-full max-w-md p-4 mb-4 text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400">
+                        <p class="mb-2 font-semibold">Hello !</p>
+                        <p>
+                            On se doute que tu veux utiliser notre machine partout, mais ton écran semble trop petit pour en profiter sans avoir des bugs graphiques chelous (genre sur les petits éléments).<br>
+                            Tu peux quand même essayer, mais le mieux reste de prendre ta tablette ou ton PC pour revenir ici.
+                        </p>
+                    </div>
+
+                    <button @click="show_size_disclaimer = false" class="w-full max-w-md p-2 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105">
+                        <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
+                            Essayer quand même
                         </span>
                     </button>
                 </div>
             </transition>
         </div>
 
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad32_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad31_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad30_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad29_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad28_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad27_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad26_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad25_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad24_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad23_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad22_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad21_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad20_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad19_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad18_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad17_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad16_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad15_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad14_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad13_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad12_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad11_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad10_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad9_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad8_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad7_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad6_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad5_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad4_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad3_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad2_text"></div>
-        <div class="absolute flex items-center justify-center text-xs font-bold tracking-tighter uppercase opacity-75 pointer-events-none font-eurostile-extended" style="color: #525aa5;" ref="pad1_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad32_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad31_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad30_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad29_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad28_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad27_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad26_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad25_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad24_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad23_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad22_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad21_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad20_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad19_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad18_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad17_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad16_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad15_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad14_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad13_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad12_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad11_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad10_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad9_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad8_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad7_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad6_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad5_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad4_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad3_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad2_text"></div>
+        <div class="absolute z-10 flex items-center justify-center font-bold tracking-tighter text-center uppercase opacity-75 pointer-events-none text-variable-xs font-eurostile-extended" style="color: #525aa5;" ref="pad1_text"></div>
 
-        <div class="absolute p-3 uppercase font-digital-7 text-screen-default" ref="display" v-show="display.on">
+        <div class="absolute z-10 p-3 uppercase text-variable-base font-digital-7 text-screen-default" ref="display" v-show="display.on">
             <div class="flex flex-row w-full h-full leading-none">
                 <div class="flex flex-col w-3/4 h-full border-r border-screen-default" v-if="display.page == 1">
-                    <div class="flex flex-col justify-center text-sm font-bold tracking-tighter h-2/3 font-eurostile-extended">
-                        <div class="-mb-1">MAGENTA MACHINE</div>
-                        <div class="-mb-1">BOUM BAP</div>
+                    <div class="flex flex-col justify-center font-bold tracking-tighter text-variable-xs h-2/3 font-eurostile-extended">
+                        <div>MAGENTA MACHINE</div>
+                        <div>BOUM BAP</div>
                     </div>
                     <div class="flex flex-row items-center justify-center border-t h-1/3 border-screen-default">
                         <div>{{ tonejs.transport_position }}</div>
@@ -287,6 +309,7 @@
         data() {
             return {
                 audiocontext_status: 'suspended',
+                show_size_disclaimer: true,
                 freqs,
                 display: {
                     ref: undefined,
@@ -792,63 +815,63 @@
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:D5'
-                    pad.text = 'vocal'
+                    pad.text = 'boum bap'
 
                     pad = _.find(this.controls.pads, {id: 'pad21', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:C4'
-                    pad.text = 'vocal'
+                    pad.text = 'années 1'
 
                     pad = _.find(this.controls.pads, {id: 'pad22', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:D4'
-                    pad.text = 'vocal'
+                    pad.text = 'années 2'
 
                     pad = _.find(this.controls.pads, {id: 'pad23', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:E4'
-                    pad.text = 'vocal'
+                    pad.text = 'années 3'
 
                     pad = _.find(this.controls.pads, {id: 'pad25', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:F4'
-                    pad.text = 'vocal'
+                    pad.text = 'jeune'
 
                     pad = _.find(this.controls.pads, {id: 'pad26', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:G4'
-                    pad.text = 'vocal'
+                    pad.text = 'dépassé'
 
                     pad = _.find(this.controls.pads, {id: 'pad27', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:A5'
-                    pad.text = 'vocal'
+                    pad.text = 'pas d\'amour'
 
                     pad = _.find(this.controls.pads, {id: 'pad28', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:B5'
-                    pad.text = 'vocal'
+                    pad.text = 'pas le permis'
 
                     pad = _.find(this.controls.pads, {id: 'pad29', on: 'bank2'});
                     pad.type = 'hold'
                     pad.value = 'enabled'
                     pad.mode = 'hold'
                     pad.trigger = 'vocals_sampler:C5'
-                    pad.text = 'vocal'
+                    pad.text = 'souvenir'
                 })
             },
             stop(){

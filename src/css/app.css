@@ -38,3 +38,23 @@ html, body, #app {
 .font-digital-7 {
     font-family: 'Digital-7 Mono';
 }
+
+.text-variable-xs {
+    font-size: 1.4vw;
+}
+
+@media screen and (min-width: 800px) {
+    .text-variable-xs {
+        font-size: .6em;
+    }
+}
+
+.text-variable-base {
+    font-size: 2vw;
+}
+
+@media screen and (min-width: 800px) {
+    .text-variable-base {
+        font-size: 1em;
+    }
+}

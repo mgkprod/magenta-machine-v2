@@ -14,6 +14,10 @@ module.exports = {
             }
         },
     },
-    variants: {},
+    variants: {
+        extend: {
+            backgroundOpacity: ['dark'],
+        }
+    },
     plugins: [],
 }

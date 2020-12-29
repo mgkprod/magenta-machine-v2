@@ -685,8 +685,6 @@
                         this.tonejs.transport_position = position[0] + ':' + position[1]
                     }, "4n");
 
-                    this.display.on = true;
-
                     let btn;
 
                     // Btns
@@ -878,7 +876,14 @@
                     pad.mode = 'quantized-just-before-mesure'
                     pad.trigger = 'vocals_sampler:E5'
 
-                    this.switch_bank({bank: 1})
+                    setTimeout(() => {
+                        this.switch_bank({bank: 2})
+                        setTimeout(() => {
+                            this.display.on = true;
+                            this.switch_bank({bank: 1})
+                        }, 50);
+                    }, 50)
+
                 })
             },
             stop(){

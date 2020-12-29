@@ -351,6 +351,10 @@
                     kick_sampler: undefined,
                     lead_sampler: undefined,
                     vocals_sampler: undefined,
+                    master_fxs: [
+                        { enabled: false, wet: 0, min: 0, max: 100 },
+                        { enabled: false, wet: 0, min: 0, max: 100 },
+                    ],
                     effects: [
                         { route: 'bass', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
                         { route: 'drums', effect: 'volume', values: [{ name: 'volume', type: 'int', value: 0, min: -50, max: 5, unit: 'dB' }]},
@@ -698,15 +702,15 @@
                     btn.value = 'enabled'
                     btn.trigger = this.stop
 
-                    // btn = _.find(this.controls.btns, {id: 'm1'});
-                    // btn.type = 'click'
-                    // btn.value = 'enabled'
-                    // btn.trigger =  { fn: this.switch_page, payload: {page: 1} }
+                    btn = _.find(this.controls.btns, {id: 'tl'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger =  { fn: this.enable_master_fx, payload: {fx: 1} }
 
-                    // btn = _.find(this.controls.btns, {id: 'm2'});
-                    // btn.type = 'click'
-                    // btn.value = 'enabled'
-                    // btn.trigger =  { fn: this.switch_page, payload: {page: 2} }
+                    btn = _.find(this.controls.btns, {id: 'bl'});
+                    btn.type = 'click'
+                    btn.value = 'enabled'
+                    btn.trigger =  { fn: this.enable_master_fx, payload: {fx: 2} }
 
                     btn = _.find(this.controls.btns, {id: 'mr1'});
                     btn.type = 'click'
@@ -875,6 +879,8 @@
                 })
             },
             stop(){
+                this.display.page = 1;
+
                 this.tonejs.bass_sampler.releaseAll()
                 this.tonejs.drums_sampler.releaseAll()
                 this.tonejs.effects_sampler.releaseAll()
@@ -885,18 +891,22 @@
                 Tone.Transport.stop();
             },
             play(){
+                this.display.page = 1;
+
                 // Tone.Transport.state == 'started'
                 //     ? Tone.Transport.pause()
                 //     : Tone.Transport.start()
                 this.play_start();
             },
             play_start(){
+                this.display.page = 1;
+
                 this.stop();
                 Tone.Transport.position = '0:2:0';
                 Tone.Transport.start()
             },
             left() {
-                if (this.display.page != 2) return;
+                this.display.page = 2
 
                 if (this.display.effects.item_selected == 0) {
                     this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected - 1).clamp(0, this.display.effects.available_effects.length - 1)
@@ -931,7 +941,7 @@
                 }
             },
             right() {
-                if (this.display.page != 2) return;
+                this.display.page = 2
 
                 if (this.display.effects.item_selected == 0) {
                     this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected + 1).clamp(0, this.display.effects.available_effects.length - 1)
@@ -966,26 +976,28 @@
                 }
             },
             up() {
-                if (this.display.page != 2) return;
+                this.display.page = 2
 
                 let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
                 this.display.effects.item_selected = (this.display.effects.item_selected - 1).clamp(0, 1 + _.size(current_effect.values));
             },
             down() {
-                if (this.display.page != 2) return;
+                this.display.page = 2
 
                 let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
                 this.display.effects.item_selected = (this.display.effects.item_selected + 1).clamp(0, 1 + _.size(current_effect.values));
             },
             apply_effect(current_effect){
+                let target = this.tonejs[current_effect.route + '_sampler'];
+
                 if (current_effect.effect == 'volume') {
-                    this.tonejs[current_effect.route + '_sampler'].volume.value = _.find(current_effect.values, ['name', 'volume']).value;
+                    target.volume.value = _.find(current_effect.values, ['name', 'volume']).value;
                 }
 
                 if (current_effect.effect == 'crusher') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.BitCrusher().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -997,7 +1009,7 @@
                 if (current_effect.effect == 'reverb') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.Reverb().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1009,7 +1021,7 @@
                 if (current_effect.effect == 'stereowidener') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.StereoWidener().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1021,7 +1033,7 @@
                 if (current_effect.effect == 'tremolo') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.Tremolo().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1034,7 +1046,7 @@
                 if (current_effect.effect == 'vibrato') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.Vibrato().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1047,7 +1059,7 @@
                 if (current_effect.effect == 'feedbackdelay') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.FeedbackDelay().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1060,7 +1072,7 @@
                 if (current_effect.effect == 'chorus') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.Chorus().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1074,7 +1086,7 @@
                 if (current_effect.effect == 'distortion') {
                     if (!current_effect.handler) {
                         current_effect.handler = new Tone.Distortion().toDestination();
-                        this.tonejs[current_effect.route + '_sampler'].connect(current_effect.handler);
+                        target.connect(current_effect.handler);
                     }
 
                     current_effect.handler.set({
@@ -1084,6 +1096,8 @@
                 }
             },
             switch_bank(payload){
+                this.display.page = 1;
+
                 this.tonejs.bank = payload.bank
 
                 _.find(this.controls.btns, { id: 'tr1' }).value = 'enabled';
@@ -1107,8 +1121,40 @@
 
                 this.position_screen()
             },
-            switch_page(payload){
-                this.display.page = payload.page
+            enable_master_fx(payload){
+                this.display.page = 1;
+
+                if (!this.tonejs.master_fxs[(payload.fx - 1)].enabled) {
+                    if (payload.fx == 1) {
+                        _.find(this.controls.btns, { id: 'tl' }).value = 'active';
+                    } else {
+                        _.find(this.controls.btns, { id: 'bl' }).value = 'active';
+                    }
+
+                    this.tonejs.master_fxs[(payload.fx - 1)].enabled = true;
+
+                    this.display.effects.available_routes.forEach((route) => {
+                        let current_effect = _.find(this.tonejs.effects, { effect: 'reverb', route: route });
+                        _.find(current_effect.values, { name: 'wet' }).value = 0;
+                        _.find(current_effect.values, { name: 'decay' }).value = 0.01;
+                        this.apply_effect(current_effect)
+                    })
+                } else {
+                    if (payload.fx == 1) {
+                        _.find(this.controls.btns, { id: 'tl' }).value = 'enabled';
+                    } else {
+                        _.find(this.controls.btns, { id: 'bl' }).value = 'enabled';
+                    }
+
+                    this.tonejs.master_fxs[(payload.fx - 1)].enabled = false;
+
+                    this.display.effects.available_routes.forEach((route) => {
+                        let current_effect = _.find(this.tonejs.effects, { effect: 'distortion', route: route });
+                        _.find(current_effect.values, { name: 'wet' }).value = 0;
+                        _.find(current_effect.values, { name: 'distortion' }).value = 0.01;
+                        this.apply_effect(current_effect)
+                    })
+                }
             },
             pad_click(e){
                 let current_pad_index = _.findIndex(this.controls.pads, {'ref': e.target, 'on': 'bank' + this.tonejs.bank});
@@ -1307,6 +1353,27 @@
                     if (value > this.controls.sliders[this.mousehook.hooked_to].max) value = this.controls.sliders[this.mousehook.hooked_to].max;
 
                     this.controls.sliders[this.mousehook.hooked_to].value = value;
+
+                    let current_slider_index = this.mousehook.hooked_to;
+
+                    if (this.controls.sliders[current_slider_index].id == 'slider1') {
+                        let target_value = 1 - (value.map(this.controls.sliders[this.mousehook.hooked_to].min, this.controls.sliders[this.mousehook.hooked_to].max, 0, 100) / 100)
+                        this.display.effects.available_routes.forEach((route) => {
+                            let current_effect = _.find(this.tonejs.effects, { effect: 'reverb', route: route });
+                            _.find(current_effect.values, { name: 'wet' }).value = target_value;
+                            _.find(current_effect.values, { name: 'decay' }).value = 10;
+                            if (this.tonejs.master_fxs[0].enabled) this.apply_effect(current_effect);
+                        })
+                    }
+                    if (this.controls.sliders[current_slider_index].id == 'slider2') {
+                        let target_value = 1 - (value.map(this.controls.sliders[this.mousehook.hooked_to].min, this.controls.sliders[this.mousehook.hooked_to].max, 0, 100) / 100)
+                        this.display.effects.available_routes.forEach((route) => {
+                            let current_effect = _.find(this.tonejs.effects, { effect: 'distortion', route: route });
+                            _.find(current_effect.values, { name: 'wet' }).value = target_value;
+                            _.find(current_effect.values, { name: 'distortion' }).value = 1;
+                            if (this.tonejs.master_fxs[1].enabled) this.apply_effect(current_effect);
+                        })
+                    }
                 }
             }
         },

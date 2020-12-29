@@ -1,6 +1,6 @@
 {
   "name": "magenta-machine",
-  "version": "2.0.0-beta1",
+  "version": "2.0.0-beta2",
   "main": "index.js",
   "repository": "git@github.com:mgkprod/magenta-machine.git",
   "author": "Simon MGK <contact@mgkprod.fr>",

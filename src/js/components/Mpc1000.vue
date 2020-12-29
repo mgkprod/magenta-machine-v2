@@ -1321,6 +1321,23 @@
                         this.tonejs.destination_volume = value.map(this.controls.knobs[this.mousehook.hooked_to].min, this.controls.knobs[this.mousehook.hooked_to].max, -50, 10)
                         Tone.Destination.set({ volume: this.tonejs.destination_volume })
                     }
+                    if (this.controls.knobs[current_knob_index].id == 'knob2') {
+                        if (this.display.page == 2) {
+                            if (this.display.effects.item_selected >= 2) {
+                                let current_effect = _.find(this.tonejs.effects, { effect: this.display.effects.available_effects[this.display.effects.effect_item_selected], route: this.display.effects.available_routes[this.display.effects.route_item_selected] });
+                                this.display.effects.item_selected = (this.display.effects.item_selected).clamp(0, 1 + _.size(current_effect.values));
+
+                                // Apply value change
+                                current_effect.values[this.display.effects.item_selected - 2].value = (value.clamp(
+                                    current_effect.values[this.display.effects.item_selected - 2].min * 100,
+                                    current_effect.values[this.display.effects.item_selected - 2].max * 100
+                                ) / 100)
+
+                                // Apply effect
+                                this.apply_effect(current_effect)
+                            }
+                        }
+                    }
                 } else if (this.mousehook.hooked_to_type == 'slider') {
                     // Knob rotation
                     let distance = (this.mousehook.current_pos.y - this.mousehook.init_pos.y);

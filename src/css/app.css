@@ -1,70 +1,72 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-html, body, #app {
-    height: 100%;
-    width: 100%;
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
 }
 
 @font-face {
-    font-family: 'Eurostile Extended Bold';
-    font-style: normal;
-    font-weight: 800;
-    src: url('/fonts/EurostileExt-Bla.woff2') format('woff2'),
-         url('/fonts/EurostileExt-Bla.otf') format('truetype');
+  font-family: "Eurostile Extended Bold";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/EurostileExt-Bla.woff2") format("woff2"),
+    url("/fonts/EurostileExt-Bla.otf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Digital-7 Mono';
-    font-style: normal;
-    font-weight: normal;
-    src: url('/fonts/Digital7.woff2') format('woff2'),
-         url('/fonts/Digital7.otf') format('truetype');
+  font-family: "Digital-7 Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Digital7.woff2") format("woff2"),
+    url("/fonts/Digital7.otf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Digital-7 Mono';
-    font-style: italic;
-    font-weight: normal;
-    src: url('/fonts/Digital7-Italic.woff2') format('woff2'),
-         url('/fonts/Digital7-Italic.otf') format('truetype');
+  font-family: "Digital-7 Mono";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/Digital7-Italic.woff2") format("woff2"),
+    url("/fonts/Digital7-Italic.otf") format("truetype");
 }
 
 .font-eurostile-extended {
-    font-family: 'Eurostile Extended Bold';
+  font-family: "Eurostile Extended Bold";
 }
 
 .font-digital-7 {
-    font-family: 'Digital-7 Mono';
+  font-family: "Digital-7 Mono";
 }
 
 .text-variable-xs {
-    font-size: 1.4vw;
+  font-size: 1.4vw;
 }
 
 @media screen and (min-width: 800px) {
-    .text-variable-xs {
-        font-size: .6em;
-    }
+  .text-variable-xs {
+    font-size: 0.6em;
+  }
 }
 
 .text-variable-sm {
-    font-size: 1.6vw;
+  font-size: 1.6vw;
 }
 
 @media screen and (min-width: 800px) {
-    .text-variable-sm {
-        font-size: .8em;
-    }
+  .text-variable-sm {
+    font-size: 0.8em;
+  }
 }
 
 .text-variable-base {
-    font-size: 2vw;
+  font-size: 2vw;
 }
 
 @media screen and (min-width: 800px) {
-    .text-variable-base {
-        font-size: 1em;
-    }
+  .text-variable-base {
+    font-size: 1em;
+  }
 }

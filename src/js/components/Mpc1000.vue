@@ -2693,7 +2693,7 @@ export default {
     },
     bind_controls() {
       Tone.context.lookAhead = 0.001;
-      Tone.Transport.setLoopPoints("1m", "9m");
+      Tone.Transport.setLoopPoints("1m", "5m");
       Tone.Transport.loop = true;
       Tone.Transport.bpm.value = 103;
       Tone.Transport.timeSignature = this.tonejs.transport_signature;
@@ -2761,10 +2761,6 @@ export default {
           if (this.devtools) console.log(Tone.Transport.position);
 
           let position = Tone.Transport.position.split(":");
-
-          if (this.tonejs.transport_position == 30 && position == 31) {
-            this.triggers_just_before_mesure(time);
-          }
 
           this.tonejs.transport_position_t = position[1];
           this.tonejs.transport_position = position[0] + ":" + position[1];
@@ -3351,7 +3347,7 @@ export default {
                 this.tonejs[trigger[0]].triggerAttack(trigger[1], time);
                 if (this.devtools) console.log(time);
                 this.controls.pads[current_pad_index].value = "active";
-              }, "8:3:0"),
+              }, "4:3:0"),
             ];
           }
 

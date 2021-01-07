@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+  <head>
     <title>MAGENTA MACHINE V2</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" href="/favicon.svg">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
 
     <script>
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.querySelector('html').classList.add('dark')
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      )
+        document.querySelector('html').classList.add('dark');
     </script>
-</head>
+  </head>
 
-<body class="transition bg-white dark:bg-gray-900 transition-200">
+  <body class="transition bg-white dark:bg-gray-900 transition-200">
     <div id="app" class="w-full h-full">
-        <app />
+      <app />
     </div>
-</body>
+  </body>
 </html>

@@ -6,10 +6,7 @@
     @touchend="mouseup"
     @mouseup="mouseup"
   >
-    <div
-      class="relative w-full h-full"
-      style="max-width: 753px; max-height: 546px;"
-    >
+    <div class="relative w-full h-full" style="max-width: 753px; max-height: 546px;">
       <svg
         class="w-full h-full"
         width="753"
@@ -430,8 +427,7 @@
           :class="{
             'transition-position duration-150': !(
               this.mousehook.hooked_to_type == 'slider' &&
-              this.mousehook.hooked_to ==
-                _.findIndex(this.controls.sliders, { id: 'slider2' })
+              this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider2' })
             ),
           }"
         >
@@ -542,8 +538,7 @@
           :class="{
             'transition-position duration-150': !(
               this.mousehook.hooked_to_type == 'slider' &&
-              this.mousehook.hooked_to ==
-                _.findIndex(this.controls.sliders, { id: 'slider1' })
+              this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider1' })
             ),
           }"
         >
@@ -556,12 +551,7 @@
             fill="white"
           />
         </g>
-        <g
-          @click="btn_click"
-          @mousedown="btn_mousedown"
-          @touchstart="btn_mousedown"
-          ref="btn_br2"
-        >
+        <g @click="btn_click" @mousedown="btn_mousedown" @touchstart="btn_mousedown" ref="btn_br2">
           <path
             d="M708.152 434C699.165 434.719 689.69 435.479 680.21 436.245C679.106 436.336 677.979 436.411 676.9 436.639C674.4 437.171 673.292 438.484 674.073 440.898C675.182 444.372 674.352 447.756 674.318 451.176C674.283 454.879 674.195 458.572 674.176 462.274C674.161 464.494 674.357 466.718 674.23 468.918C674.059 471.777 674.103 474.538 674.977 477.337C676.168 481.211 676.646 481.874 680.581 481.011C688.137 479.353 695.806 479.294 703.461 479.132C708.401 479.025 713.361 478.879 718.277 479.225C720.669 479.401 722.172 478.738 723.119 476.805C723.812 475.392 724.447 473.81 724.545 472.268C724.877 467.469 725.038 462.665 725.077 457.855C725.121 452.446 724.262 447.045 725.423 441.615C726.087 438.562 724.384 436.493 721.128 435.913C717.027 435.176 712.878 434.684 708.152 434Z"
             fill="#B535A1"
@@ -571,24 +561,12 @@
             fill="white"
           />
         </g>
-        <g
-          @click="btn_click"
-          @mousedown="btn_mousedown"
-          @touchstart="btn_mousedown"
-          ref="btn_br1"
-        >
+        <g @click="btn_click" @mousedown="btn_mousedown" @touchstart="btn_mousedown" ref="btn_br1">
           <path
             d="M647.649 442.601L647.522 441.124C647.239 438.235 646.56 437.469 643.68 437.168C641.122 436.885 638.535 436.641 635.967 436.612C627.453 436.534 618.945 436.465 610.446 436.562C603.655 436.625 596.87 436.928 590.089 437.144C588.942 437.187 587.648 437.382 587.492 438.738C587.219 441.114 586.511 443.41 587.541 445.958C588.688 448.773 589.469 451.856 589.674 454.88C590.133 461.519 590.133 468.188 590.314 474.836C590.397 478.011 591.168 479.011 594.449 479.411C596.767 479.695 599.125 479.617 601.468 479.695L601.463 479.943C602.45 479.918 603.445 479.93 604.422 479.871C617.124 479.076 629.816 478.255 642.523 477.514C644.197 477.422 645.559 476.806 646.15 475.402C647.087 473.173 648.283 470.797 648.283 468.489C648.293 466.328 648.19 464.182 648.059 462.022C647.658 455.558 646.911 449.104 647.649 442.601Z"
             fill="#B535A1"
           />
-          <rect
-            x="610.091"
-            y="450.051"
-            width="13.5818"
-            height="13.5818"
-            rx="2"
-            fill="white"
-          />
+          <rect x="610.091" y="450.051" width="13.5818" height="13.5818" rx="2" fill="white" />
         </g>
       </svg>
 
@@ -605,9 +583,7 @@
             @click="unlock_audiocontext"
             class="p-2 mx-1 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105"
           >
-            <span
-              class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended"
-            >
+            <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
               Power ON
             </span>
           </button>
@@ -628,11 +604,9 @@
           >
             <p class="mb-2 font-semibold">Hello !</p>
             <p>
-              On se doute que tu veux utiliser notre machine partout, mais ton
-              écran semble trop petit pour en profiter sans avoir des bugs
-              graphiques chelous (genre sur les petits éléments).<br />
-              Tu peux quand même essayer, mais le mieux reste de prendre ta
-              tablette ou ton PC pour revenir ici.
+              On se doute que tu veux utiliser notre machine partout, mais ton écran semble trop petit pour en profiter
+              sans avoir des bugs graphiques chelous (genre sur les petits éléments).<br />
+              Tu peux quand même essayer, mais le mieux reste de prendre ta tablette ou ton PC pour revenir ici.
             </p>
           </div>
 
@@ -640,9 +614,7 @@
             @click="show_size_disclaimer = false"
             class="w-full max-w-md p-2 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105"
           >
-            <span
-              class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended"
-            >
+            <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
               Essayer quand même
             </span>
           </button>
@@ -827,19 +799,14 @@
       v-show="display.on"
     >
       <div class="flex flex-row w-full h-full leading-none">
-        <div
-          class="flex flex-col w-3/4 h-full border-r border-screen-default"
-          v-if="display.page == 1"
-        >
+        <div class="flex flex-col w-3/4 h-full border-r border-screen-default" v-if="display.page == 1">
           <div
             class="flex flex-col justify-center font-bold tracking-tighter text-variable-sm h-2/3 font-eurostile-extended"
           >
             <div>MAGENTA MACHINE</div>
             <div>BOUM BAP</div>
           </div>
-          <div
-            class="flex flex-row items-center justify-center border-t h-1/3 border-screen-default"
-          >
+          <div class="flex flex-row items-center justify-center border-t h-1/3 border-screen-default">
             <div>{{ tonejs.transport_position }}</div>
             <div class="flex flex-row flex-auto h-2 mx-2 bg-screen-dim">
               <div
@@ -853,49 +820,27 @@
             </div>
           </div>
         </div>
-        <div
-          class="flex flex-col justify-center w-3/4 h-full border-r border-screen-default"
-          v-if="display.page == 2"
-        >
+        <div class="flex flex-col justify-center w-3/4 h-full border-r border-screen-default" v-if="display.page == 2">
           <div>
-            <div
-              v-if="display.effects.item_selected == 0"
-              class="inline-block w-2 h-2 bg-screen-dim"
-            ></div>
+            <div v-if="display.effects.item_selected == 0" class="inline-block w-2 h-2 bg-screen-dim"></div>
             FX:<span class="font-bold">{{
-              display.effects.available_effects[
-                display.effects.effect_item_selected
-              ]
+              display.effects.available_effects[display.effects.effect_item_selected]
             }}</span>
           </div>
           <div>
-            <div
-              v-if="display.effects.item_selected == 1"
-              class="inline-block w-2 h-2 bg-screen-dim"
-            ></div>
+            <div v-if="display.effects.item_selected == 1" class="inline-block w-2 h-2 bg-screen-dim"></div>
             ROUTE TO:<span class="font-bold">{{
-              display.effects.available_routes[
-                display.effects.route_item_selected
-              ]
+              display.effects.available_routes[display.effects.route_item_selected]
             }}</span>
           </div>
           <div
             v-for="(option, i) in _.find(tonejs.effects, {
-              effect:
-                display.effects.available_effects[
-                  display.effects.effect_item_selected
-                ],
-              route:
-                display.effects.available_routes[
-                  display.effects.route_item_selected
-                ],
+              effect: display.effects.available_effects[display.effects.effect_item_selected],
+              route: display.effects.available_routes[display.effects.route_item_selected],
             }).values"
             v-bind:key="i"
           >
-            <div
-              v-if="display.effects.item_selected == i + 2"
-              class="inline-block w-2 h-2 bg-screen-dim"
-            ></div>
+            <div v-if="display.effects.item_selected == i + 2" class="inline-block w-2 h-2 bg-screen-dim"></div>
             {{ option.name }}:
             <template v-if="option.type == 'list'">
               {{ option.list[option.value] }}
@@ -965,9 +910,7 @@
             }"
           >
             <div class="w-1/3 mr-1">{{ slider.id }}</div>
-            <div class="w-1/3 mr-1">
-              min:{{ slider.min }} max:{{ slider.max }}
-            </div>
+            <div class="w-1/3 mr-1">min:{{ slider.min }} max:{{ slider.max }}</div>
             <div class="w-1/3 text-right">{{ slider.value }}</div>
           </div>
         </div>
@@ -977,41 +920,37 @@
 </template>
 
 <script>
-import {
-  SVG,
-  extend as SVGextend,
-  Element as SVGElement,
-} from "@svgdotjs/svg.js";
-import * as Tone from "tone";
+import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
+import * as Tone from 'tone';
 
 const colors = {
-  white: "#fff",
+  white: '#fff',
   pad: {
-    enabled: "#53C6D7",
-    queued: "#E142C8",
-    active: "#F7EC03",
-    disabled: "#525AA5",
+    enabled: '#53C6D7',
+    queued: '#E142C8',
+    active: '#F7EC03',
+    disabled: '#525AA5',
   },
   btn: {
-    enabled: "#B535A1",
-    active: "#4AC3CA",
-    disabled: "#525AA5",
+    enabled: '#B535A1',
+    active: '#4AC3CA',
+    disabled: '#525AA5',
   },
   screen: {
-    enabled: "#3FB93C",
-    disabled: "#275426",
-    text: "#255808",
+    enabled: '#3FB93C',
+    disabled: '#275426',
+    text: '#255808',
   },
 };
 
-const freqs = ["1m", "2n", "4n", "8n", "16n", "32n", "64n"];
+const freqs = ['1m', '2n', '4n', '8n', '16n', '32n', '64n'];
 
 export default {
-  props: ["devtools"],
+  props: ['devtools'],
 
   data() {
     return {
-      audiocontext_status: "suspended",
+      audiocontext_status: 'suspended',
       show_size_disclaimer: true,
       freqs,
       display: {
@@ -1020,22 +959,8 @@ export default {
         page: 1,
         effects: {
           // available_effects: ['volume', 'reverb', 'tremolo', 'vibrato', 'feedbackdelay', 'chorus', 'distortion', 'crusher', 'stereowidener'],
-          available_effects: [
-            "volume",
-            "reverb",
-            "feedbackdelay",
-            "vibrato",
-            "distortion",
-            "crusher",
-          ],
-          available_routes: [
-            "bass",
-            "drums",
-            "kick",
-            "lead",
-            "effects",
-            "vocals",
-          ],
+          available_effects: ['volume', 'reverb', 'feedbackdelay', 'vibrato', 'distortion', 'crusher'],
+          available_routes: ['bass', 'drums', 'kick', 'lead', 'effects', 'vocals'],
           item_selected: 0,
           effect_item_selected: 0,
           route_item_selected: 0,
@@ -1059,7 +984,7 @@ export default {
       tonejs: {
         transport_signature: 4,
         transport_position_t: 0,
-        transport_position: "0:0",
+        transport_position: '0:0',
         bank: 1,
         destination_volume: 0,
         bass_sampler: undefined,
@@ -1070,1046 +995,1046 @@ export default {
         vocals_sampler: undefined,
         effects: [
           {
-            route: "bass",
-            effect: "volume",
+            route: 'bass',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "volume",
+            route: 'drums',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "volume",
+            route: 'kick',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "volume",
+            route: 'lead',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "volume",
+            route: 'effects',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "volume",
+            route: 'vocals',
+            effect: 'volume',
             values: [
               {
-                name: "volume",
-                type: "int",
+                name: 'volume',
+                type: 'int',
                 value: 0,
                 min: -50,
                 max: 5,
-                unit: "dB",
+                unit: 'dB',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "crusher",
+            route: 'bass',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "crusher",
+            route: 'drums',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "crusher",
+            route: 'kick',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "crusher",
+            route: 'lead',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "crusher",
+            route: 'effects',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "crusher",
+            route: 'vocals',
+            effect: 'crusher',
             values: [
-              { name: "bits", type: "int", value: 1, min: 1, max: 16 },
+              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 0.5,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "reverb",
+            route: 'bass',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "reverb",
+            route: 'drums',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "reverb",
+            route: 'kick',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "reverb",
+            route: 'lead',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "reverb",
+            route: 'effects',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "reverb",
+            route: 'vocals',
+            effect: 'reverb',
             values: [
               {
-                name: "decay",
-                type: "int",
+                name: 'decay',
+                type: 'int',
                 value: 5,
                 min: 1,
                 max: 20,
-                unit: "s",
+                unit: 's',
               },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "stereowidener",
+            route: 'bass',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "stereowidener",
+            route: 'drums',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "stereowidener",
+            route: 'kick',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "stereowidener",
+            route: 'lead',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "stereowidener",
+            route: 'effects',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "stereowidener",
+            route: 'vocals',
+            effect: 'stereowidener',
             values: [
-              { name: "width", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "tremolo",
+            route: 'bass',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "tremolo",
+            route: 'drums',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "tremolo",
+            route: 'kick',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "tremolo",
+            route: 'lead',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "tremolo",
+            route: 'effects',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "tremolo",
+            route: 'vocals',
+            effect: 'tremolo',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "vibrato",
+            route: 'bass',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "vibrato",
+            route: 'drums',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "vibrato",
+            route: 'kick',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "vibrato",
+            route: 'lead',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "vibrato",
+            route: 'effects',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "vibrato",
+            route: 'vocals',
+            effect: 'vibrato',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "feedbackdelay",
+            route: 'bass',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "feedbackdelay",
+            route: 'drums',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "feedbackdelay",
+            route: 'kick',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "feedbackdelay",
+            route: 'lead',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "feedbackdelay",
+            route: 'effects',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "feedbackdelay",
+            route: 'vocals',
+            effect: 'feedbackdelay',
             values: [
               {
-                name: "delay",
-                type: "list",
+                name: 'delay',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "feedback", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "chorus",
+            route: 'bass',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "chorus",
+            route: 'drums',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "chorus",
+            route: 'kick',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "chorus",
+            route: 'lead',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "chorus",
+            route: 'effects',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "chorus",
+            route: 'vocals',
+            effect: 'chorus',
             values: [
               {
-                name: "freq",
-                type: "list",
+                name: 'freq',
+                type: 'list',
                 value: 0,
                 min: 0,
                 max: freqs.length - 1,
                 list: freqs,
               },
-              { name: "delay", type: "int", value: 10, min: 2, max: 20 },
-              { name: "depth", type: "float", value: 0, min: 0, max: 1 },
+              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
+              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "bass",
-            effect: "distortion",
+            route: 'bass',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "drums",
-            effect: "distortion",
+            route: 'drums',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "kick",
-            effect: "distortion",
+            route: 'kick',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "lead",
-            effect: "distortion",
+            route: 'lead',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "effects",
-            effect: "distortion",
+            route: 'effects',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
           {
-            route: "vocals",
-            effect: "distortion",
+            route: 'vocals',
+            effect: 'distortion',
             values: [
-              { name: "distortion", type: "float", value: 0.5, min: 0, max: 1 },
+              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
               {
-                name: "wet",
-                type: "float",
+                name: 'wet',
+                type: 'float',
                 value: 1,
                 min: 0,
                 max: 1,
-                unit: "x10%",
+                unit: 'x10%',
               },
             ],
           },
@@ -2127,7 +2052,7 @@ export default {
     let audioContext = new AudioContext();
     this.audiocontext_status = audioContext.state;
 
-    if (this.audiocontext_status == "running") {
+    if (this.audiocontext_status == 'running') {
       setTimeout(this.demo_animation, 500);
     }
   },
@@ -2135,7 +2060,7 @@ export default {
   methods: {
     async unlock_audiocontext() {
       await Tone.start();
-      this.audiocontext_status = "running";
+      this.audiocontext_status = 'running';
 
       setTimeout(this.demo_animation, 500);
     },
@@ -2159,309 +2084,309 @@ export default {
       this.controls.pads = [
         {
           ref: this.$refs.pad1,
-          on: "bank1",
-          id: "pad1",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank1',
+          id: 'pad1',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad2,
-          on: "bank1",
-          id: "pad2",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank1',
+          id: 'pad2',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad3,
-          on: "bank1",
-          id: "pad3",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank1',
+          id: 'pad3',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad4,
-          on: "bank1",
-          id: "pad4",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank1',
+          id: 'pad4',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad5,
-          on: "bank1",
-          id: "pad5",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad5',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad6,
-          on: "bank1",
-          id: "pad6",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad6',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad7,
-          on: "bank1",
-          id: "pad7",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad7',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad8,
-          on: "bank1",
-          id: "pad8",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad8',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad9,
-          on: "bank1",
-          id: "pad9",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad9',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad10,
-          on: "bank1",
-          id: "pad10",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad10',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad11,
-          on: "bank1",
-          id: "pad11",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad11',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad12,
-          on: "bank1",
-          id: "pad12",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad12',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad13,
-          on: "bank1",
-          id: "pad13",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad13',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad14,
-          on: "bank1",
-          id: "pad14",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad14',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad15,
-          on: "bank1",
-          id: "pad15",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad15',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad16,
-          on: "bank1",
-          id: "pad16",
-          value: "disabled",
-          type: "hold",
+          on: 'bank1',
+          id: 'pad16',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad1,
-          on: "bank2",
-          id: "pad17",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank2',
+          id: 'pad17',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad2,
-          on: "bank2",
-          id: "pad18",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank2',
+          id: 'pad18',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad3,
-          on: "bank2",
-          id: "pad19",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank2',
+          id: 'pad19',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad4,
-          on: "bank2",
-          id: "pad20",
-          value: "disabled",
-          type: "toggle",
+          on: 'bank2',
+          id: 'pad20',
+          value: 'disabled',
+          type: 'toggle',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad5,
-          on: "bank2",
-          id: "pad21",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad21',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad6,
-          on: "bank2",
-          id: "pad22",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad22',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad7,
-          on: "bank2",
-          id: "pad23",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad23',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad8,
-          on: "bank2",
-          id: "pad24",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad24',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad9,
-          on: "bank2",
-          id: "pad25",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad25',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad10,
-          on: "bank2",
-          id: "pad26",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad26',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad11,
-          on: "bank2",
-          id: "pad27",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad27',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad12,
-          on: "bank2",
-          id: "pad28",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad28',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad13,
-          on: "bank2",
-          id: "pad29",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad29',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad14,
-          on: "bank2",
-          id: "pad30",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad30',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad15,
-          on: "bank2",
-          id: "pad31",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad31',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.pad16,
-          on: "bank2",
-          id: "pad32",
-          value: "disabled",
-          type: "hold",
+          on: 'bank2',
+          id: 'pad32',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.btn_tl,
-          on: "bank",
-          id: "pad33",
-          value: "disabled",
-          type: "hold",
+          on: 'bank',
+          id: 'pad33',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
         {
           ref: this.$refs.btn_bl,
-          on: "bank",
-          id: "pad34",
-          value: "disabled",
-          type: "hold",
+          on: 'bank',
+          id: 'pad34',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
-          text: "",
+          text: '',
         },
       ];
 
@@ -2469,82 +2394,82 @@ export default {
       this.controls.btns = [
         {
           ref: this.$refs.btn_tr1,
-          pos: "tr",
-          id: "tr1",
-          value: "disabled",
-          type: "hold",
+          pos: 'tr',
+          id: 'tr1',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_tr2,
-          pos: "tr",
-          id: "tr2",
-          value: "disabled",
-          type: "hold",
+          pos: 'tr',
+          id: 'tr2',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr1,
-          pos: "mr",
-          id: "mr1",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr1',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr2,
-          pos: "mr",
-          id: "mr2",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr2',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr3,
-          pos: "mr",
-          id: "mr3",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr3',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr4,
-          pos: "mr",
-          id: "mr4",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr4',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr5,
-          pos: "mr",
-          id: "mr5",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr5',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_mr6,
-          pos: "mr",
-          id: "mr6",
-          value: "disabled",
-          type: "hold",
+          pos: 'mr',
+          id: 'mr6',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_br1,
-          pos: "br",
-          id: "br1",
-          value: "disabled",
-          type: "hold",
+          pos: 'br',
+          id: 'br1',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
         {
           ref: this.$refs.btn_br2,
-          pos: "br",
-          id: "br2",
-          value: "disabled",
-          type: "hold",
+          pos: 'br',
+          id: 'br2',
+          value: 'disabled',
+          type: 'hold',
           pressed: false,
         },
       ];
@@ -2553,7 +2478,7 @@ export default {
       this.controls.knobs = [
         {
           ref: this.$refs.knob1,
-          id: "knob1",
+          id: 'knob1',
           value: 235,
           min: 0,
           max: 260,
@@ -2561,7 +2486,7 @@ export default {
         },
         {
           ref: this.$refs.knob2,
-          id: "knob2",
+          id: 'knob2',
           value: 0,
           min: -500,
           max: 500,
@@ -2573,7 +2498,7 @@ export default {
       this.controls.sliders = [
         {
           ref: this.$refs.slider1,
-          id: "slider1",
+          id: 'slider1',
           value: 0,
           min: 0,
           max: 70,
@@ -2581,7 +2506,7 @@ export default {
         },
         {
           ref: this.$refs.slider2,
-          id: "slider2",
+          id: 'slider2',
           value: 0,
           min: 0,
           max: 70,
@@ -2591,33 +2516,31 @@ export default {
     },
     position_screen() {
       let position = this.screen.getBoundingClientRect();
-      this.display.ref.style.top = position.top + "px";
-      this.display.ref.style.left = position.left + "px";
-      this.display.ref.style.width = position.width + "px";
-      this.display.ref.style.height = position.height + "px";
+      this.display.ref.style.top = position.top + 'px';
+      this.display.ref.style.left = position.left + 'px';
+      this.display.ref.style.width = position.width + 'px';
+      this.display.ref.style.height = position.height + 'px';
 
       this.controls.pads.forEach((pad) => {
         position = pad.ref.getBoundingClientRect();
-        this.$refs[pad.id + "_text"].style.top = position.top + "px";
-        this.$refs[pad.id + "_text"].style.left = position.left + "px";
-        this.$refs[pad.id + "_text"].style.width = position.width + "px";
-        this.$refs[pad.id + "_text"].style.height = position.height + "px";
+        this.$refs[pad.id + '_text'].style.top = position.top + 'px';
+        this.$refs[pad.id + '_text'].style.left = position.left + 'px';
+        this.$refs[pad.id + '_text'].style.width = position.width + 'px';
+        this.$refs[pad.id + '_text'].style.height = position.height + 'px';
       });
     },
     disable_controls() {
       SVG(this.screen).fill(colors.screen.disabled);
-      this.letters.forEach((el) =>
-        SVG(el).fill({ color: colors.screen.text, opacity: 0 })
-      );
+      this.letters.forEach((el) => SVG(el).fill({ color: colors.screen.text, opacity: 0 }));
     },
     demo_animation() {
       // Buttons
       this.controls.btns.forEach(({ ref }, k) => {
         setTimeout(() => {
-          this.controls.btns[k].value = "enabled";
+          this.controls.btns[k].value = 'enabled';
         }, (k + 1) * 50);
         setTimeout(() => {
-          this.controls.btns[k].value = "disabled";
+          this.controls.btns[k].value = 'disabled';
         }, 700);
       });
 
@@ -2644,11 +2567,11 @@ export default {
         // Pads
         this.controls.pads.forEach(({ ref }, k) => {
           setTimeout(() => {
-            this.controls.pads[k].value = "enabled";
+            this.controls.pads[k].value = 'enabled';
             setTimeout(() => {
-              this.controls.pads[k].value = "active";
+              this.controls.pads[k].value = 'active';
               setTimeout(() => {
-                this.controls.pads[k].value = "disabled";
+                this.controls.pads[k].value = 'disabled';
               }, k + 1 + 50);
             }, k + 1 + 50);
           }, (k + 1) * 15);
@@ -2657,11 +2580,11 @@ export default {
         setTimeout(() => {
           this.controls.pads.reverse().forEach(({ ref }, k) => {
             setTimeout(() => {
-              this.controls.pads[k].value = "enabled";
+              this.controls.pads[k].value = 'enabled';
               setTimeout(() => {
-                this.controls.pads[k].value = "active";
+                this.controls.pads[k].value = 'active';
                 setTimeout(() => {
-                  this.controls.pads[k].value = "disabled";
+                  this.controls.pads[k].value = 'disabled';
                 }, k + 1 + 50);
               }, k + 1 + 50);
             }, (k + 1) * 15);
@@ -2670,18 +2593,18 @@ export default {
 
         setTimeout(() => {
           this.controls.pads.reverse().forEach(({ ref }, k) => {
-            this.controls.pads[k].value = "enabled";
+            this.controls.pads[k].value = 'enabled';
             setTimeout(() => {
-              this.controls.pads[k].value = "disabled";
+              this.controls.pads[k].value = 'disabled';
             }, 300);
           });
         }, 1200);
 
         setTimeout(() => {
           this.controls.pads.forEach(({ ref }, k) => {
-            this.controls.pads[k].value = "active";
+            this.controls.pads[k].value = 'active';
             setTimeout(() => {
-              this.controls.pads[k].value = "disabled";
+              this.controls.pads[k].value = 'disabled';
             }, 300);
           });
         }, 1200 + 600);
@@ -2693,65 +2616,65 @@ export default {
     },
     bind_controls() {
       Tone.context.lookAhead = 0.001;
-      Tone.Transport.setLoopPoints("1m", "5m");
+      Tone.Transport.setLoopPoints('1m', '5m');
       Tone.Transport.loop = true;
       Tone.Transport.bpm.value = 103;
       Tone.Transport.timeSignature = this.tonejs.transport_signature;
 
       this.tonejs.bass_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/bass_1.mp3",
-          D4: "/audios/bass_2.mp3",
+          C4: '/audios/bass_1.mp3',
+          D4: '/audios/bass_2.mp3',
         },
       }).toDestination();
       // this.tonejs.bass_sampler.sync();
 
       this.tonejs.drums_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/drums_1.mp3",
-          D4: "/audios/drums_2.mp3",
-          E4: "/audios/drums_3.mp3",
+          C4: '/audios/drums_1.mp3',
+          D4: '/audios/drums_2.mp3',
+          E4: '/audios/drums_3.mp3',
         },
       }).toDestination();
       // this.tonejs.drums_sampler.sync();
 
       this.tonejs.effects_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/effects_1.mp3",
-          D4: "/audios/effects_2.mp3",
+          C4: '/audios/effects_1.mp3',
+          D4: '/audios/effects_2.mp3',
         },
       }).toDestination();
       // this.tonejs.effects_sampler.sync();
 
       this.tonejs.kick_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/kick_1.mp3",
-          D4: "/audios/kick_2.mp3",
+          C4: '/audios/kick_1.mp3',
+          D4: '/audios/kick_2.mp3',
         },
       }).toDestination();
       // this.tonejs.kick_sampler.sync();
 
       this.tonejs.lead_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/lead_1.mp3",
-          D4: "/audios/lead_2.mp3",
-          E4: "/audios/lead_3.mp3",
+          C4: '/audios/lead_1.mp3',
+          D4: '/audios/lead_2.mp3',
+          E4: '/audios/lead_3.mp3',
         },
       }).toDestination();
       // this.tonejs.lead_sampler.sync();
 
       this.tonejs.vocals_sampler = new Tone.Sampler({
         urls: {
-          C4: "/audios/vocals_1.mp3",
-          D4: "/audios/vocals_2.mp3",
-          E4: "/audios/vocals_3.mp3",
-          F4: "/audios/vocals_4.mp3",
-          G4: "/audios/vocals_5.mp3",
-          A5: "/audios/vocals_6.mp3",
-          B5: "/audios/vocals_7.mp3",
-          C5: "/audios/vocals_8.mp3",
-          D5: "/audios/vocals_9.mp3",
-          E5: "/audios/vocals_auto.mp3",
+          C4: '/audios/vocals_1.mp3',
+          D4: '/audios/vocals_2.mp3',
+          E4: '/audios/vocals_3.mp3',
+          F4: '/audios/vocals_4.mp3',
+          G4: '/audios/vocals_5.mp3',
+          A5: '/audios/vocals_6.mp3',
+          B5: '/audios/vocals_7.mp3',
+          C5: '/audios/vocals_8.mp3',
+          D5: '/audios/vocals_9.mp3',
+          E5: '/audios/vocals_auto.mp3',
         },
       }).toDestination();
       // this.tonejs.vocals_sampler.sync();
@@ -2760,204 +2683,204 @@ export default {
         Tone.Transport.scheduleRepeat((time) => {
           if (this.devtools) console.log(Tone.Transport.position);
 
-          let position = Tone.Transport.position.split(":");
+          let position = Tone.Transport.position.split(':');
 
           this.tonejs.transport_position_t = position[1];
-          this.tonejs.transport_position = position[0] + ":" + position[1];
-        }, "4n");
+          this.tonejs.transport_position = position[0] + ':' + position[1];
+        }, '4n');
 
         let btn;
 
         // Btns
-        btn = _.find(this.controls.btns, { id: "tr1" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'tr1' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = { fn: this.switch_bank, payload: { bank: 1 } };
 
-        btn = _.find(this.controls.btns, { id: "tr2" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'tr2' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = { fn: this.switch_bank, payload: { bank: 2 } };
 
-        btn = _.find(this.controls.btns, { id: "br2" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'br2' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.play_start;
 
-        btn = _.find(this.controls.btns, { id: "br1" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'br1' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.stop;
 
-        btn = _.find(this.controls.btns, { id: "mr1" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'mr1' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.left;
 
-        btn = _.find(this.controls.btns, { id: "mr2" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'mr2' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.up;
 
-        btn = _.find(this.controls.btns, { id: "mr3" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'mr3' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.right;
 
-        btn = _.find(this.controls.btns, { id: "mr5" });
-        btn.type = "click";
-        btn.value = "enabled";
+        btn = _.find(this.controls.btns, { id: 'mr5' });
+        btn.type = 'click';
+        btn.value = 'enabled';
         btn.trigger = this.down;
 
         let pad;
 
         // Bank 1
-        pad = _.find(this.controls.pads, { id: "pad1", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "bass_sampler:C4";
-        pad.text = "bass 1";
+        pad = _.find(this.controls.pads, { id: 'pad1', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'bass_sampler:C4';
+        pad.text = 'bass 1';
 
-        pad = _.find(this.controls.pads, { id: "pad2", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "bass_sampler:D4";
-        pad.text = "bass 2";
+        pad = _.find(this.controls.pads, { id: 'pad2', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'bass_sampler:D4';
+        pad.text = 'bass 2';
 
-        pad = _.find(this.controls.pads, { id: "pad5", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "drums_sampler:C4";
-        pad.text = "drums 1";
+        pad = _.find(this.controls.pads, { id: 'pad5', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'drums_sampler:C4';
+        pad.text = 'drums 1';
 
-        pad = _.find(this.controls.pads, { id: "pad6", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "drums_sampler:D4";
-        pad.text = "drums 2";
+        pad = _.find(this.controls.pads, { id: 'pad6', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'drums_sampler:D4';
+        pad.text = 'drums 2';
 
-        pad = _.find(this.controls.pads, { id: "pad7", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "drums_sampler:E4";
-        pad.text = "drums 3";
+        pad = _.find(this.controls.pads, { id: 'pad7', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'drums_sampler:E4';
+        pad.text = 'drums 3';
 
-        pad = _.find(this.controls.pads, { id: "pad9", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "kick_sampler:C4";
-        pad.text = "kick 1";
+        pad = _.find(this.controls.pads, { id: 'pad9', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'kick_sampler:C4';
+        pad.text = 'kick 1';
 
-        pad = _.find(this.controls.pads, { id: "pad10", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "kick_sampler:D4";
-        pad.text = "kick 2";
+        pad = _.find(this.controls.pads, { id: 'pad10', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'kick_sampler:D4';
+        pad.text = 'kick 2';
 
-        pad = _.find(this.controls.pads, { id: "pad13", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "lead_sampler:C4";
-        pad.text = "lead 1";
+        pad = _.find(this.controls.pads, { id: 'pad13', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'lead_sampler:C4';
+        pad.text = 'lead 1';
 
-        pad = _.find(this.controls.pads, { id: "pad14", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "lead_sampler:D4";
-        pad.text = "lead 2";
+        pad = _.find(this.controls.pads, { id: 'pad14', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'lead_sampler:D4';
+        pad.text = 'lead 2';
 
-        pad = _.find(this.controls.pads, { id: "pad15", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-mesure";
-        pad.trigger = "lead_sampler:E4";
-        pad.text = "lead 3";
+        pad = _.find(this.controls.pads, { id: 'pad15', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-mesure';
+        pad.trigger = 'lead_sampler:E4';
+        pad.text = 'lead 3';
 
-        pad = _.find(this.controls.pads, { id: "pad16", on: "bank1" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-just-before-mesure";
-        pad.trigger = "effects_sampler:D4";
-        pad.text = "lead 4";
+        pad = _.find(this.controls.pads, { id: 'pad16', on: 'bank1' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-just-before-mesure';
+        pad.trigger = 'effects_sampler:D4';
+        pad.text = 'lead 4';
 
-        pad = _.find(this.controls.pads, { id: "pad17", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:D5";
-        pad.text = "boum bap";
+        pad = _.find(this.controls.pads, { id: 'pad17', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:D5';
+        pad.text = 'boum bap';
 
-        pad = _.find(this.controls.pads, { id: "pad18", on: "bank2" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-just-before-mesure";
-        pad.trigger = "vocals_sampler:E5";
-        pad.text = "boum bap boucle";
+        pad = _.find(this.controls.pads, { id: 'pad18', on: 'bank2' });
+        pad.type = 'toggle';
+        pad.value = 'enabled';
+        pad.mode = 'quantized-just-before-mesure';
+        pad.trigger = 'vocals_sampler:E5';
+        pad.text = 'boum bap boucle';
 
-        pad = _.find(this.controls.pads, { id: "pad21", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:C4";
-        pad.text = "années 1";
+        pad = _.find(this.controls.pads, { id: 'pad21', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:C4';
+        pad.text = 'années 1';
 
-        pad = _.find(this.controls.pads, { id: "pad22", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:D4";
-        pad.text = "années 2";
+        pad = _.find(this.controls.pads, { id: 'pad22', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:D4';
+        pad.text = 'années 2';
 
-        pad = _.find(this.controls.pads, { id: "pad23", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:E4";
-        pad.text = "années 3";
+        pad = _.find(this.controls.pads, { id: 'pad23', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:E4';
+        pad.text = 'années 3';
 
-        pad = _.find(this.controls.pads, { id: "pad25", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:F4";
-        pad.text = "jeune";
+        pad = _.find(this.controls.pads, { id: 'pad25', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:F4';
+        pad.text = 'jeune';
 
-        pad = _.find(this.controls.pads, { id: "pad26", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:G4";
-        pad.text = "dépassé";
+        pad = _.find(this.controls.pads, { id: 'pad26', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:G4';
+        pad.text = 'dépassé';
 
-        pad = _.find(this.controls.pads, { id: "pad27", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:A5";
+        pad = _.find(this.controls.pads, { id: 'pad27', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:A5';
         pad.text = "pas d'amour";
 
-        pad = _.find(this.controls.pads, { id: "pad28", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:B5";
-        pad.text = "pas le permis";
+        pad = _.find(this.controls.pads, { id: 'pad28', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:B5';
+        pad.text = 'pas le permis';
 
-        pad = _.find(this.controls.pads, { id: "pad29", on: "bank2" });
-        pad.type = "hold";
-        pad.value = "enabled";
-        pad.mode = "hold";
-        pad.trigger = "vocals_sampler:C5";
-        pad.text = "souvenir";
+        pad = _.find(this.controls.pads, { id: 'pad29', on: 'bank2' });
+        pad.type = 'hold';
+        pad.value = 'enabled';
+        pad.mode = 'hold';
+        pad.trigger = 'vocals_sampler:C5';
+        pad.text = 'souvenir';
 
         setTimeout(() => {
           this.switch_bank({ bank: 2 });
@@ -2992,63 +2915,53 @@ export default {
       this.display.page = 1;
 
       this.stop();
-      Tone.Transport.position = "0:2:0";
+      Tone.Transport.position = '0:2:0';
       Tone.Transport.start();
     },
     left() {
       this.display.page = 2;
 
       if (this.display.effects.item_selected == 0) {
-        this.display.effects.effect_item_selected = (
-          this.display.effects.effect_item_selected - 1
-        ).clamp(0, this.display.effects.available_effects.length - 1);
+        this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected - 1).clamp(
+          0,
+          this.display.effects.available_effects.length - 1,
+        );
       }
 
       if (this.display.effects.item_selected == 1) {
-        this.display.effects.route_item_selected = (
-          this.display.effects.route_item_selected - 1
-        ).clamp(0, this.display.effects.available_routes.length - 1);
+        this.display.effects.route_item_selected = (this.display.effects.route_item_selected - 1).clamp(
+          0,
+          this.display.effects.available_routes.length - 1,
+        );
       }
 
       let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[
-          this.display.effects.effect_item_selected
-        ],
-        route: this.display.effects.available_routes[
-          this.display.effects.route_item_selected
-        ],
+        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
       });
       this.display.effects.item_selected = this.display.effects.item_selected.clamp(
         0,
-        1 + _.size(current_effect.values)
+        1 + _.size(current_effect.values),
       );
 
       if (this.display.effects.item_selected >= 2) {
         // Apply value change
-        let new_value =
-          current_effect.values[this.display.effects.item_selected - 2].value;
+        let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
 
         if (
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-            "int" ||
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-            "list"
+          current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
+          current_effect.values[this.display.effects.item_selected - 2].type == 'list'
         ) {
           new_value--;
         }
 
-        if (
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-          "float"
-        ) {
+        if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
           new_value = (new_value * 10 - 1) / 10;
         }
 
-        current_effect.values[
-          this.display.effects.item_selected - 2
-        ].value = new_value.clamp(
+        current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
           current_effect.values[this.display.effects.item_selected - 2].min,
-          current_effect.values[this.display.effects.item_selected - 2].max
+          current_effect.values[this.display.effects.item_selected - 2].max,
         );
 
         // Apply effect
@@ -3059,56 +2972,46 @@ export default {
       this.display.page = 2;
 
       if (this.display.effects.item_selected == 0) {
-        this.display.effects.effect_item_selected = (
-          this.display.effects.effect_item_selected + 1
-        ).clamp(0, this.display.effects.available_effects.length - 1);
+        this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected + 1).clamp(
+          0,
+          this.display.effects.available_effects.length - 1,
+        );
       }
 
       if (this.display.effects.item_selected == 1) {
-        this.display.effects.route_item_selected = (
-          this.display.effects.route_item_selected + 1
-        ).clamp(0, this.display.effects.available_routes.length - 1);
+        this.display.effects.route_item_selected = (this.display.effects.route_item_selected + 1).clamp(
+          0,
+          this.display.effects.available_routes.length - 1,
+        );
       }
 
       let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[
-          this.display.effects.effect_item_selected
-        ],
-        route: this.display.effects.available_routes[
-          this.display.effects.route_item_selected
-        ],
+        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
       });
       this.display.effects.item_selected = this.display.effects.item_selected.clamp(
         0,
-        1 + _.size(current_effect.values)
+        1 + _.size(current_effect.values),
       );
 
       if (this.display.effects.item_selected >= 2) {
         // Apply value change
-        let new_value =
-          current_effect.values[this.display.effects.item_selected - 2].value;
+        let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
 
         if (
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-            "int" ||
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-            "list"
+          current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
+          current_effect.values[this.display.effects.item_selected - 2].type == 'list'
         ) {
           new_value++;
         }
 
-        if (
-          current_effect.values[this.display.effects.item_selected - 2].type ==
-          "float"
-        ) {
+        if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
           new_value = (new_value * 10 + 1) / 10;
         }
 
-        current_effect.values[
-          this.display.effects.item_selected - 2
-        ].value = new_value.clamp(
+        current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
           current_effect.values[this.display.effects.item_selected - 2].min,
-          current_effect.values[this.display.effects.item_selected - 2].max
+          current_effect.values[this.display.effects.item_selected - 2].max,
         );
 
         // Apply effect
@@ -3119,149 +3022,139 @@ export default {
       this.display.page = 2;
 
       let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[
-          this.display.effects.effect_item_selected
-        ],
-        route: this.display.effects.available_routes[
-          this.display.effects.route_item_selected
-        ],
+        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
       });
-      this.display.effects.item_selected = (
-        this.display.effects.item_selected - 1
-      ).clamp(0, 1 + _.size(current_effect.values));
+      this.display.effects.item_selected = (this.display.effects.item_selected - 1).clamp(
+        0,
+        1 + _.size(current_effect.values),
+      );
     },
     down() {
       this.display.page = 2;
 
       let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[
-          this.display.effects.effect_item_selected
-        ],
-        route: this.display.effects.available_routes[
-          this.display.effects.route_item_selected
-        ],
+        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
       });
-      this.display.effects.item_selected = (
-        this.display.effects.item_selected + 1
-      ).clamp(0, 1 + _.size(current_effect.values));
+      this.display.effects.item_selected = (this.display.effects.item_selected + 1).clamp(
+        0,
+        1 + _.size(current_effect.values),
+      );
     },
     apply_effect(current_effect) {
-      let target = this.tonejs[current_effect.route + "_sampler"];
+      let target = this.tonejs[current_effect.route + '_sampler'];
 
-      if (current_effect.effect == "volume") {
-        target.volume.value = _.find(current_effect.values, [
-          "name",
-          "volume",
-        ]).value;
+      if (current_effect.effect == 'volume') {
+        target.volume.value = _.find(current_effect.values, ['name', 'volume']).value;
       }
 
-      if (current_effect.effect == "crusher") {
+      if (current_effect.effect == 'crusher') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.BitCrusher().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          bits: _.find(current_effect.values, ["name", "bits"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          bits: _.find(current_effect.values, ['name', 'bits']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "reverb") {
+      if (current_effect.effect == 'reverb') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.Reverb().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          decay: _.find(current_effect.values, ["name", "decay"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          decay: _.find(current_effect.values, ['name', 'decay']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "stereowidener") {
+      if (current_effect.effect == 'stereowidener') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.StereoWidener().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          width: _.find(current_effect.values, ["name", "width"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          width: _.find(current_effect.values, ['name', 'width']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "tremolo") {
+      if (current_effect.effect == 'tremolo') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.Tremolo().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          frequency: _.find(current_effect.values, ["name", "freq"]).list[
-            _.find(current_effect.values, ["name", "freq"]).value
+          frequency: _.find(current_effect.values, ['name', 'freq']).list[
+            _.find(current_effect.values, ['name', 'freq']).value
           ],
-          depth: _.find(current_effect.values, ["name", "depth"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          depth: _.find(current_effect.values, ['name', 'depth']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "vibrato") {
+      if (current_effect.effect == 'vibrato') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.Vibrato().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          frequency: _.find(current_effect.values, ["name", "freq"]).list[
-            _.find(current_effect.values, ["name", "freq"]).value
+          frequency: _.find(current_effect.values, ['name', 'freq']).list[
+            _.find(current_effect.values, ['name', 'freq']).value
           ],
-          depth: _.find(current_effect.values, ["name", "depth"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          depth: _.find(current_effect.values, ['name', 'depth']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "feedbackdelay") {
+      if (current_effect.effect == 'feedbackdelay') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.FeedbackDelay().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          delay: _.find(current_effect.values, ["name", "delay"]).list[
-            _.find(current_effect.values, ["name", "delay"]).value
+          delay: _.find(current_effect.values, ['name', 'delay']).list[
+            _.find(current_effect.values, ['name', 'delay']).value
           ],
-          feedback: _.find(current_effect.values, ["name", "feedback"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          feedback: _.find(current_effect.values, ['name', 'feedback']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "chorus") {
+      if (current_effect.effect == 'chorus') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.Chorus().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          frequency: _.find(current_effect.values, ["name", "freq"]).list[
-            _.find(current_effect.values, ["name", "freq"]).value
+          frequency: _.find(current_effect.values, ['name', 'freq']).list[
+            _.find(current_effect.values, ['name', 'freq']).value
           ],
-          delayTime: _.find(current_effect.values, ["name", "delay"]).value,
-          depth: _.find(current_effect.values, ["name", "depth"]).value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          delayTime: _.find(current_effect.values, ['name', 'delay']).value,
+          depth: _.find(current_effect.values, ['name', 'depth']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
 
-      if (current_effect.effect == "distortion") {
+      if (current_effect.effect == 'distortion') {
         if (!current_effect.handler) {
           current_effect.handler = new Tone.Distortion().toDestination();
           target.connect(current_effect.handler);
         }
 
         current_effect.handler.set({
-          distortion: _.find(current_effect.values, ["name", "distortion"])
-            .value,
-          wet: _.find(current_effect.values, ["name", "wet"]).value,
+          distortion: _.find(current_effect.values, ['name', 'distortion']).value,
+          wet: _.find(current_effect.values, ['name', 'wet']).value,
         });
       }
     },
@@ -3270,25 +3163,25 @@ export default {
 
       this.tonejs.bank = payload.bank;
 
-      _.find(this.controls.btns, { id: "tr1" }).value = "enabled";
-      _.find(this.controls.btns, { id: "tr2" }).value = "enabled";
-      _.find(this.controls.btns, { id: "tr" + payload.bank }).value = "active";
+      _.find(this.controls.btns, { id: 'tr1' }).value = 'enabled';
+      _.find(this.controls.btns, { id: 'tr2' }).value = 'enabled';
+      _.find(this.controls.btns, { id: 'tr' + payload.bank }).value = 'active';
 
       this.controls.pads.forEach((pad) => {
-        this.$refs[pad.id + "_text"].innerText = "";
+        this.$refs[pad.id + '_text'].innerText = '';
       });
 
       this.controls.pads.forEach((pad) => {
-        this.$refs[pad.id + "_text"].innerText = "";
+        this.$refs[pad.id + '_text'].innerText = '';
       });
 
       let pads = _.filter(this.controls.pads, {
-        on: "bank" + this.tonejs.bank,
+        on: 'bank' + this.tonejs.bank,
       });
       _.each(pads, (pad) => {
         SVG(pad.ref).fill(colors.pad[pad.value]);
 
-        this.$refs[pad.id + "_text"].innerText = pad.text;
+        this.$refs[pad.id + '_text'].innerText = pad.text;
       });
 
       this.position_screen();
@@ -3296,137 +3189,103 @@ export default {
     pad_click(e) {
       let current_pad_index = _.findIndex(this.controls.pads, {
         ref: e.target,
-        on: "bank" + this.tonejs.bank,
+        on: 'bank' + this.tonejs.bank,
       });
 
       if (current_pad_index == -1) {
         // exceptions for tl and bl
         current_pad_index = _.findIndex(this.controls.pads, {
           ref: e.target,
-          on: "bank",
+          on: 'bank',
         });
       }
 
       if (
-        this.controls.pads[current_pad_index].type != "toggle" ||
-        this.controls.pads[current_pad_index].value == "disabled"
+        this.controls.pads[current_pad_index].type != 'toggle' ||
+        this.controls.pads[current_pad_index].value == 'disabled'
       )
         return;
 
       if (
-        this.controls.pads[current_pad_index].mode == "quantized-mesure" ||
-        this.controls.pads[current_pad_index].mode ==
-          "quantized-just-before-mesure"
+        this.controls.pads[current_pad_index].mode == 'quantized-mesure' ||
+        this.controls.pads[current_pad_index].mode == 'quantized-just-before-mesure'
       ) {
-        let trigger = this.controls.pads[current_pad_index].trigger.split(":");
+        let trigger = this.controls.pads[current_pad_index].trigger.split(':');
 
-        if (this.controls.pads[current_pad_index].value == "enabled") {
-          this.controls.pads[current_pad_index].value = "queued";
+        if (this.controls.pads[current_pad_index].value == 'enabled') {
+          this.controls.pads[current_pad_index].value = 'queued';
           // Add the note
-          if (
-            this.controls.pads[current_pad_index].mode == "quantized-mesure"
-          ) {
-            this.controls.pads[
-              current_pad_index
-            ].tone_event_id = Tone.Transport.schedule((time) => {
+          if (this.controls.pads[current_pad_index].mode == 'quantized-mesure') {
+            this.controls.pads[current_pad_index].tone_event_id = Tone.Transport.schedule((time) => {
               this.tonejs[trigger[0]].triggerAttack(trigger[1], time);
               if (this.devtools) console.log(time);
-              this.controls.pads[current_pad_index].value = "active";
-            }, "1:0:0");
+              this.controls.pads[current_pad_index].value = 'active';
+            }, '1:0:0');
           }
 
-          if (
-            this.controls.pads[current_pad_index].mode ==
-            "quantized-just-before-mesure"
-          ) {
+          if (this.controls.pads[current_pad_index].mode == 'quantized-just-before-mesure') {
             this.controls.pads[current_pad_index].tone_event_id = [
               Tone.Transport.schedule((time) => {
                 this.tonejs[trigger[0]].triggerAttack(trigger[1], time);
                 if (this.devtools) console.log(time);
-                this.controls.pads[current_pad_index].value = "active";
-              }, "0:3:0"),
+                this.controls.pads[current_pad_index].value = 'active';
+              }, '0:3:0'),
               Tone.Transport.schedule((time) => {
                 this.tonejs[trigger[0]].triggerAttack(trigger[1], time);
                 if (this.devtools) console.log(time);
-                this.controls.pads[current_pad_index].value = "active";
-              }, "4:3:0"),
+                this.controls.pads[current_pad_index].value = 'active';
+              }, '4:3:0'),
             ];
           }
 
           // Starts the transport if it's the first one
-          let pads = _.filter(
-            this.controls.pads,
-            (pad) => pad.value == "active"
-          );
-          let queued_pads = _.filter(
-            this.controls.pads,
-            (pad) => pad.value == "queued"
-          );
+          let pads = _.filter(this.controls.pads, (pad) => pad.value == 'active');
+          let queued_pads = _.filter(this.controls.pads, (pad) => pad.value == 'queued');
           let acts_on_self = _.find(
             this.controls.pads,
-            (pad) =>
-              pad.value == "queued" &&
-              pad.id == this.controls.pads[current_pad_index].id
+            (pad) => pad.value == 'queued' && pad.id == this.controls.pads[current_pad_index].id,
           );
-          if (pads.length == 0 && queued_pads.length == 1 && acts_on_self)
-            this.play_start();
+          if (pads.length == 0 && queued_pads.length == 1 && acts_on_self) this.play_start();
         } else {
           if (this.controls.pads[current_pad_index].tone_event_id) {
             if (
               this.controls.pads[current_pad_index].tone_event_id[0] &&
               this.controls.pads[current_pad_index].tone_event_id.length
             ) {
-              _.each(
-                this.controls.pads[current_pad_index].tone_event_id,
-                (eid) => Tone.Transport.clear(eid)
-              );
+              _.each(this.controls.pads[current_pad_index].tone_event_id, (eid) => Tone.Transport.clear(eid));
             } else {
-              Tone.Transport.clear(
-                this.controls.pads[current_pad_index].tone_event_id
-              );
+              Tone.Transport.clear(this.controls.pads[current_pad_index].tone_event_id);
             }
           }
-          this.controls.pads[current_pad_index].value = "enabled";
+          this.controls.pads[current_pad_index].value = 'enabled';
         }
       } else {
         this.controls.pads[current_pad_index].value =
-          this.controls.pads[current_pad_index].value == "enabled"
-            ? "active"
-            : "enabled";
+          this.controls.pads[current_pad_index].value == 'enabled' ? 'active' : 'enabled';
       }
     },
     btn_click(e) {
-      let current_btn_index = _.findIndex(this.controls.btns, [
-        "ref",
-        e.target,
-      ]);
+      let current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target]);
       if (current_btn_index == -1) {
         // check on parent
-        current_btn_index = _.findIndex(this.controls.btns, [
-          "ref",
-          e.target.parentNode,
-        ]);
+        current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target.parentNode]);
       }
 
       if (
-        (this.controls.btns[current_btn_index].type != "toggle" &&
-          this.controls.btns[current_btn_index].type != "click") ||
-        this.controls.btns[current_btn_index].value == "disabled"
+        (this.controls.btns[current_btn_index].type != 'toggle' &&
+          this.controls.btns[current_btn_index].type != 'click') ||
+        this.controls.btns[current_btn_index].value == 'disabled'
       )
         return;
 
-      if (this.controls.btns[current_btn_index].type == "toggle") {
+      if (this.controls.btns[current_btn_index].type == 'toggle') {
         this.controls.btns[current_btn_index].value =
-          this.controls.btns[current_btn_index].value == "enabled"
-            ? "active"
-            : "enabled";
+          this.controls.btns[current_btn_index].value == 'enabled' ? 'active' : 'enabled';
       }
 
       if (this.controls.btns[current_btn_index].trigger) {
         if (this.controls.btns[current_btn_index].trigger.fn) {
-          this.controls.btns[current_btn_index].trigger.fn(
-            this.controls.btns[current_btn_index].trigger.payload
-          );
+          this.controls.btns[current_btn_index].trigger.fn(this.controls.btns[current_btn_index].trigger.payload);
         } else {
           this.controls.btns[current_btn_index].trigger();
         }
@@ -3435,55 +3294,49 @@ export default {
     pad_mousedown(e) {
       let current_pad_index = _.findIndex(this.controls.pads, {
         ref: e.target,
-        on: "bank" + this.tonejs.bank,
+        on: 'bank' + this.tonejs.bank,
       });
 
       if (current_pad_index == -1) {
         // exceptions for tl and bl
         current_pad_index = _.findIndex(this.controls.pads, {
           ref: e.target,
-          on: "bank",
+          on: 'bank',
         });
       }
 
       this.controls.pads[current_pad_index].pressed = true;
 
       if (
-        this.controls.pads[current_pad_index].type == "hold" &&
-        this.controls.pads[current_pad_index].value != "disabled"
+        this.controls.pads[current_pad_index].type == 'hold' &&
+        this.controls.pads[current_pad_index].value != 'disabled'
       ) {
-        this.controls.pads[current_pad_index].value = "active";
+        this.controls.pads[current_pad_index].value = 'active';
 
-        let trigger = this.controls.pads[current_pad_index].trigger.split(":");
+        let trigger = this.controls.pads[current_pad_index].trigger.split(':');
         this.tonejs[trigger[0]].triggerAttack(trigger[1]);
       }
 
-      this.mousehook.hooked_to_type = "pad";
+      this.mousehook.hooked_to_type = 'pad';
       this.mousehook.hooked_to = current_pad_index;
     },
     btn_mousedown(e) {
-      let current_btn_index = _.findIndex(this.controls.btns, [
-        "ref",
-        e.target,
-      ]);
+      let current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target]);
       if (current_btn_index == -1) {
         // check on parent
-        current_btn_index = _.findIndex(this.controls.btns, [
-          "ref",
-          e.target.parentNode,
-        ]);
+        current_btn_index = _.findIndex(this.controls.btns, ['ref', e.target.parentNode]);
       }
 
       this.controls.btns[current_btn_index].pressed = true;
 
       if (
-        this.controls.btns[current_btn_index].type == "hold" &&
-        this.controls.btns[current_btn_index].value != "disabled"
+        this.controls.btns[current_btn_index].type == 'hold' &&
+        this.controls.btns[current_btn_index].value != 'disabled'
       ) {
-        this.controls.btns[current_btn_index].value = "active";
+        this.controls.btns[current_btn_index].value = 'active';
       }
 
-      this.mousehook.hooked_to_type = "btn";
+      this.mousehook.hooked_to_type = 'btn';
       this.mousehook.hooked_to = current_btn_index;
     },
     knob_mousedown(e) {
@@ -3491,13 +3344,10 @@ export default {
       this.mousehook.init_pos.y = e.clientY || e.touches[0].clientY;
 
       // Find knob
-      let current_knob_index = _.findIndex(this.controls.knobs, [
-        "ref",
-        e.target.parentNode,
-      ]);
+      let current_knob_index = _.findIndex(this.controls.knobs, ['ref', e.target.parentNode]);
       this.controls.knobs[current_knob_index].hooked = true;
 
-      this.mousehook.hooked_to_type = "knob";
+      this.mousehook.hooked_to_type = 'knob';
       this.mousehook.hooked_to = current_knob_index;
       this.mousehook.init_value = this.controls.knobs[current_knob_index].value;
     },
@@ -3506,46 +3356,41 @@ export default {
       this.mousehook.init_pos.y = e.clientY || e.touches[0].clientY;
 
       // Find slider
-      let current_slider_index = _.findIndex(this.controls.sliders, [
-        "ref",
-        e.target.parentNode,
-      ]);
+      let current_slider_index = _.findIndex(this.controls.sliders, ['ref', e.target.parentNode]);
       this.controls.sliders[current_slider_index].hooked = true;
 
-      this.mousehook.hooked_to_type = "slider";
+      this.mousehook.hooked_to_type = 'slider';
       this.mousehook.hooked_to = current_slider_index;
-      this.mousehook.init_value = this.controls.sliders[
-        current_slider_index
-      ].value;
+      this.mousehook.init_value = this.controls.sliders[current_slider_index].value;
     },
     mouseup(e) {
       if (this.mousehook.hooked_to === undefined) return;
 
-      if (this.mousehook.hooked_to_type == "pad") {
+      if (this.mousehook.hooked_to_type == 'pad') {
         let current_pad_index = this.mousehook.hooked_to;
         this.controls.pads[current_pad_index].pressed = false;
 
         if (
-          this.controls.pads[current_pad_index].type == "hold" &&
-          this.controls.pads[current_pad_index].value != "disabled"
+          this.controls.pads[current_pad_index].type == 'hold' &&
+          this.controls.pads[current_pad_index].value != 'disabled'
         ) {
-          this.controls.pads[current_pad_index].value = "enabled";
+          this.controls.pads[current_pad_index].value = 'enabled';
         }
-      } else if (this.mousehook.hooked_to_type == "btn") {
+      } else if (this.mousehook.hooked_to_type == 'btn') {
         let current_btn_index = this.mousehook.hooked_to;
         this.controls.btns[current_btn_index].pressed = false;
 
         if (
-          this.controls.btns[current_btn_index].type == "hold" &&
-          this.controls.btns[current_btn_index].value != "disabled"
+          this.controls.btns[current_btn_index].type == 'hold' &&
+          this.controls.btns[current_btn_index].value != 'disabled'
         ) {
-          this.controls.btns[current_btn_index].value = "enabled";
+          this.controls.btns[current_btn_index].value = 'enabled';
         }
-      } else if (this.mousehook.hooked_to_type == "knob") {
+      } else if (this.mousehook.hooked_to_type == 'knob') {
         let current_knob_index = this.mousehook.hooked_to;
 
         this.controls.knobs[current_knob_index].hooked = false;
-      } else if (this.mousehook.hooked_to_type == "slider") {
+      } else if (this.mousehook.hooked_to_type == 'slider') {
         let current_slider_index = this.mousehook.hooked_to;
 
         this.controls.sliders[current_slider_index].hooked = false;
@@ -3561,7 +3406,7 @@ export default {
 
       e.preventDefault();
 
-      if (this.mousehook.hooked_to_type == "knob") {
+      if (this.mousehook.hooked_to_type == 'knob') {
         // Knob rotation
         let distance =
           this.mousehook.current_pos.x -
@@ -3569,45 +3414,37 @@ export default {
           (this.mousehook.current_pos.y - this.mousehook.init_pos.y);
         let value = (this.mousehook.init_value + distance).clamp(
           this.controls.knobs[this.mousehook.hooked_to].min,
-          this.controls.knobs[this.mousehook.hooked_to].max
+          this.controls.knobs[this.mousehook.hooked_to].max,
         );
         this.controls.knobs[this.mousehook.hooked_to].value = value;
 
         let current_knob_index = this.mousehook.hooked_to;
-        if (this.controls.knobs[current_knob_index].id == "knob1") {
+        if (this.controls.knobs[current_knob_index].id == 'knob1') {
           this.tonejs.destination_volume = value.map(
             this.controls.knobs[this.mousehook.hooked_to].min,
             this.controls.knobs[this.mousehook.hooked_to].max,
             -50,
-            10
+            10,
           );
           Tone.Destination.set({ volume: this.tonejs.destination_volume });
         }
-        if (this.controls.knobs[current_knob_index].id == "knob2") {
+        if (this.controls.knobs[current_knob_index].id == 'knob2') {
           if (this.display.page == 2) {
             if (this.display.effects.item_selected >= 2) {
               let current_effect = _.find(this.tonejs.effects, {
-                effect: this.display.effects.available_effects[
-                  this.display.effects.effect_item_selected
-                ],
-                route: this.display.effects.available_routes[
-                  this.display.effects.route_item_selected
-                ],
+                effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+                route: this.display.effects.available_routes[this.display.effects.route_item_selected],
               });
               this.display.effects.item_selected = this.display.effects.item_selected.clamp(
                 0,
-                1 + _.size(current_effect.values)
+                1 + _.size(current_effect.values),
               );
 
               // Apply value change
-              current_effect.values[
-                this.display.effects.item_selected - 2
-              ].value =
+              current_effect.values[this.display.effects.item_selected - 2].value =
                 value.clamp(
-                  current_effect.values[this.display.effects.item_selected - 2]
-                    .min * 100,
-                  current_effect.values[this.display.effects.item_selected - 2]
-                    .max * 100
+                  current_effect.values[this.display.effects.item_selected - 2].min * 100,
+                  current_effect.values[this.display.effects.item_selected - 2].max * 100,
                 ) / 100;
 
               // Apply effect
@@ -3615,7 +3452,7 @@ export default {
             }
           }
         }
-      } else if (this.mousehook.hooked_to_type == "slider") {
+      } else if (this.mousehook.hooked_to_type == 'slider') {
         // Knob rotation
         let distance = this.mousehook.current_pos.y - this.mousehook.init_pos.y;
         let value = this.mousehook.init_value + distance;
@@ -3630,43 +3467,41 @@ export default {
 
         let current_slider_index = this.mousehook.hooked_to;
 
-        if (this.controls.sliders[current_slider_index].id == "slider1") {
-          let inverted_value =
-            this.controls.sliders[this.mousehook.hooked_to].max - value;
+        if (this.controls.sliders[current_slider_index].id == 'slider1') {
+          let inverted_value = this.controls.sliders[this.mousehook.hooked_to].max - value;
           let target_value = inverted_value.map(
             this.controls.sliders[this.mousehook.hooked_to].min,
             this.controls.sliders[this.mousehook.hooked_to].max,
             -50,
-            5
+            5,
           );
           console.log(target_value);
 
           let current_effect = _.find(this.tonejs.effects, {
-            effect: "volume",
-            route: "effects",
+            effect: 'volume',
+            route: 'effects',
           });
           _.find(current_effect.values, {
-            name: "volume",
+            name: 'volume',
           }).value = target_value;
           this.apply_effect(current_effect);
         }
-        if (this.controls.sliders[current_slider_index].id == "slider2") {
-          let inverted_value =
-            this.controls.sliders[this.mousehook.hooked_to].max - value;
+        if (this.controls.sliders[current_slider_index].id == 'slider2') {
+          let inverted_value = this.controls.sliders[this.mousehook.hooked_to].max - value;
           let target_value = inverted_value.map(
             this.controls.sliders[this.mousehook.hooked_to].min,
             this.controls.sliders[this.mousehook.hooked_to].max,
             -50,
-            5
+            5,
           );
           console.log(target_value);
 
           let current_effect = _.find(this.tonejs.effects, {
-            effect: "volume",
-            route: "vocals",
+            effect: 'volume',
+            route: 'vocals',
           });
           _.find(current_effect.values, {
-            name: "volume",
+            name: 'volume',
           }).value = target_value;
           this.apply_effect(current_effect);
         }
@@ -3684,7 +3519,7 @@ export default {
             pressed: pad.pressed,
             on: pad.on,
           };
-        })
+        }),
       );
     },
     controls_btns_json: function() {
@@ -3695,7 +3530,7 @@ export default {
             value: btn.value,
             pressed: btn.pressed,
           };
-        })
+        }),
       );
     },
     controls_knobs_json: function() {
@@ -3705,7 +3540,7 @@ export default {
             id: knob.id,
             value: knob.value,
           };
-        })
+        }),
       );
     },
     controls_sliders_json: function() {
@@ -3715,7 +3550,7 @@ export default {
             id: slider.id,
             value: slider.value,
           };
-        })
+        }),
       );
     },
   },
@@ -3735,18 +3570,10 @@ export default {
 
           if (pad.pressed) {
             SVG(curr_pad.ref).transform({ translateX: 1, translateY: 3 });
-            this.$refs[curr_pad.id + "_text"].classList.add(
-              "transform",
-              "translate-x-px",
-              "translate-y-px"
-            );
+            this.$refs[curr_pad.id + '_text'].classList.add('transform', 'translate-x-px', 'translate-y-px');
           } else if (!pad.pressed) {
             SVG(curr_pad.ref).transform({ translateX: 0, translateY: 0 });
-            this.$refs[curr_pad.id + "_text"].classList.remove(
-              "transform",
-              "translate-x-px",
-              "translate-y-px"
-            );
+            this.$refs[curr_pad.id + '_text'].classList.remove('transform', 'translate-x-px', 'translate-y-px');
           }
         }
       });
@@ -3760,12 +3587,10 @@ export default {
       let diff = _.differenceWith(btns, old_btns, _.isEqual);
 
       _.each(diff, (btn) => {
-        let curr_btn = _.find(this.controls.btns, ["id", btn.id]);
+        let curr_btn = _.find(this.controls.btns, ['id', btn.id]);
         SVG(curr_btn.ref).fill(colors.btn[curr_btn.value]);
-        if (btn.pressed)
-          SVG(curr_btn.ref).transform({ translateX: 1, translateY: 3 });
-        if (!btn.pressed)
-          SVG(curr_btn.ref).transform({ translateX: 0, translateY: 0 });
+        if (btn.pressed) SVG(curr_btn.ref).transform({ translateX: 1, translateY: 3 });
+        if (!btn.pressed) SVG(curr_btn.ref).transform({ translateX: 0, translateY: 0 });
       });
     },
     controls_knobs_json: function(knobs_json, old_knobs_json) {
@@ -3775,7 +3600,7 @@ export default {
       let diff = _.differenceWith(knobs, old_knobs, _.isEqual);
 
       _.each(diff, (knob) => {
-        let curr_knob = _.find(this.controls.knobs, ["id", knob.id]);
+        let curr_knob = _.find(this.controls.knobs, ['id', knob.id]);
         SVG(curr_knob.ref).transform({ rotate: curr_knob.value });
       });
     },
@@ -3786,7 +3611,7 @@ export default {
       let diff = _.differenceWith(sliders, old_sliders, _.isEqual);
 
       _.each(diff, (slider) => {
-        let curr_slider = _.find(this.controls.sliders, ["id", slider.id]);
+        let curr_slider = _.find(this.controls.sliders, ['id', slider.id]);
         SVG(curr_slider.ref).transform({ translateY: curr_slider.value });
       });
     },

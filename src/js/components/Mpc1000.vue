@@ -2882,12 +2882,26 @@ export default {
         pad.trigger = "lead_sampler:E4";
         pad.text = "lead 3";
 
+        pad = _.find(this.controls.pads, { id: "pad16", on: "bank1" });
+        pad.type = "toggle";
+        pad.value = "enabled";
+        pad.mode = "quantized-just-before-mesure";
+        pad.trigger = "effects_sampler:D4";
+        pad.text = "lead 4";
+
         pad = _.find(this.controls.pads, { id: "pad17", on: "bank2" });
         pad.type = "hold";
         pad.value = "enabled";
         pad.mode = "hold";
         pad.trigger = "vocals_sampler:D5";
         pad.text = "boum bap";
+
+        pad = _.find(this.controls.pads, { id: "pad18", on: "bank2" });
+        pad.type = "toggle";
+        pad.value = "enabled";
+        pad.mode = "quantized-just-before-mesure";
+        pad.trigger = "vocals_sampler:E5";
+        pad.text = "boum bap boucle";
 
         pad = _.find(this.controls.pads, { id: "pad21", on: "bank2" });
         pad.type = "hold";
@@ -2944,18 +2958,6 @@ export default {
         pad.mode = "hold";
         pad.trigger = "vocals_sampler:C5";
         pad.text = "souvenir";
-
-        pad = _.find(this.controls.pads, { id: "pad33" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-just-before-mesure";
-        pad.trigger = "effects_sampler:D4";
-
-        pad = _.find(this.controls.pads, { id: "pad34" });
-        pad.type = "toggle";
-        pad.value = "enabled";
-        pad.mode = "quantized-just-before-mesure";
-        pad.trigger = "vocals_sampler:E5";
 
         setTimeout(() => {
           this.switch_bank({ bank: 2 });

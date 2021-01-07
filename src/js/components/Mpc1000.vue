@@ -2817,70 +2817,70 @@ export default {
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "bass_sampler:C4";
-        pad.text = "bass";
+        pad.text = "bass 1";
 
         pad = _.find(this.controls.pads, { id: "pad2", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "bass_sampler:D4";
-        pad.text = "bass";
+        pad.text = "bass 2";
 
         pad = _.find(this.controls.pads, { id: "pad5", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "drums_sampler:C4";
-        pad.text = "drum";
+        pad.text = "drums 1";
 
         pad = _.find(this.controls.pads, { id: "pad6", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "drums_sampler:D4";
-        pad.text = "drum";
+        pad.text = "drums 2";
 
         pad = _.find(this.controls.pads, { id: "pad7", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "drums_sampler:E4";
-        pad.text = "drum";
+        pad.text = "drums 3";
 
         pad = _.find(this.controls.pads, { id: "pad9", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "kick_sampler:C4";
-        pad.text = "kick";
+        pad.text = "kick 1";
 
         pad = _.find(this.controls.pads, { id: "pad10", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "kick_sampler:D4";
-        pad.text = "kick";
+        pad.text = "kick 2";
 
         pad = _.find(this.controls.pads, { id: "pad13", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "lead_sampler:C4";
-        pad.text = "lead";
+        pad.text = "lead 1";
 
         pad = _.find(this.controls.pads, { id: "pad14", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "lead_sampler:D4";
-        pad.text = "lead";
+        pad.text = "lead 2";
 
         pad = _.find(this.controls.pads, { id: "pad15", on: "bank1" });
         pad.type = "toggle";
         pad.value = "enabled";
         pad.mode = "quantized-mesure";
         pad.trigger = "lead_sampler:E4";
-        pad.text = "lead";
+        pad.text = "lead 3";
 
         pad = _.find(this.controls.pads, { id: "pad17", on: "bank2" });
         pad.type = "hold";

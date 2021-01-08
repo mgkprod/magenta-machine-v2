@@ -956,6 +956,7 @@ export default {
 
   data() {
     return {
+      preloading: true,
       audiocontext_status: 'suspended',
       show_size_disclaimer: true,
       freqs,
@@ -2059,7 +2060,10 @@ export default {
     this.audiocontext_status = audioContext.state;
 
     if (this.audiocontext_status == 'running') {
-      setTimeout(this.demo_animation, 500);
+      setTimeout(() => {
+        this.tone_init();
+        this.demo_animation();
+      }, 200);
     }
   },
 
@@ -2068,7 +2072,10 @@ export default {
       await Tone.start();
       this.audiocontext_status = 'running';
 
-      setTimeout(this.demo_animation, 500);
+      setTimeout(() => {
+        this.tone_init();
+        this.demo_animation();
+      }, 200);
     },
     register_controls() {
       // Screen
@@ -2616,11 +2623,12 @@ export default {
         }, 1200 + 600);
 
         setTimeout(() => {
-          this.bind_controls();
+          if (this.preloading) this.demo_animation();
+          else this.bind_controls();
         }, 1200 + 600 + 600);
       }, 500);
     },
-    bind_controls() {
+    tone_init() {
       Tone.context.lookAhead = 0.001;
       Tone.Transport.setLoopPoints('1m', '5m');
       Tone.Transport.loop = true;
@@ -2687,216 +2695,219 @@ export default {
       // this.tonejs.vocals_sampler.sync();
 
       Tone.loaded().then(() => {
-        Tone.Transport.scheduleRepeat((time) => {
-          if (this.devtools) console.log(Tone.Transport.position);
-
-          let position = Tone.Transport.position.split(':');
-
-          this.tonejs.transport_position_t = position[1];
-          this.tonejs.transport_position = position[0] + ':' + position[1];
-        }, '4n');
-
-        let btn;
-
-        // Btns
-        btn = _.find(this.controls.btns, { id: 'tr1' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = { fn: this.switch_bank, payload: { bank: 1 } };
-
-        btn = _.find(this.controls.btns, { id: 'tr2' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = { fn: this.switch_bank, payload: { bank: 2 } };
-
-        btn = _.find(this.controls.btns, { id: 'br2' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.play_start;
-
-        btn = _.find(this.controls.btns, { id: 'br1' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.stop;
-
-        btn = _.find(this.controls.btns, { id: 'mr1' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.left;
-
-        btn = _.find(this.controls.btns, { id: 'mr2' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.up;
-
-        btn = _.find(this.controls.btns, { id: 'mr3' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.right;
-
-        btn = _.find(this.controls.btns, { id: 'mr5' });
-        btn.type = 'click';
-        btn.value = 'enabled';
-        btn.trigger = this.down;
-
-        let pad;
-
-        // Bank 1
-        pad = _.find(this.controls.pads, { id: 'pad1', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'bass_sampler:C4';
-        pad.text = 'bass 1';
-
-        pad = _.find(this.controls.pads, { id: 'pad2', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'bass_sampler:D4';
-        pad.text = 'bass 2';
-
-        pad = _.find(this.controls.pads, { id: 'pad5', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'drums_sampler:C4';
-        pad.text = 'drums 1';
-
-        pad = _.find(this.controls.pads, { id: 'pad6', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'drums_sampler:D4';
-        pad.text = 'drums 2';
-
-        pad = _.find(this.controls.pads, { id: 'pad7', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'drums_sampler:E4';
-        pad.text = 'drums 3';
-
-        pad = _.find(this.controls.pads, { id: 'pad9', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'kick_sampler:C4';
-        pad.text = 'kick 1';
-
-        pad = _.find(this.controls.pads, { id: 'pad10', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'kick_sampler:D4';
-        pad.text = 'kick 2';
-
-        pad = _.find(this.controls.pads, { id: 'pad13', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'lead_sampler:C4';
-        pad.text = 'lead 1';
-
-        pad = _.find(this.controls.pads, { id: 'pad14', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'lead_sampler:D4';
-        pad.text = 'lead 2';
-
-        pad = _.find(this.controls.pads, { id: 'pad15', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-mesure';
-        pad.trigger = 'lead_sampler:E4';
-        pad.text = 'lead 3';
-
-        pad = _.find(this.controls.pads, { id: 'pad16', on: 'bank1' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-just-before-mesure';
-        pad.trigger = 'lead_sampler:F4';
-        pad.text = 'lead 4';
-
-        pad = _.find(this.controls.pads, { id: 'pad17', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:D5';
-        pad.text = 'boum bap';
-
-        pad = _.find(this.controls.pads, { id: 'pad18', on: 'bank2' });
-        pad.type = 'toggle';
-        pad.value = 'enabled';
-        pad.mode = 'quantized-just-before-mesure';
-        pad.trigger = 'effects_sampler:E4';
-        pad.text = 'boum bap boucle';
-
-        pad = _.find(this.controls.pads, { id: 'pad21', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:C4';
-        pad.text = 'années 1';
-
-        pad = _.find(this.controls.pads, { id: 'pad22', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:D4';
-        pad.text = 'années 2';
-
-        pad = _.find(this.controls.pads, { id: 'pad23', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:E4';
-        pad.text = 'années 3';
-
-        pad = _.find(this.controls.pads, { id: 'pad25', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:F4';
-        pad.text = 'jeune';
-
-        pad = _.find(this.controls.pads, { id: 'pad26', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:G4';
-        pad.text = 'dépassé';
-
-        pad = _.find(this.controls.pads, { id: 'pad27', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:A5';
-        pad.text = "pas d'amour";
-
-        pad = _.find(this.controls.pads, { id: 'pad28', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:B5';
-        pad.text = 'pas le permis';
-
-        pad = _.find(this.controls.pads, { id: 'pad29', on: 'bank2' });
-        pad.type = 'hold';
-        pad.value = 'enabled';
-        pad.mode = 'hold';
-        pad.trigger = 'vocals_sampler:C5';
-        pad.text = 'souvenir';
-
-        setTimeout(() => {
-          this.switch_bank({ bank: 2 });
-          setTimeout(() => {
-            this.display.on = true;
-            this.switch_bank({ bank: 1 });
-          }, 50);
-        }, 50);
+        this.preloading = false;
       });
+    },
+    bind_controls() {
+      Tone.Transport.scheduleRepeat((time) => {
+        if (this.devtools) console.log(Tone.Transport.position);
+
+        let position = Tone.Transport.position.split(':');
+
+        this.tonejs.transport_position_t = position[1];
+        this.tonejs.transport_position = position[0] + ':' + position[1];
+      }, '4n');
+
+      let btn;
+
+      // Btns
+      btn = _.find(this.controls.btns, { id: 'tr1' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = { fn: this.switch_bank, payload: { bank: 1 } };
+
+      btn = _.find(this.controls.btns, { id: 'tr2' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = { fn: this.switch_bank, payload: { bank: 2 } };
+
+      btn = _.find(this.controls.btns, { id: 'br2' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.play_start;
+
+      btn = _.find(this.controls.btns, { id: 'br1' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.stop;
+
+      btn = _.find(this.controls.btns, { id: 'mr1' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.left;
+
+      btn = _.find(this.controls.btns, { id: 'mr2' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.up;
+
+      btn = _.find(this.controls.btns, { id: 'mr3' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.right;
+
+      btn = _.find(this.controls.btns, { id: 'mr5' });
+      btn.type = 'click';
+      btn.value = 'enabled';
+      btn.trigger = this.down;
+
+      let pad;
+
+      // Bank 1
+      pad = _.find(this.controls.pads, { id: 'pad1', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'bass_sampler:C4';
+      pad.text = 'bass 1';
+
+      pad = _.find(this.controls.pads, { id: 'pad2', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'bass_sampler:D4';
+      pad.text = 'bass 2';
+
+      pad = _.find(this.controls.pads, { id: 'pad5', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'drums_sampler:C4';
+      pad.text = 'drums 1';
+
+      pad = _.find(this.controls.pads, { id: 'pad6', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'drums_sampler:D4';
+      pad.text = 'drums 2';
+
+      pad = _.find(this.controls.pads, { id: 'pad7', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'drums_sampler:E4';
+      pad.text = 'drums 3';
+
+      pad = _.find(this.controls.pads, { id: 'pad9', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'kick_sampler:C4';
+      pad.text = 'kick 1';
+
+      pad = _.find(this.controls.pads, { id: 'pad10', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'kick_sampler:D4';
+      pad.text = 'kick 2';
+
+      pad = _.find(this.controls.pads, { id: 'pad13', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'lead_sampler:C4';
+      pad.text = 'lead 1';
+
+      pad = _.find(this.controls.pads, { id: 'pad14', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'lead_sampler:D4';
+      pad.text = 'lead 2';
+
+      pad = _.find(this.controls.pads, { id: 'pad15', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-mesure';
+      pad.trigger = 'lead_sampler:E4';
+      pad.text = 'lead 3';
+
+      pad = _.find(this.controls.pads, { id: 'pad16', on: 'bank1' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-just-before-mesure';
+      pad.trigger = 'lead_sampler:F4';
+      pad.text = 'lead 4';
+
+      pad = _.find(this.controls.pads, { id: 'pad17', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:D5';
+      pad.text = 'boum bap';
+
+      pad = _.find(this.controls.pads, { id: 'pad18', on: 'bank2' });
+      pad.type = 'toggle';
+      pad.value = 'enabled';
+      pad.mode = 'quantized-just-before-mesure';
+      pad.trigger = 'effects_sampler:E4';
+      pad.text = 'boum bap boucle';
+
+      pad = _.find(this.controls.pads, { id: 'pad21', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:C4';
+      pad.text = 'années 1';
+
+      pad = _.find(this.controls.pads, { id: 'pad22', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:D4';
+      pad.text = 'années 2';
+
+      pad = _.find(this.controls.pads, { id: 'pad23', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:E4';
+      pad.text = 'années 3';
+
+      pad = _.find(this.controls.pads, { id: 'pad25', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:F4';
+      pad.text = 'jeune';
+
+      pad = _.find(this.controls.pads, { id: 'pad26', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:G4';
+      pad.text = 'dépassé';
+
+      pad = _.find(this.controls.pads, { id: 'pad27', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:A5';
+      pad.text = "pas d'amour";
+
+      pad = _.find(this.controls.pads, { id: 'pad28', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:B5';
+      pad.text = 'pas le permis';
+
+      pad = _.find(this.controls.pads, { id: 'pad29', on: 'bank2' });
+      pad.type = 'hold';
+      pad.value = 'enabled';
+      pad.mode = 'hold';
+      pad.trigger = 'vocals_sampler:C5';
+      pad.text = 'souvenir';
+
+      setTimeout(() => {
+        this.switch_bank({ bank: 2 });
+        setTimeout(() => {
+          this.display.on = true;
+          this.switch_bank({ bank: 1 });
+        }, 50);
+      }, 50);
     },
     stop() {
       this.display.page = 1;

@@ -2664,6 +2664,7 @@ export default {
           C4: '/audios/lead_1.mp3',
           D4: '/audios/lead_2.mp3',
           E4: '/audios/lead_3.mp3',
+          F4: '/audios/effects_2.mp3',
         },
       }).toDestination();
       // this.tonejs.lead_sampler.sync();
@@ -2814,7 +2815,7 @@ export default {
         pad.type = 'toggle';
         pad.value = 'enabled';
         pad.mode = 'quantized-just-before-mesure';
-        pad.trigger = 'effects_sampler:D4';
+        pad.trigger = 'lead_sampler:F4';
         pad.text = 'lead 4';
 
         pad = _.find(this.controls.pads, { id: 'pad17', on: 'bank2' });
@@ -3219,6 +3220,27 @@ export default {
 
         if (this.controls.pads[current_pad_index].value == 'enabled') {
           this.controls.pads[current_pad_index].value = 'queued';
+
+          // Disable all the other pads from the same sampler
+          let trigger_target = this.controls.pads[current_pad_index].trigger;
+          let trigger_target_sampler = trigger_target.split(':')[0];
+
+          let pads_to_disable = _.filter(
+            this.controls.pads,
+            ({ trigger }) => trigger && trigger_target != trigger && trigger.split(':')[0] == trigger_target_sampler,
+          );
+
+          _.each(pads_to_disable, function(pad) {
+            if (pad.tone_event_id) {
+              if (pad.tone_event_id[0] && pad.tone_event_id.length) {
+                _.each(pad.tone_event_id, (eid) => Tone.Transport.clear(eid));
+              } else {
+                Tone.Transport.clear(pad.tone_event_id);
+              }
+            }
+            pad.value = 'enabled';
+          });
+
           // Add the note
           if (this.controls.pads[current_pad_index].mode == 'quantized-mesure') {
             this.controls.pads[current_pad_index].tone_event_id = Tone.Transport.schedule((time) => {

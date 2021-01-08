@@ -7,7 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "@svgdotjs/svg.js": "^3.0.16",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "9",
     "cross-env": "^7.0",
     "filename-regex": "^2.0.1",

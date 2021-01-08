@@ -2647,6 +2647,7 @@ export default {
         urls: {
           C4: '/audios/effects_1.mp3',
           D4: '/audios/effects_2.mp3',
+          E4: '/audios/vocals_auto.mp3',
         },
       }).toDestination();
       // this.tonejs.effects_sampler.sync();
@@ -2680,7 +2681,6 @@ export default {
           B5: '/audios/vocals_7.mp3',
           C5: '/audios/vocals_8.mp3',
           D5: '/audios/vocals_9.mp3',
-          E5: '/audios/vocals_auto.mp3',
         },
       }).toDestination();
       // this.tonejs.vocals_sampler.sync();
@@ -2829,7 +2829,7 @@ export default {
         pad.type = 'toggle';
         pad.value = 'enabled';
         pad.mode = 'quantized-just-before-mesure';
-        pad.trigger = 'vocals_sampler:E5';
+        pad.trigger = 'effects_sampler:E4';
         pad.text = 'boum bap boucle';
 
         pad = _.find(this.controls.pads, { id: 'pad21', on: 'bank2' });
@@ -3341,6 +3341,8 @@ export default {
         this.controls.pads[current_pad_index].value = 'active';
 
         let trigger = this.controls.pads[current_pad_index].trigger.split(':');
+
+        this.tonejs[trigger[0]].releaseAll();
         this.tonejs[trigger[0]].triggerAttack(trigger[1]);
       }
 

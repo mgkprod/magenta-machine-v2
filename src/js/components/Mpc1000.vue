@@ -607,11 +607,12 @@
           <div
             class="w-full max-w-md p-4 mb-4 text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400"
           >
-            <p class="mb-2 font-semibold">Hello !</p>
+            <p class="mb-2 font-semibold">Avertissement !</p>
             <p>
-              On se doute que tu veux utiliser notre machine partout, mais ton écran semble trop petit pour en profiter
-              sans avoir des bugs graphiques chelous (genre sur les petits éléments).<br />
-              Tu peux quand même essayer, mais le mieux reste de prendre ta tablette ou ton PC pour revenir ici.
+              Il est possible que tu rencontres des bugs graphiques chelous (genre sur les petits éléments).<br />
+              La machine est optimisée pour les grands écrans comme les tablettes et les PC, et on peut pas garantir que
+              ça marche à 100% sur tous les petits écrans. <br />
+              Tu peux quand même t'en servir, mais fait pas trop gaffe si l'affichage déconne 🤣
             </p>
           </div>
 
@@ -620,7 +621,7 @@
             class="w-full max-w-md p-2 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105"
           >
             <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
-              Essayer quand même
+              Compris
             </span>
           </button>
         </div>

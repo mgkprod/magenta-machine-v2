@@ -4,13 +4,6 @@
 
     <div class="absolute inset-0 top-auto p-4 text-indigo-500 dark:text-indigo-200">
       <div class="flex flex-row items-center justify-start -mx-1">
-        <div class="mx-1">
-          <div
-            v-text="version"
-            class="p-2 mx-1 text-sm font-semibold text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200"
-          ></div>
-        </div>
-
         <div class="mx-auto"></div>
 
         <button

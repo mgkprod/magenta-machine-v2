@@ -620,6 +620,96 @@
           </button>
         </div>
       </transition>
+
+      <transition
+        leave-active-class="transition-opacity duration-150"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75"
+          v-if="show_help_modal"
+        >
+          <div
+            class="w-full max-w-md p-4 mb-4 text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400"
+          >
+            <p class="mb-2 font-semibold">Comment ça marche ?</p>
+            <p class="mb-2">Couleur des pads :<br /></p>
+            <div class="flex items-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8" viewBox="0 0 85 64" fill="none">
+                <path
+                  d="M18.0646 61.8138C20.6404 61.9884 23.2427 61.8217 25.8189 62.0192C30.1122 62.3511 34.3822 63.0547 38.672 63.2167C42.8708 63.3787 47.0854 63.1104 51.2882 62.9405C56.6929 62.7229 76.9081 62.1579 81.6208 62.0793C83.0481 62.0548 83.9417 61.5779 84.0366 60.0683C84.2382 56.9819 84.7166 53.8813 84.5426 50.8194C84.2935 46.5478 83.6135 42.2852 82.9928 38.0424C82.0874 31.8199 80.9092 25.627 80.154 19.3843C79.5096 14.0443 78.1456 8.76642 78.5567 3.31072C78.707 1.31674 77.9677 0.622578 75.9315 0.579117C74.5319 0.545143 73.1284 0.502079 71.7288 0.529732C68.7279 0.583858 65.7271 0.691715 62.7302 0.764412C60.7415 0.815376 58.7567 0.877014 56.7719 0.853703C54.7793 0.838295 52.7629 0.478764 50.8058 0.687366C44.3257 1.39693 37.8654 1.922 31.3339 1.38627C28.9538 1.19347 26.5322 1.53601 24.1291 1.53285C19.2337 1.53285 14.3347 1.52534 9.43722 1.39417C7.24411 1.33214 5.06524 0.846195 2.87213 0.792068C2.12449 0.776661 1.11748 1.31674 0.694438 1.92635C0.44417 2.28469 0.949047 3.41581 1.397 3.95589C2.13673 4.84641 2.54317 5.66897 2.52143 6.9036C2.39926 13.6864 2.34866 20.4798 2.39334 27.2673C2.40876 29.9681 2.79462 32.661 2.89662 35.3634C3.05279 39.4533 2.98004 43.5566 3.24257 47.6386C3.44183 50.7285 3.92853 53.8058 4.44409 56.8677C4.81969 59.0917 5.87138 60.7427 8.5077 60.9094C11.7015 61.1149 14.8735 61.6008 18.0646 61.8138Z"
+                  fill="#53c6d7"
+                />
+              </svg>
+              <div class="ml-2">Désactivé</div>
+            </div>
+            <div class="flex items-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8" viewBox="0 0 85 64" fill="none">
+                <path
+                  d="M18.0646 61.8138C20.6404 61.9884 23.2427 61.8217 25.8189 62.0192C30.1122 62.3511 34.3822 63.0547 38.672 63.2167C42.8708 63.3787 47.0854 63.1104 51.2882 62.9405C56.6929 62.7229 76.9081 62.1579 81.6208 62.0793C83.0481 62.0548 83.9417 61.5779 84.0366 60.0683C84.2382 56.9819 84.7166 53.8813 84.5426 50.8194C84.2935 46.5478 83.6135 42.2852 82.9928 38.0424C82.0874 31.8199 80.9092 25.627 80.154 19.3843C79.5096 14.0443 78.1456 8.76642 78.5567 3.31072C78.707 1.31674 77.9677 0.622578 75.9315 0.579117C74.5319 0.545143 73.1284 0.502079 71.7288 0.529732C68.7279 0.583858 65.7271 0.691715 62.7302 0.764412C60.7415 0.815376 58.7567 0.877014 56.7719 0.853703C54.7793 0.838295 52.7629 0.478764 50.8058 0.687366C44.3257 1.39693 37.8654 1.922 31.3339 1.38627C28.9538 1.19347 26.5322 1.53601 24.1291 1.53285C19.2337 1.53285 14.3347 1.52534 9.43722 1.39417C7.24411 1.33214 5.06524 0.846195 2.87213 0.792068C2.12449 0.776661 1.11748 1.31674 0.694438 1.92635C0.44417 2.28469 0.949047 3.41581 1.397 3.95589C2.13673 4.84641 2.54317 5.66897 2.52143 6.9036C2.39926 13.6864 2.34866 20.4798 2.39334 27.2673C2.40876 29.9681 2.79462 32.661 2.89662 35.3634C3.05279 39.4533 2.98004 43.5566 3.24257 47.6386C3.44183 50.7285 3.92853 53.8058 4.44409 56.8677C4.81969 59.0917 5.87138 60.7427 8.5077 60.9094C11.7015 61.1149 14.8735 61.6008 18.0646 61.8138Z"
+                  fill="#F7EC03"
+                />
+              </svg>
+              <div class="ml-2">En cours de lecture</div>
+            </div>
+
+            <div class="flex items-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8" viewBox="0 0 85 64" fill="none">
+                <path
+                  d="M18.0646 61.8138C20.6404 61.9884 23.2427 61.8217 25.8189 62.0192C30.1122 62.3511 34.3822 63.0547 38.672 63.2167C42.8708 63.3787 47.0854 63.1104 51.2882 62.9405C56.6929 62.7229 76.9081 62.1579 81.6208 62.0793C83.0481 62.0548 83.9417 61.5779 84.0366 60.0683C84.2382 56.9819 84.7166 53.8813 84.5426 50.8194C84.2935 46.5478 83.6135 42.2852 82.9928 38.0424C82.0874 31.8199 80.9092 25.627 80.154 19.3843C79.5096 14.0443 78.1456 8.76642 78.5567 3.31072C78.707 1.31674 77.9677 0.622578 75.9315 0.579117C74.5319 0.545143 73.1284 0.502079 71.7288 0.529732C68.7279 0.583858 65.7271 0.691715 62.7302 0.764412C60.7415 0.815376 58.7567 0.877014 56.7719 0.853703C54.7793 0.838295 52.7629 0.478764 50.8058 0.687366C44.3257 1.39693 37.8654 1.922 31.3339 1.38627C28.9538 1.19347 26.5322 1.53601 24.1291 1.53285C19.2337 1.53285 14.3347 1.52534 9.43722 1.39417C7.24411 1.33214 5.06524 0.846195 2.87213 0.792068C2.12449 0.776661 1.11748 1.31674 0.694438 1.92635C0.44417 2.28469 0.949047 3.41581 1.397 3.95589C2.13673 4.84641 2.54317 5.66897 2.52143 6.9036C2.39926 13.6864 2.34866 20.4798 2.39334 27.2673C2.40876 29.9681 2.79462 32.661 2.89662 35.3634C3.05279 39.4533 2.98004 43.5566 3.24257 47.6386C3.44183 50.7285 3.92853 53.8058 4.44409 56.8677C4.81969 59.0917 5.87138 60.7427 8.5077 60.9094C11.7015 61.1149 14.8735 61.6008 18.0646 61.8138Z"
+                  fill="#e142c8"
+                />
+              </svg>
+              <div class="ml-2">Attente prochaine boucle</div>
+            </div>
+          </div>
+
+          <button
+            @click="show_help_modal = false"
+            class="w-full max-w-md p-2 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105"
+          >
+            <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
+              OK
+            </span>
+          </button>
+        </div>
+      </transition>
+      <transition
+        leave-active-class="transition-opacity duration-150"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75"
+          v-if="show_credits_modal"
+        >
+          <div
+            class="w-full max-w-md p-4 mb-4 text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400"
+          >
+            <p class="mb-2 font-semibold">Crédits</p>
+            <p>
+              {{ version }} <br />
+              <br />
+              Loop station réalisée avec Tone.js.<br />
+              Design inspiré du AKAI MPC1000, chargé avec les boucles de Boum Bap<br />
+              <br />
+              Développé avec <span class="text-pink-500">❤️</span> par
+              <a href="https://mgk.dev" target="_blank"> Simon Rubuano </a><br />
+              Dessin du MPC-1000: <a href="https://www.instagram.com/togram.stagram" target="_blank">Margot Malgras</a>
+            </p>
+          </div>
+
+          <button
+            @click="show_credits_modal = false"
+            class="w-full max-w-md p-2 font-semibold text-indigo-500 transition transform scale-100 bg-indigo-100 rounded-lg -variable-xs-sm transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200 hover:scale-105"
+          >
+            <span class="font-bold tracking-tighter uppercase -variable-xs-sm font-eurostile-extended">
+              OK
+            </span>
+          </button>
+        </div>
+      </transition>
     </div>
 
     <div
@@ -952,7 +1042,10 @@ export default {
     return {
       preloading: true,
       audiocontext_status: 'suspended',
+      version: undefined,
       show_size_disclaimer: true,
+      show_help_modal: false,
+      show_credits_modal: false,
       freqs,
       display: {
         ref: undefined,
@@ -2045,6 +2138,8 @@ export default {
   },
 
   mounted() {
+    this.version = 'MAGENTA MACHINE v' + process.env.PACKAGE_VERSION;
+
     this.register_controls();
     this.disable_controls();
     window.onresize = this.position_screen;
@@ -2728,22 +2823,32 @@ export default {
       btn = _.find(this.controls.btns, { id: 'mr1' });
       btn.type = 'click';
       btn.value = 'enabled';
-      btn.trigger = this.left;
+      btn.trigger = this.help_modal;
 
       btn = _.find(this.controls.btns, { id: 'mr2' });
       btn.type = 'click';
       btn.value = 'enabled';
-      btn.trigger = this.up;
+      btn.trigger = this.credits_modal;
 
-      btn = _.find(this.controls.btns, { id: 'mr3' });
-      btn.type = 'click';
-      btn.value = 'enabled';
-      btn.trigger = this.right;
+      // btn = _.find(this.controls.btns, { id: 'mr1' });
+      // btn.type = 'click';
+      // btn.value = 'enabled';
+      // btn.trigger = this.left;
 
-      btn = _.find(this.controls.btns, { id: 'mr5' });
-      btn.type = 'click';
-      btn.value = 'enabled';
-      btn.trigger = this.down;
+      // btn = _.find(this.controls.btns, { id: 'mr2' });
+      // btn.type = 'click';
+      // btn.value = 'enabled';
+      // btn.trigger = this.up;
+
+      // btn = _.find(this.controls.btns, { id: 'mr3' });
+      // btn.type = 'click';
+      // btn.value = 'enabled';
+      // btn.trigger = this.right;
+
+      // btn = _.find(this.controls.btns, { id: 'mr5' });
+      // btn.type = 'click';
+      // btn.value = 'enabled';
+      // btn.trigger = this.down;
 
       let pad;
 
@@ -2929,6 +3034,14 @@ export default {
       this.stop();
       Tone.Transport.position = '0:2:0';
       Tone.Transport.start();
+    },
+    help_modal() {
+      console.log('help_modal');
+      this.show_help_modal = true;
+    },
+    credits_modal() {
+      console.log('credits_modal');
+      this.show_credits_modal = true;
     },
     left() {
       this.display.page = 2;

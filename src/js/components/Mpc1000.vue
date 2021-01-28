@@ -526,7 +526,7 @@
           :class="{
             'transition-position duration-150': !(
               this.mousehook.hooked_to_type == 'slider' &&
-              this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider2' })
+              this.mousehook.hooked_to == _.findIndex(this.controls.sliders, { id: 'slider1' })
             ),
           }"
         >
@@ -910,7 +910,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col justify-center w-3/4 h-full border-r border-screen-default" v-if="display.page == 2">
+        <!-- <div class="flex flex-col justify-center w-3/4 h-full border-r border-screen-default" v-if="display.page == 2">
           <div>
             <div v-if="display.effects.item_selected == 0" class="inline-block w-2 h-2 bg-screen-dim"></div>
             FX:<span class="font-bold">{{
@@ -942,7 +942,7 @@
             <span v-if="option.unit">{{ option.unit }}</span>
           </div>
           <div class="mb-auto"></div>
-        </div>
+        </div> -->
         <div class="w-1/4 font-digital-7">
           <div class="pl-2 font-bold">POS:{{ tonejs.transport_position }}</div>
           <div class="pl-2">BPM:103</div>
@@ -1050,15 +1050,6 @@ export default {
       display: {
         ref: undefined,
         on: false,
-        page: 1,
-        effects: {
-          // available_effects: ['volume', 'reverb', 'tremolo', 'vibrato', 'feedbackdelay', 'chorus', 'distortion', 'crusher', 'stereowidener'],
-          available_effects: ['volume', 'reverb', 'feedbackdelay', 'vibrato', 'distortion', 'crusher'],
-          available_routes: ['bass', 'drums', 'kick', 'lead', 'effects', 'vocals'],
-          item_selected: 0,
-          effect_item_selected: 0,
-          route_item_selected: 0,
-        },
       },
       screen: undefined,
       letters: [],
@@ -1087,1056 +1078,19 @@ export default {
         lead_sampler: undefined,
         effects_sampler: undefined,
         vocals_sampler: undefined,
-        effects: [
-          {
-            route: 'bass',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
+        effects: {
+          filter_drums: {
+            enabled: false,
+            handler: undefined,
           },
-          {
-            route: 'drums',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
+          reverb_vocals: {
+            enabled: false,
+            handler: undefined,
           },
-          {
-            route: 'kick',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'volume',
-            values: [
-              {
-                name: 'volume',
-                type: 'int',
-                value: 0,
-                min: -50,
-                max: 5,
-                unit: 'dB',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'crusher',
-            values: [
-              { name: 'bits', type: 'int', value: 1, min: 1, max: 16 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 0.5,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'reverb',
-            values: [
-              {
-                name: 'decay',
-                type: 'int',
-                value: 5,
-                min: 1,
-                max: 20,
-                unit: 's',
-              },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'stereowidener',
-            values: [
-              { name: 'width', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'tremolo',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'vibrato',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'feedbackdelay',
-            values: [
-              {
-                name: 'delay',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'feedback', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'chorus',
-            values: [
-              {
-                name: 'freq',
-                type: 'list',
-                value: 0,
-                min: 0,
-                max: freqs.length - 1,
-                list: freqs,
-              },
-              { name: 'delay', type: 'int', value: 10, min: 2, max: 20 },
-              { name: 'depth', type: 'float', value: 0, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'bass',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'drums',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'kick',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'lead',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'effects',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-          {
-            route: 'vocals',
-            effect: 'distortion',
-            values: [
-              { name: 'distortion', type: 'float', value: 0.5, min: 0, max: 1 },
-              {
-                name: 'wet',
-                type: 'float',
-                value: 1,
-                min: 0,
-                max: 1,
-                unit: 'x10%',
-              },
-            ],
-          },
-        ],
+        },
       },
     };
   },
-
   mounted() {
     this.version = 'MAGENTA MACHINE v' + process.env.PACKAGE_VERSION;
 
@@ -2472,24 +1426,6 @@ export default {
           pressed: false,
           text: '',
         },
-        {
-          ref: this.$refs.btn_tl,
-          on: 'bank',
-          id: 'pad33',
-          value: 'disabled',
-          type: 'hold',
-          pressed: false,
-          text: '',
-        },
-        {
-          ref: this.$refs.btn_bl,
-          on: 'bank',
-          id: 'pad34',
-          value: 'disabled',
-          type: 'hold',
-          pressed: false,
-          text: '',
-        },
       ];
 
       // Buttons
@@ -2570,6 +1506,22 @@ export default {
           ref: this.$refs.btn_br2,
           pos: 'br',
           id: 'br2',
+          value: 'disabled',
+          type: 'hold',
+          pressed: false,
+        },
+        {
+          ref: this.$refs.btn_tl,
+          pos: 'tl',
+          id: 'tl',
+          value: 'disabled',
+          type: 'hold',
+          pressed: false,
+        },
+        {
+          ref: this.$refs.btn_bl,
+          pos: 'bl',
+          id: 'bl',
           value: 'disabled',
           type: 'hold',
           pressed: false,
@@ -2783,6 +1735,19 @@ export default {
       }).toDestination();
       // this.tonejs.vocals_sampler.sync();
 
+      this.tonejs.effects.filter_drums.handler = new Tone.Filter(8000, 'highpass').toDestination();
+      this.tonejs.drums_sampler.connect(this.tonejs.effects.filter_drums.handler);
+      this.tonejs.effects.filter_drums.handler.set({
+        wet: 0,
+      });
+
+      this.tonejs.effects.reverb_vocals.handler = new Tone.Reverb().toDestination();
+      this.tonejs.vocals_sampler.connect(this.tonejs.effects.reverb_vocals.handler);
+      this.tonejs.effects.reverb_vocals.handler.set({
+        decay: 10,
+        wet: 0,
+      });
+
       Tone.loaded().then(() => {
         this.preloading = false;
       });
@@ -2830,25 +1795,15 @@ export default {
       btn.value = 'enabled';
       btn.trigger = this.credits_modal;
 
-      // btn = _.find(this.controls.btns, { id: 'mr1' });
-      // btn.type = 'click';
-      // btn.value = 'enabled';
-      // btn.trigger = this.left;
+      btn = _.find(this.controls.btns, { id: 'tl' });
+      btn.type = 'toggle';
+      btn.value = 'enabled';
+      btn.trigger = this.enable_filter;
 
-      // btn = _.find(this.controls.btns, { id: 'mr2' });
-      // btn.type = 'click';
-      // btn.value = 'enabled';
-      // btn.trigger = this.up;
-
-      // btn = _.find(this.controls.btns, { id: 'mr3' });
-      // btn.type = 'click';
-      // btn.value = 'enabled';
-      // btn.trigger = this.right;
-
-      // btn = _.find(this.controls.btns, { id: 'mr5' });
-      // btn.type = 'click';
-      // btn.value = 'enabled';
-      // btn.trigger = this.down;
+      btn = _.find(this.controls.btns, { id: 'bl' });
+      btn.type = 'toggle';
+      btn.value = 'enabled';
+      btn.trigger = this.enable_reverb;
 
       let pad;
 
@@ -3043,246 +1998,272 @@ export default {
       console.log('credits_modal');
       this.show_credits_modal = true;
     },
-    left() {
-      this.display.page = 2;
-
-      if (this.display.effects.item_selected == 0) {
-        this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected - 1).clamp(
-          0,
-          this.display.effects.available_effects.length - 1,
-        );
-      }
-
-      if (this.display.effects.item_selected == 1) {
-        this.display.effects.route_item_selected = (this.display.effects.route_item_selected - 1).clamp(
-          0,
-          this.display.effects.available_routes.length - 1,
-        );
-      }
-
-      let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
-        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
-      });
-      this.display.effects.item_selected = this.display.effects.item_selected.clamp(
-        0,
-        1 + _.size(current_effect.values),
-      );
-
-      if (this.display.effects.item_selected >= 2) {
-        // Apply value change
-        let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
-
-        if (
-          current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
-          current_effect.values[this.display.effects.item_selected - 2].type == 'list'
-        ) {
-          new_value--;
-        }
-
-        if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
-          new_value = (new_value * 10 - 1) / 10;
-        }
-
-        current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
-          current_effect.values[this.display.effects.item_selected - 2].min,
-          current_effect.values[this.display.effects.item_selected - 2].max,
-        );
-
-        // Apply effect
-        this.apply_effect(current_effect);
-      }
-    },
-    right() {
-      this.display.page = 2;
-
-      if (this.display.effects.item_selected == 0) {
-        this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected + 1).clamp(
-          0,
-          this.display.effects.available_effects.length - 1,
-        );
-      }
-
-      if (this.display.effects.item_selected == 1) {
-        this.display.effects.route_item_selected = (this.display.effects.route_item_selected + 1).clamp(
-          0,
-          this.display.effects.available_routes.length - 1,
-        );
-      }
-
-      let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
-        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
-      });
-      this.display.effects.item_selected = this.display.effects.item_selected.clamp(
-        0,
-        1 + _.size(current_effect.values),
-      );
-
-      if (this.display.effects.item_selected >= 2) {
-        // Apply value change
-        let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
-
-        if (
-          current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
-          current_effect.values[this.display.effects.item_selected - 2].type == 'list'
-        ) {
-          new_value++;
-        }
-
-        if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
-          new_value = (new_value * 10 + 1) / 10;
-        }
-
-        current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
-          current_effect.values[this.display.effects.item_selected - 2].min,
-          current_effect.values[this.display.effects.item_selected - 2].max,
-        );
-
-        // Apply effect
-        this.apply_effect(current_effect);
-      }
-    },
-    up() {
-      this.display.page = 2;
-
-      let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
-        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
-      });
-      this.display.effects.item_selected = (this.display.effects.item_selected - 1).clamp(
-        0,
-        1 + _.size(current_effect.values),
-      );
-    },
-    down() {
-      this.display.page = 2;
-
-      let current_effect = _.find(this.tonejs.effects, {
-        effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
-        route: this.display.effects.available_routes[this.display.effects.route_item_selected],
-      });
-      this.display.effects.item_selected = (this.display.effects.item_selected + 1).clamp(
-        0,
-        1 + _.size(current_effect.values),
-      );
-    },
-    apply_effect(current_effect) {
-      let target = this.tonejs[current_effect.route + '_sampler'];
-
-      if (current_effect.effect == 'volume') {
-        target.volume.value = _.find(current_effect.values, ['name', 'volume']).value;
-      }
-
-      if (current_effect.effect == 'crusher') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.BitCrusher().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          bits: _.find(current_effect.values, ['name', 'bits']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
+    enable_filter() {
+      if (this.tonejs.effects.filter_drums.enabled) {
+        this.tonejs.effects.filter_drums.enabled = false;
+        this.tonejs.effects.filter_drums.handler.set({
+          wet: 0,
         });
-      }
-
-      if (current_effect.effect == 'reverb') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.Reverb().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          decay: _.find(current_effect.values, ['name', 'decay']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'stereowidener') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.StereoWidener().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          width: _.find(current_effect.values, ['name', 'width']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'tremolo') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.Tremolo().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          frequency: _.find(current_effect.values, ['name', 'freq']).list[
-            _.find(current_effect.values, ['name', 'freq']).value
-          ],
-          depth: _.find(current_effect.values, ['name', 'depth']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'vibrato') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.Vibrato().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          frequency: _.find(current_effect.values, ['name', 'freq']).list[
-            _.find(current_effect.values, ['name', 'freq']).value
-          ],
-          depth: _.find(current_effect.values, ['name', 'depth']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'feedbackdelay') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.FeedbackDelay().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          delay: _.find(current_effect.values, ['name', 'delay']).list[
-            _.find(current_effect.values, ['name', 'delay']).value
-          ],
-          feedback: _.find(current_effect.values, ['name', 'feedback']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'chorus') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.Chorus().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          frequency: _.find(current_effect.values, ['name', 'freq']).list[
-            _.find(current_effect.values, ['name', 'freq']).value
-          ],
-          delayTime: _.find(current_effect.values, ['name', 'delay']).value,
-          depth: _.find(current_effect.values, ['name', 'depth']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
-        });
-      }
-
-      if (current_effect.effect == 'distortion') {
-        if (!current_effect.handler) {
-          current_effect.handler = new Tone.Distortion().toDestination();
-          target.connect(current_effect.handler);
-        }
-
-        current_effect.handler.set({
-          distortion: _.find(current_effect.values, ['name', 'distortion']).value,
-          wet: _.find(current_effect.values, ['name', 'wet']).value,
+      } else {
+        this.tonejs.effects.filter_drums.enabled = true;
+        this.tonejs.effects.filter_drums.handler.set({
+          wet: 1,
         });
       }
     },
+    enable_reverb() {
+      if (this.tonejs.effects.reverb_vocals.enabled) {
+        this.tonejs.effects.reverb_vocals.enabled = false;
+        this.tonejs.effects.reverb_vocals.handler.set({
+          wet: 0,
+        });
+      } else {
+        this.tonejs.effects.reverb_vocals.enabled = true;
+        this.tonejs.effects.reverb_vocals.handler.set({
+          wet: 1,
+        });
+      }
+    },
+    // left() {
+    //   this.display.page = 2;
+
+    //   if (this.display.effects.item_selected == 0) {
+    //     this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected - 1).clamp(
+    //       0,
+    //       this.display.effects.available_effects.length - 1,
+    //     );
+    //   }
+
+    //   if (this.display.effects.item_selected == 1) {
+    //     this.display.effects.route_item_selected = (this.display.effects.route_item_selected - 1).clamp(
+    //       0,
+    //       this.display.effects.available_routes.length - 1,
+    //     );
+    //   }
+
+    //   let current_effect = _.find(this.tonejs.effects, {
+    //     effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+    //     route: this.display.effects.available_routes[this.display.effects.route_item_selected],
+    //   });
+    //   this.display.effects.item_selected = this.display.effects.item_selected.clamp(
+    //     0,
+    //     1 + _.size(current_effect.values),
+    //   );
+
+    //   if (this.display.effects.item_selected >= 2) {
+    //     // Apply value change
+    //     let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
+
+    //     if (
+    //       current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
+    //       current_effect.values[this.display.effects.item_selected - 2].type == 'list'
+    //     ) {
+    //       new_value--;
+    //     }
+
+    //     if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
+    //       new_value = (new_value * 10 - 1) / 10;
+    //     }
+
+    //     current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
+    //       current_effect.values[this.display.effects.item_selected - 2].min,
+    //       current_effect.values[this.display.effects.item_selected - 2].max,
+    //     );
+
+    //     // Apply effect
+    //     this.apply_effect(current_effect);
+    //   }
+    // },
+    // right() {
+    //   this.display.page = 2;
+
+    //   if (this.display.effects.item_selected == 0) {
+    //     this.display.effects.effect_item_selected = (this.display.effects.effect_item_selected + 1).clamp(
+    //       0,
+    //       this.display.effects.available_effects.length - 1,
+    //     );
+    //   }
+
+    //   if (this.display.effects.item_selected == 1) {
+    //     this.display.effects.route_item_selected = (this.display.effects.route_item_selected + 1).clamp(
+    //       0,
+    //       this.display.effects.available_routes.length - 1,
+    //     );
+    //   }
+
+    //   let current_effect = _.find(this.tonejs.effects, {
+    //     effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+    //     route: this.display.effects.available_routes[this.display.effects.route_item_selected],
+    //   });
+    //   this.display.effects.item_selected = this.display.effects.item_selected.clamp(
+    //     0,
+    //     1 + _.size(current_effect.values),
+    //   );
+
+    //   if (this.display.effects.item_selected >= 2) {
+    //     // Apply value change
+    //     let new_value = current_effect.values[this.display.effects.item_selected - 2].value;
+
+    //     if (
+    //       current_effect.values[this.display.effects.item_selected - 2].type == 'int' ||
+    //       current_effect.values[this.display.effects.item_selected - 2].type == 'list'
+    //     ) {
+    //       new_value++;
+    //     }
+
+    //     if (current_effect.values[this.display.effects.item_selected - 2].type == 'float') {
+    //       new_value = (new_value * 10 + 1) / 10;
+    //     }
+
+    //     current_effect.values[this.display.effects.item_selected - 2].value = new_value.clamp(
+    //       current_effect.values[this.display.effects.item_selected - 2].min,
+    //       current_effect.values[this.display.effects.item_selected - 2].max,
+    //     );
+
+    //     // Apply effect
+    //     this.apply_effect(current_effect);
+    //   }
+    // },
+    // up() {
+    //   this.display.page = 2;
+
+    //   let current_effect = _.find(this.tonejs.effects, {
+    //     effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+    //     route: this.display.effects.available_routes[this.display.effects.route_item_selected],
+    //   });
+    //   this.display.effects.item_selected = (this.display.effects.item_selected - 1).clamp(
+    //     0,
+    //     1 + _.size(current_effect.values),
+    //   );
+    // },
+    // down() {
+    //   this.display.page = 2;
+
+    //   let current_effect = _.find(this.tonejs.effects, {
+    //     effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+    //     route: this.display.effects.available_routes[this.display.effects.route_item_selected],
+    //   });
+    //   this.display.effects.item_selected = (this.display.effects.item_selected + 1).clamp(
+    //     0,
+    //     1 + _.size(current_effect.values),
+    //   );
+    // },
+    // apply_effect(current_effect) {
+    //   let target = this.tonejs[current_effect.route + '_sampler'];
+
+    //   if (current_effect.effect == 'volume') {
+    //     target.volume.value = _.find(current_effect.values, ['name', 'volume']).value;
+    //   }
+
+    //   if (current_effect.effect == 'crusher') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.BitCrusher().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       bits: _.find(current_effect.values, ['name', 'bits']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'reverb') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.Reverb().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       decay: _.find(current_effect.values, ['name', 'decay']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'stereowidener') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.StereoWidener().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       width: _.find(current_effect.values, ['name', 'width']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'tremolo') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.Tremolo().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       frequency: _.find(current_effect.values, ['name', 'freq']).list[
+    //         _.find(current_effect.values, ['name', 'freq']).value
+    //       ],
+    //       depth: _.find(current_effect.values, ['name', 'depth']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'vibrato') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.Vibrato().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       frequency: _.find(current_effect.values, ['name', 'freq']).list[
+    //         _.find(current_effect.values, ['name', 'freq']).value
+    //       ],
+    //       depth: _.find(current_effect.values, ['name', 'depth']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'feedbackdelay') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.FeedbackDelay().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       delay: _.find(current_effect.values, ['name', 'delay']).list[
+    //         _.find(current_effect.values, ['name', 'delay']).value
+    //       ],
+    //       feedback: _.find(current_effect.values, ['name', 'feedback']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'chorus') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.Chorus().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       frequency: _.find(current_effect.values, ['name', 'freq']).list[
+    //         _.find(current_effect.values, ['name', 'freq']).value
+    //       ],
+    //       delayTime: _.find(current_effect.values, ['name', 'delay']).value,
+    //       depth: _.find(current_effect.values, ['name', 'depth']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+
+    //   if (current_effect.effect == 'distortion') {
+    //     if (!current_effect.handler) {
+    //       current_effect.handler = new Tone.Distortion().toDestination();
+    //       target.connect(current_effect.handler);
+    //     }
+
+    //     current_effect.handler.set({
+    //       distortion: _.find(current_effect.values, ['name', 'distortion']).value,
+    //       wet: _.find(current_effect.values, ['name', 'wet']).value,
+    //     });
+    //   }
+    // },
     switch_bank(payload) {
       this.display.page = 1;
 
@@ -3317,13 +2298,13 @@ export default {
         on: 'bank' + this.tonejs.bank,
       });
 
-      if (current_pad_index == -1) {
-        // exceptions for tl and bl
-        current_pad_index = _.findIndex(this.controls.pads, {
-          ref: e.target,
-          on: 'bank',
-        });
-      }
+      // if (current_pad_index == -1) {
+      //   // exceptions for tl and bl
+      //   current_pad_index = _.findIndex(this.controls.pads, {
+      //     ref: e.target,
+      //     on: 'bank',
+      //   });
+      // }
 
       if (
         this.controls.pads[current_pad_index].type != 'toggle' ||
@@ -3443,13 +2424,13 @@ export default {
         on: 'bank' + this.tonejs.bank,
       });
 
-      if (current_pad_index == -1) {
-        // exceptions for tl and bl
-        current_pad_index = _.findIndex(this.controls.pads, {
-          ref: e.target,
-          on: 'bank',
-        });
-      }
+      // if (current_pad_index == -1) {
+      //   // exceptions for tl and bl
+      //   current_pad_index = _.findIndex(this.controls.pads, {
+      //     ref: e.target,
+      //     on: 'bank',
+      //   });
+      // }
 
       this.controls.pads[current_pad_index].pressed = true;
 
@@ -3576,30 +2557,30 @@ export default {
           );
           Tone.Destination.set({ volume: this.tonejs.destination_volume });
         }
-        if (this.controls.knobs[current_knob_index].id == 'knob2') {
-          if (this.display.page == 2) {
-            if (this.display.effects.item_selected >= 2) {
-              let current_effect = _.find(this.tonejs.effects, {
-                effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
-                route: this.display.effects.available_routes[this.display.effects.route_item_selected],
-              });
-              this.display.effects.item_selected = this.display.effects.item_selected.clamp(
-                0,
-                1 + _.size(current_effect.values),
-              );
+        // if (this.controls.knobs[current_knob_index].id == 'knob2') {
+        //   if (this.display.page == 2) {
+        //     if (this.display.effects.item_selected >= 2) {
+        //       let current_effect = _.find(this.tonejs.effects, {
+        //         effect: this.display.effects.available_effects[this.display.effects.effect_item_selected],
+        //         route: this.display.effects.available_routes[this.display.effects.route_item_selected],
+        //       });
+        //       this.display.effects.item_selected = this.display.effects.item_selected.clamp(
+        //         0,
+        //         1 + _.size(current_effect.values),
+        //       );
 
-              // Apply value change
-              current_effect.values[this.display.effects.item_selected - 2].value =
-                value.clamp(
-                  current_effect.values[this.display.effects.item_selected - 2].min * 100,
-                  current_effect.values[this.display.effects.item_selected - 2].max * 100,
-                ) / 100;
+        //       // Apply value change
+        //       current_effect.values[this.display.effects.item_selected - 2].value =
+        //         value.clamp(
+        //           current_effect.values[this.display.effects.item_selected - 2].min * 100,
+        //           current_effect.values[this.display.effects.item_selected - 2].max * 100,
+        //         ) / 100;
 
-              // Apply effect
-              this.apply_effect(current_effect);
-            }
-          }
-        }
+        //       // Apply effect
+        //       this.apply_effect(current_effect);
+        //     }
+        //   }
+        // }
       } else if (this.mousehook.hooked_to_type == 'slider') {
         // Knob rotation
         let distance = this.mousehook.current_pos.y - this.mousehook.init_pos.y;
@@ -3620,38 +2601,32 @@ export default {
           let target_value = inverted_value.map(
             this.controls.sliders[this.mousehook.hooked_to].min,
             this.controls.sliders[this.mousehook.hooked_to].max,
-            -50,
-            5,
+            10000,
+            0,
           );
-          console.log(target_value);
 
-          let current_effect = _.find(this.tonejs.effects, {
-            effect: 'volume',
-            route: 'effects',
+          this.tonejs.effects.filter_drums.enabled = true;
+          _.find(this.controls.btns, { id: 'tl' }).value = 'active';
+
+          this.tonejs.effects.filter_drums.handler.set({
+            frequency: target_value,
           });
-          _.find(current_effect.values, {
-            name: 'volume',
-          }).value = target_value;
-          this.apply_effect(current_effect);
         }
         if (this.controls.sliders[current_slider_index].id == 'slider2') {
           let inverted_value = this.controls.sliders[this.mousehook.hooked_to].max - value;
           let target_value = inverted_value.map(
             this.controls.sliders[this.mousehook.hooked_to].min,
             this.controls.sliders[this.mousehook.hooked_to].max,
-            -50,
-            5,
+            100,
+            0,
           );
-          console.log(target_value);
 
-          let current_effect = _.find(this.tonejs.effects, {
-            effect: 'volume',
-            route: 'vocals',
+          this.tonejs.effects.reverb_vocals.enabled = true;
+          _.find(this.controls.btns, { id: 'bl' }).value = 'active';
+
+          this.tonejs.effects.reverb_vocals.handler.set({
+            wet: target_value / 100,
           });
-          _.find(current_effect.values, {
-            name: 'volume',
-          }).value = target_value;
-          this.apply_effect(current_effect);
         }
       }
     },
@@ -3736,7 +2711,11 @@ export default {
 
       _.each(diff, (btn) => {
         let curr_btn = _.find(this.controls.btns, ['id', btn.id]);
-        SVG(curr_btn.ref).fill(colors.btn[curr_btn.value]);
+        if (btn.id == 'tl' || btn.id == 'bl') {
+          SVG(curr_btn.ref.children[0]).fill(colors.btn[curr_btn.value]);
+        } else {
+          SVG(curr_btn.ref).fill(colors.btn[curr_btn.value]);
+        }
         if (btn.pressed) SVG(curr_btn.ref).transform({ translateX: 1, translateY: 3 });
         if (!btn.pressed) SVG(curr_btn.ref).transform({ translateX: 0, translateY: 0 });
       });

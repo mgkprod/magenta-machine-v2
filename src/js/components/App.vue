@@ -6,7 +6,7 @@
       <div class="flex flex-row items-center justify-start -mx-1">
         <div class="mx-auto"></div>
 
-        <button
+        <!-- <button
           class="p-2 mx-1 text-sm font-semibold text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200"
           @click="devtools = !devtools"
         >
@@ -17,7 +17,7 @@
               clip-rule="evenodd"
             />
           </svg>
-        </button>
+        </button> -->
         <button
           class="p-2 mx-1 text-sm font-semibold text-indigo-500 transition bg-indigo-100 rounded-lg transition-200 dark:bg-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200 dark:hover:bg-indigo-800 hover:text-indigo-600 hover:bg-indigo-200 focus:outline-none focus:ring-4 ring-opacity-50 dark:focus:ring-indigo-800 focus:ring-indigo-200"
           @click="toggle_theme"
